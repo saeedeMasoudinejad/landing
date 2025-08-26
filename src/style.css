@@ -1,10 +1,56 @@
 @font-face {
-    font-family: "BeYekan";
-    src: url('../src/assets/fonts/BYekan+.ttf');
+    font-family: "Vazirmatn-Regular";
+    src: url("./assets/fonts/Vazirmatn-Regular.ttf");
+}
+@font-face {
+    font-family: "Vazirmatn-Black";
+    src: url("./assets/fonts/Vazirmatn-Black.ttf");
+}
+@font-face {
+    font-family: "Vazirmatn-Bold";
+    src: url("./assets/fonts/Vazirmatn-Bold.ttf");
+}
+@font-face {
+    font-family: "Vazirmatn-ExtraBold";
+    src: url("./assets/fonts/Vazirmatn-ExtraBold.ttf");
+}
+@font-face {
+    font-family: "Vazirmatn-ExtraLight";
+    src: url("./assets/fonts/Vazirmatn-ExtraLight.ttf");
+}
+@font-face {
+    font-family: "Vazirmatn-Light";
+    src: url("./assets/fonts/Vazirmatn-Light.ttf");
+}
+@font-face {
+    font-family: "Vazirmatn-Medium";
+    src: url("./assets/fonts/Vazirmatn-Medium.ttf");
+}
+@font-face {
+    font-family: "Vazirmatn-SemiBold";
+    src: url("./assets/fonts/Vazirmatn-SemiBold.ttf");
+}
+@font-face {
+    font-family: "Vazirmatn-Thin";
+    src: url("./assets/fonts/Vazirmatn-Thin.ttf");
 }
 
+:root {
+    --primary-light: #2C7EF8;
+    --primary-hover-light: #075CD9;
+    --on-primary-light: #FFFFFF;
+    --background-light: #FFFFFF;
+    --on-background-light:#191C1E;
+    --surface-light:#FFFFFF;
+    --primary-Dark:  #3A86F8;
+    --primary-hover-Dark: #6BA4FA;
+    --background-Dark: #040810;
+    --on-background-Dark: #E6E9EF;
+    --surface-Dark: #E6E9EF;
+}
+
+
 *{
-    font-family: "BeYekan", sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
