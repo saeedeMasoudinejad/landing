@@ -78,7 +78,7 @@
 }
 .hero .title .highlighted-word::after {
   content: "";
-  background-image: url(../assets/Images/blueVector.png);
+  background-image: url(../src/assets/Images/blueVector.png);
   background-repeat: no-repeat;
   background-size: contain;
   position: absolute;
