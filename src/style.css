@@ -35,6 +35,20 @@
     src: url("./assets/fonts/Vazirmatn-Thin.ttf");
 }
 
+:root {
+    --primary-light: #2C7EF8;
+    --primary-hover-light: #075CD9;
+    --on-primary-light: #FFFFFF;
+    --background-light: #FFFFFF;
+    --on-background-light:#191C1E;
+    --surface-light:#FFFFFF;
+    --primary-Dark:  #3A86F8;
+    --primary-hover-Dark: #6BA4FA;
+    --background-Dark: #040810;
+    --on-background-Dark: #E6E9EF;
+    --surface-Dark: #E6E9EF;
+}
+
 
 *{
     margin: 0;
