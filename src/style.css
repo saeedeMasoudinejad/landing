@@ -1,0 +1,12 @@
+@font-face {
+    font-family: "BeYekan";
+    src: url('../src/assets/fonts/BYekan+.ttf');
+}
+
+*{
+    font-family: "BeYekan", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    direction: rtl;
+}
