@@ -41,7 +41,8 @@
     --on-primary-light: #FFFFFF;
     --background-light: #FFFFFF;
     --on-background-light:#191C1E;
-    --surface-light:#FFFFFF;
+    --surface-light:#FFFFFF;;
+    --neutral-9: #F5F6F8;
     --primary-Dark:  #3A86F8;
     --primary-hover-Dark: #6BA4FA;
     --background-Dark: #040810;
@@ -61,14 +62,17 @@
     font-family: "Vazirmatn-SemiBold";
     color: var(--on-background-light);
 }
-
+/*flex flex-col items-center justify-center border py-1 px-[12px] rounded-[24px] h-[156px] gap-[8px] w-[156px] shadow-[0px_4px_63px_0px_#00000008]*/
 .feature{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    border: 1px solid var(--neutral-9);
+    border-radius: 24px;
+    box-shadow: 0px 4px 63px 0px #00000008;;
 }
 
-.features p{
-    text-align: center;
+.features img {
+    color: var(--primary-light);
 }
