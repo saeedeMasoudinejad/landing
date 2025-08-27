@@ -55,4 +55,20 @@
     padding: 0;
     box-sizing: border-box;
     direction: rtl;
+    font-family: "Vazirmatn-Regular";
+}
+.featureHeader{
+    font-family: "Vazirmatn-SemiBold";
+    color: var(--on-background-light);
+}
+
+.feature{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.features p{
+    text-align: center;
 }
