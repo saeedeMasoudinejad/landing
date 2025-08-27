@@ -1,84 +1,82 @@
 @font-face {
-  font-family: "Vazirmatn-Regular";
-  src: url("./assets/fonts/Vazirmatn-Regular.ttf");
+    font-family: "Vazirmatn-Regular";
+    src: url("./assets/fonts/Vazirmatn-Regular.ttf");
 }
 @font-face {
-  font-family: "Vazirmatn-Black";
-  src: url("./assets/fonts/Vazirmatn-Black.ttf");
+    font-family: "Vazirmatn-Black";
+    src: url("./assets/fonts/Vazirmatn-Black.ttf");
 }
 @font-face {
-  font-family: "Vazirmatn-Bold";
-  src: url("./assets/fonts/Vazirmatn-Bold.ttf");
+    font-family: "Vazirmatn-Bold";
+    src: url("./assets/fonts/Vazirmatn-Bold.ttf");
 }
 @font-face {
-  font-family: "Vazirmatn-ExtraBold";
-  src: url("./assets/fonts/Vazirmatn-ExtraBold.ttf");
+    font-family: "Vazirmatn-ExtraBold";
+    src: url("./assets/fonts/Vazirmatn-ExtraBold.ttf");
 }
 @font-face {
-  font-family: "Vazirmatn-ExtraLight";
-  src: url("./assets/fonts/Vazirmatn-ExtraLight.ttf");
+    font-family: "Vazirmatn-ExtraLight";
+    src: url("./assets/fonts/Vazirmatn-ExtraLight.ttf");
 }
 @font-face {
-  font-family: "Vazirmatn-Light";
-  src: url("./assets/fonts/Vazirmatn-Light.ttf");
+    font-family: "Vazirmatn-Light";
+    src: url("./assets/fonts/Vazirmatn-Light.ttf");
 }
 @font-face {
-  font-family: "Vazirmatn-Medium";
-  src: url("./assets/fonts/Vazirmatn-Medium.ttf");
+    font-family: "Vazirmatn-Medium";
+    src: url("./assets/fonts/Vazirmatn-Medium.ttf");
 }
 @font-face {
-  font-family: "Vazirmatn-SemiBold";
-  src: url("./assets/fonts/Vazirmatn-SemiBold.ttf");
+    font-family: "Vazirmatn-SemiBold";
+    src: url("./assets/fonts/Vazirmatn-SemiBold.ttf");
 }
 @font-face {
-  font-family: "Vazirmatn-Thin";
-  src: url("./assets/fonts/Vazirmatn-Thin.ttf");
+    font-family: "Vazirmatn-Thin";
+    src: url("./assets/fonts/Vazirmatn-Thin.ttf");
 }
 
 :root {
-  --primary-light: #2c7ef8;
-  --primary-hover-light: #075cd9;
-  --on-primary-light: #ffffff;
-  --background-light: #ffffff;
-  --on-background-light: #191c1e;
-  --surface-light: #ffffff;
-  --primary-Dark: #3a86f8;
-  --primary-hover-Dark: #6ba4fa;
-  --background-Dark: #040810;
-  --on-background-Dark: #e6e9ef;
-  --surface-Dark: #e6e9ef;
+    --primary-light: #2c7ef8;
+    --primary-hover-light: #075cd9;
+    --on-primary-light: #ffffff;
+    --background-light: #ffffff;
+    --on-background-light: #191c1e;
+    --surface-light: #ffffff;
+    --primary-Dark: #3a86f8;
+    --primary-hover-Dark: #6ba4fa;
+    --background-Dark: #040810;
+    --on-background-Dark: #e6e9ef;
+    --surface-Dark: #e6e9ef;
 
-  --aboutus-btn: #ebf3fe;
+    --aboutus-btn: #ebf3fe;
 }
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  direction: rtl;
-  font-family: "Vazirmatn-Regular";
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    direction: rtl;
+    font-family: "Vazirmatn-Regular";
 }
 
 /* ------------------------- <CSS by Mehdi Alizadeh> ------------------------ */
-body {
-  font-family: "Vazirmatn-Regular", sans-serif;
-}
 .background-rectangle-18753 {
-  background: linear-gradient(to bottom, #ebf3ff 0%, #ffffff 83%);
+    background: linear-gradient(to bottom, #ebf3ff 0%, #ffffff 83%);
 }
 .ellipse128 {
-  background: linear-gradient(-20deg, #efebff00 0%, #e0edffff 100%);
+    background: linear-gradient(-20deg, #efebff00 0%, #e0edffff 100%);
 }
 .ellipse129 {
-  background: linear-gradient(-20deg, #efebfb00 0%, #ebebfbff 100%);
+    background: linear-gradient(-20deg, #efebfb00 0%, #ebebfbff 100%);
 }
 .hero .title .highlighted-word::after {
-  content: "";
-  background: url(../src/assets/icons/blueVector.png) no-repeat center / contain;
-  position: absolute;
-  width: 180%;
-  height: 60px;
-  bottom: -50%;
-  left: -30%;
+    content: "";
+    background: url(../src/assets/icons/blueVector.png) no-repeat center /
+        contain;
+    position: absolute;
+    width: 180%;
+    height: 60px;
+    bottom: -50%;
+    left: -30%;
 }
 /* ------------------------ </CSS by Mehdi Alizadeh> ------------------------ */
