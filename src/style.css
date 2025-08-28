@@ -69,6 +69,10 @@
 .ellipse129 {
     background: linear-gradient(-20deg, #efebfb00 0%, #ebebfbff 100%);
 }
+.hero .title,
+.hero .title .highlighted-word {
+    font-family: "Vazirmatn-ExtraBold";
+}
 .hero .title .highlighted-word::after {
     content: "";
     background: url(../src/assets/icons/blueVector.png) no-repeat center /
@@ -78,5 +82,21 @@
     height: 60px;
     bottom: -50%;
     left: -30%;
+}
+.btn-gotoapp {
+    color: var(--on-primary-light);
+    background-color: var(--primary-light);
+}
+.btn-aboutus {
+    flex: 1 0 auto;
+    color: var(--primary-light);
+    background-color: #ebf3fe;
+}
+@media (max-width: 360px) {
+    .hero .title .highlighted-word::after {
+        bottom: -100%;
+        width: 140%;
+        left: -20%;
+    }
 }
 /* ------------------------ </CSS by Mehdi Alizadeh> ------------------------ */
