@@ -67,12 +67,29 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+    text-align: center;
     border: 1px solid var(--neutral-9);
     border-radius: 24px;
-    box-shadow: 0px 4px 63px 0px #00000008;;
+    box-shadow: 0px 4px 63px 0px #00000008;
+    background-color: var(--background-light);
 }
 
 .features img {
     color: var(--primary-light);
+}
+
+.features h4 {
+    font: 10px Vazirmatn-Bold;
+}
+
+.s {
+    background-color: #EBEBFB;
+    box-shadow: -3px 4px 16px 0px rgba(0, 0, 0, 0.25);
+
+}
+.d{
+    background-color: #EBEBFB ;
+    box-shadow: -3px 4px 16px 0px #00000000;
+
 }
