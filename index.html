@@ -11,42 +11,52 @@
 </head>
 <body>
 <main>"header part</main>
-<section class="flex flex-col items-center px-4 w-full gap-[24px] mx-auto mt-[627px] ml-4">
+
+<section class="relative flex flex-col items-center px-4 w-full gap-[24px] lg:gap[40px] mx-auto mt-[627px] ml-4">
+    <div class="s hidden lg:block absolute  -top-[250px] -right-[300px] rounded-full opacity-20 w-[452px] h-[452px] rotate-180"></div>
+<!--    <div class="d  absolute  top-[1776px] left-[-132px] rounded-full opacity-30 w-[452px] h-[452px] rotate-180"></div>-->
+
     <!-- Header Section -->
-    <div class="flex flex-col gap-2 md:gap-[12px] w-[312px] md:w-[540px] h-[88px] md:h-[144px] items-center text-center">
+    <div class="flex flex-col gap-2 lg:gap-[12px] items-center text-center">
         <h2 class="featureHeader h-[32px]">ویژگی‌های اپلیکیشن کوئرالیست</h2>
-        <p class="text-[10px]">زمان در یک روز برای ما محدود است، اما مهمترین کار این است که چگونه از آن استفاده می‌کنیم. با اپلیکیشن کوییرا
+        <p class="text-[10px]">زمان در یک روز برای ما محدود است، اما مهمترین کار این است که چگونه از آن استفاده می‌کنیم.
+            با اپلیکیشن کوییرا
             لیست، زمان خود را با هدف و برنامه‌ریزی موثر سپری کنید.</p>
     </div>
 
     <!-- Cards Section -->
-    <div class="grid grid-cols-2 justify-center item-center text-center md:grid-cols-4 mx-auto h-[328px] gap-[16px] md:gap-10">
-<!--        <div class="flex flex-col items-center justify-center border py-1 px-[12px] rounded-[24px] h-[156px] gap-[8px] w-[156px] shadow-[0px_4px_63px_0px_#00000008]">-->
-        <div class="feature py-1 px-[12px] rounded-[24px] h-[156px] md:h-[266px] gap-[8px] md:gap-[24px] w-[156px] md:w-[262px]">
-            <img src="./src/assets/icons/paint_icon.png" alt="paint-icon" class="w-[40px] h-[40px] p-[4px]"/>
-            <h4>رابط جذاب</h4>
-            <p class="text-[10px]">اگه از سردرگمی و بی برنامگی خسته شدی این اپلیکیشن مخصوص خودته!</p>
+    <div class="grid grid-cols-2 justify-center item-center text-center md:grid-cols-4 mx-auto gap-[16px] lg:gap-[24px]">
+        <div class="feature py-[16px] lg:py-[32px] px-[12px] lg:px-[40px] rounded-[24px]  gap-[8px] lg:gap[24px]">
+                <img src="./src/assets/icons/paint_icon.png" alt="paint-icon"/>
+                <h4>رابط جذاب</h4>
+                <p class="text-[10px]">اگه از سردرگمی و بی برنامگی خسته شدی این اپلیکیشن مخصوص خودته!</p>
         </div>
-<!--        <div class="feature  py-1 px-[12px] border rounded-[24px]  wg:w-[256px]">-->
-        <div class="feature py-1 px-[12px] rounded-[24px] h-[156px] md:h-[266px] gap-[8px] md:gap-[24px] w-[156px] md:w-[262px]">
-            <img src="./src/assets/icons/category_icon.png" alt="category-icon" class="w-[40px] h-[40px] p-[4px]"/>
-            <h4 >قابلیت دسته‌بندی کارها</h4>
-            <p class="text-[10px]">اگه از سردرگمی و بی برنامگی خسته شدی این اپلیکیشن مخصوص خودته!</p>
+        <div class="feature py-[16px] lg:py-[32px] px-[12px] lg:px-[40px] rounded-[24px]  gap-[8px] lg:gap[24px]">
+                <img src="./src/assets/icons/category_icon.png" alt="category-icon"/>
+                <h4>قابلیت دسته‌بندی کارها</h4>
+                <p class="text-[10px]">اگه از سردرگمی و بی برنامگی خسته شدی این اپلیکیشن مخصوص خودته!</p>
         </div>
-        <div class="feature py-1 px-[12px] rounded-[24px] h-[156px] md:h-[266px] gap-[8px] md:gap-[24px] w-[156px] md:w-[262px]">
-            <img src="./src/assets/icons/access_icon.png" alt="access-icon" class="w-[40px] h-[40px] p-[4px]"/>
-            <h4>دسترسی آسان</h4>
-            <p class="text-[10px]">اگه از سردرگمی و بی برنامگی خسته شدی این اپلیکیشن مخصوص خودته!</p>
+        <div class="feature py-[16px] lg:py-[32px] px-[12px] lg:px-[40px] rounded-[24px]  gap-[8px] lg:gap[24px]">
+                <img src="./src/assets/icons/access_icon.png" alt="access-icon"/>
+                <h4>دسترسی آسان</h4>
+                <p class="text-[10px]">اگه از سردرگمی و بی برنامگی خسته شدی این اپلیکیشن مخصوص خودته!</p>
         </div>
-        <div class="feature py-1 px-[12px] rounded-[24px] h-[156px] md:h-[266px] gap-[8px] md:gap-[24px] w-[156px] md:w-[262px]">
-            <img src="./src/assets/icons/place_icon.png" alt="pain-icon" class="w-[40px] h-[40px] p-[4px]"/>
-            <h4>پشتیبانی آنلاین</h4>
-            <p class="text-[10px]">اگه از سردرگمی و بی برنامگی خسته شدی این اپلیکیشن مخصوص خودته!</p>
+        <div class="feature py-[16px] lg:py-[32px] px-[12px] lg:px-[40px] rounded-[24px]  gap-[8px] lg:gap[24px]">
+                <img src="./src/assets/icons/place_icon.png" alt="pain-icon"/>
+                <h4>پشتیبانی آنلاین</h4>
+                <p class="text-[10px]">اگه از سردرگمی و بی برنامگی خسته شدی این اپلیکیشن مخصوص خودته!</p>
         </div>
 
     </div>
 
 </section>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 <section class="download-part">Downdload app</section>
 </body>
 </html>
