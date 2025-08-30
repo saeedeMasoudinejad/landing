@@ -15,9 +15,9 @@
                 extend: {
                     colors: {
                         primary: {
-                            light: '#2C7EF8',
+                            light: '#FFFFFF',
                             'hover-light': '#075CD9',
-                            dark: '#3A86F8',
+                            dark: '#060C18',
                             'hover-dark': '#6BA4FA'
                         }
                     }
@@ -26,22 +26,21 @@
         }
     </script>
 </head>
-<body>
+<body class="bg-primary-light dark:bg-primary-dark">
 <header class="flex justify-between items-center">
-    <div>
-        <button>کوئرا لیست</button>
-        <button>صفحه اصلی</button>
-        <button>درباره ما</button>
-        <button>ارتباط با ما</button>
-    </div>
-    <div class="p-6 bg-white dark:bg-gray-900 flex items-center gap-4 transition-colors duration-300">
-        <button
-                id="toggle-mode"
-                class="px-3 py-2 bg-primary-light dark:bg-primary-dark text-white rounded-md transition-colors duration-300 flex items-center gap-2">
-            <img id="mode-icon" src="src/assets/icons/dark_icon.png" alt="mode icon" class="w-5 h-5">
-            Toggle Dark Mode
-        </button>
-    </div>
+<div>
+    <button>کوئرا لیست</button>
+    <button>صفحه اصلی</button>
+    <button>درباره ما</button>
+    <button>ارتباط با ما</button>
+</div>
+<div class="p-6 flex items-center justify-between transition-colors duration-300">
+    <button
+            id="toggle-mode"
+            class="px-3 py-2 text-white rounded-md transition-colors duration-300 flex items-center gap-2">
+        <img id="mode-icon" src="src/assets/icons/dark_icon.png" alt="mode icon">
+    </button>
+</div>
 </header>
 <section
         class="relative z-10 flex flex-col items-center px-4 w-full gap-[24px] lg:gap[40px] mx-auto mt-[627px] ml-4 max-w-6xl">
