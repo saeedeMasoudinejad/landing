@@ -7,8 +7,175 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="./src/style.css">
     <title>Title</title>
+    <script>
+        // Enable Tailwind dark mode
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            light: '#2C7EF8',
+                            'hover-light': '#075CD9',
+                            dark: '#3A86F8',
+                            'hover-dark': '#6BA4FA'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
 </head>
 <body>
-
+<header class="flex justify-between items-center">
+<div>
+    <button>کوئرا لیست</button>
+    <button>صفحه اصلی</button>
+    <button>درباره ما</button>
+    <button>ارتباط با ما</button>
+</div>
+<div class="p-6 bg-white dark:bg-gray-900 flex items-center gap-4 transition-colors duration-300">
+    <button
+            id="toggle-mode"
+            class="px-3 py-2 bg-primary-light dark:bg-primary-dark text-white rounded-md transition-colors duration-300 flex items-center gap-2">
+        <img id="mode-icon" src="src/assets/icons/dark_icon.png" alt="mode icon" class="w-5 h-5">
+        Toggle Dark Mode
+    </button>
+</div>
+</header>
+<script src="./src/main.js"></script>
 </body>
 </html>
+
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--    <meta http-equiv="X-UA-Compatible" content="ie=edge">-->
+<!--    <script src="https://cdn.tailwindcss.com"></script>-->
+<!--    <link rel="stylesheet" href="./src/style.css">-->
+<!--    <title>Title</title>-->
+<!--    <script>-->
+<!--        // Enable Tailwind dark mode (class strategy)-->
+<!--        tailwind.config = {-->
+<!--            darkMode: 'class',-->
+<!--            theme: {-->
+<!--                extend: {-->
+<!--                    colors: {-->
+<!--                        primary: {-->
+<!--                            light: '#2C7EF8',-->
+<!--                            'hover-light': '#075CD9',-->
+<!--                            dark: '#3A86F8',-->
+<!--                            'hover-dark': '#6BA4FA'-->
+<!--                        }-->
+<!--                    }-->
+<!--                }-->
+<!--            }-->
+<!--        }-->
+<!--    </script>-->
+<!--    &lt;!&ndash;    <style type="text/tailwindcss">&ndash;&gt;-->
+<!--    &lt;!&ndash;        @theme {&ndash;&gt;-->
+<!--    &lt;!&ndash;            &#45;&#45;color-primary-light: #2c7ef8;&ndash;&gt;-->
+<!--    &lt;!&ndash;            &#45;&#45;color-primary-hover-light: #075cd9;&ndash;&gt;-->
+<!--    &lt;!&ndash;            &#45;&#45;color-primary-dark: #3a86f8;&ndash;&gt;-->
+<!--    &lt;!&ndash;            &#45;&#45;color-primary-hover-dark: #6ba4fa;&ndash;&gt;-->
+<!--    &lt;!&ndash;            &#45;&#45;color-light: #ffffff;&ndash;&gt;-->
+<!--    &lt;!&ndash;            &#45;&#45;color-dark: #040810;&ndash;&gt;-->
+<!--    &lt;!&ndash;            &#45;&#45;color-dark-foreground: #e6e9ef;&ndash;&gt;-->
+<!--    &lt;!&ndash;            &#45;&#45;color-light-foreground: #191c1e;&ndash;&gt;-->
+
+<!--    &lt;!&ndash;            &#45;&#45;primary-light: #2C7EF8;&ndash;&gt;-->
+<!--    &lt;!&ndash;            &#45;&#45;primary-hover-light: #075CD9;&ndash;&gt;-->
+<!--    &lt;!&ndash;            &#45;&#45;on-primary-light: #FFFFFF;&ndash;&gt;-->
+<!--    &lt;!&ndash;            &#45;&#45;background-light: #FFFFFF;&ndash;&gt;-->
+<!--    &lt;!&ndash;            &#45;&#45;on-background-light: #191C1E;&ndash;&gt;-->
+<!--    &lt;!&ndash;            &#45;&#45;surface-light: #FFFFFF;;&ndash;&gt;-->
+<!--    &lt;!&ndash;            &#45;&#45;neutral-9: #F5F6F8;&ndash;&gt;-->
+<!--    &lt;!&ndash;            &#45;&#45;primary-Dark: #3A86F8;&ndash;&gt;-->
+<!--    &lt;!&ndash;            &#45;&#45;primary-hover-Dark: #6BA4FA;&ndash;&gt;-->
+<!--    &lt;!&ndash;            &#45;&#45;background-Dark: #040810;&ndash;&gt;-->
+<!--    &lt;!&ndash;            &#45;&#45;on-background-Dark: #E6E9EF;&ndash;&gt;-->
+<!--    &lt;!&ndash;            &#45;&#45;surface-Dark: #E6E9EF;&ndash;&gt;-->
+<!--    &lt;!&ndash;        }&ndash;&gt;-->
+
+<!--    &lt;!&ndash;        @custom-variant dark (&:where(.dark, .dark *));&ndash;&gt;-->
+<!--    &lt;!&ndash;    </style>&ndash;&gt;-->
+<!--</head>-->
+<!--<body>-->
+<!--<header class="flex items-center justify-between w-full">-->
+<!--    <div>-->
+<!--        <button>کوئرا لیست</button>-->
+<!--        <button>صفحه اصلی</button>-->
+<!--        <button>درباره ما</button>-->
+<!--        <button>ارتباط با ما</button>-->
+<!--    </div>-->
+<!--    <div class="p-6 bg-white dark:bg-gray-900 flex items-center gap-4 transition-colors duration-300">-->
+<!--        <button-->
+<!--                id="toggle-mode"-->
+<!--                class="px-3 py-2 bg-primary-light dark:bg-primary-dark text-white rounded-md transition-colors duration-300 flex items-center gap-2">-->
+<!--            <img id="mode-icon" src="src/assets/icons/dark_icon.png" alt="mode icon" class="w-5 h-5">-->
+<!--            Toggle Dark Mode-->
+<!--        </button>-->
+<!--    </div>-->
+<!--    &lt;!&ndash;    <div class="bg-slat-100 dark:bg-red-400">&ndash;&gt;-->
+<!--    &lt;!&ndash;        <button>ورود به اپلیکیشن</button>&ndash;&gt;-->
+<!--    &lt;!&ndash;        <button&ndash;&gt;-->
+<!--    &lt;!&ndash;                id="toggle-mode"&ndash;&gt;-->
+<!--    &lt;!&ndash;                class="bg-primary-light dark:bg-primary-dark dark:hover:bg-primary-hover-dark cursor-pointer text-white px-3 py-1 rounded-md hover:bg-primary-hover-light transition-colors duration-300">&ndash;&gt;-->
+<!--    &lt;!&ndash;            <img id='mood-icon' src="src/assets/icons/dark_icon.png"  alt="moon">&ndash;&gt;-->
+<!--    &lt;!&ndash;        </button>&ndash;&gt;-->
+<!--    &lt;!&ndash;    </div>&ndash;&gt;-->
+<!--</header>-->
+
+<!--<section-->
+<!--        class="relative z-10 flex flex-col items-center px-4 w-full gap-[24px] lg:gap[40px] mx-auto mt-[627px] ml-4 max-w-6xl">-->
+<!--    <div class="backgroundElement hidden lg:block absolute -z-10 -top-[50px] -right-[300px] rounded-full opacity-20 w-[452px] h-[452px] rotate-180"></div>-->
+<!--    <div class="backgroundElement  absolute -z-10  top-[150px] left-[-200px] rounded-full opacity-30 w-[452px] h-[452px] rotate-180"></div>-->
+
+<!--    &lt;!&ndash; Header Section &ndash;&gt;-->
+<!--    <div class="flex flex-col gap-2 lg:gap-[12px] items-center text-center">-->
+<!--        <h2 class="featureHeader h-[32px]">ویژگی‌های اپلیکیشن کوئرالیست</h2>-->
+<!--        <p class="text-[10px]">زمان در یک روز برای ما محدود است، اما مهمترین کار این است که چگونه از آن استفاده می‌کنیم.-->
+<!--            با اپلیکیشن کوییرا-->
+<!--            لیست، زمان خود را با هدف و برنامه‌ریزی موثر سپری کنید.</p>-->
+<!--    </div>-->
+
+<!--    &lt;!&ndash; Cards Section &ndash;&gt;-->
+<!--    <div class="grid grid-cols-2 justify-center item-center text-center md:grid-cols-4 mx-auto gap-[16px] lg:gap-[24px] ">-->
+<!--        <div class="feature py-[16px] lg:py-[32px] px-[12px] lg:px-[40px] rounded-[24px]  gap-[8px] lg:gap[24px]">-->
+<!--            <img src="./src/assets/icons/paint_icon.png" alt="paint-icon"/>-->
+<!--            <h4>رابط جذاب</h4>-->
+<!--            <p class="text-[10px]">اگه از سردرگمی و بی برنامگی خسته شدی این اپلیکیشن مخصوص خودته!</p>-->
+<!--        </div>-->
+<!--        <div class="feature py-[16px] lg:py-[32px] px-[12px] lg:px-[40px] rounded-[24px]  gap-[8px] lg:gap[24px]">-->
+<!--            <img src="./src/assets/icons/category_icon.png" alt="category-icon"/>-->
+<!--            <h4>قابلیت دسته‌بندی کارها</h4>-->
+<!--            <p class="text-[10px]">اگه از سردرگمی و بی برنامگی خسته شدی این اپلیکیشن مخصوص خودته!</p>-->
+<!--        </div>-->
+<!--        <div class="feature py-[16px] lg:py-[32px] px-[12px] lg:px-[40px] rounded-[24px]  gap-[8px] lg:gap[24px]">-->
+<!--            <img src="./src/assets/icons/access_icon.png" alt="access-icon"/>-->
+<!--            <h4>دسترسی آسان</h4>-->
+<!--            <p class="text-[10px]">اگه از سردرگمی و بی برنامگی خسته شدی این اپلیکیشن مخصوص خودته!</p>-->
+<!--        </div>-->
+<!--        <div class="feature py-[16px] lg:py-[32px] px-[12px] lg:px-[40px] rounded-[24px]  gap-[8px] lg:gap[24px]">-->
+<!--            <img src="./src/assets/icons/place_icon.png" alt="pain-icon"/>-->
+<!--            <h4>پشتیبانی آنلاین</h4>-->
+<!--            <p class="text-[10px]">اگه از سردرگمی و بی برنامگی خسته شدی این اپلیکیشن مخصوص خودته!</p>-->
+<!--        </div>-->
+
+<!--    </div>-->
+
+<!--</section>-->
+<!--<br>-->
+<!--<br>-->
+<!--<br>-->
+<!--<br>-->
+<!--<br>-->
+<!--<br>-->
+<!--<br>-->
+<!--<section class="download-part">Downdload app</section>-->
+<!--<script src="./src/main.js"></script>-->
+<!--</body>-->
+<!--</html>-->
