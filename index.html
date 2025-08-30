@@ -7,10 +7,44 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="./src/style.css">
     <title>Title</title>
-
+    <script>
+        // Enable Tailwind dark mode
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            light: '#2C7EF8',
+                            'hover-light': '#075CD9',
+                            dark: '#3A86F8',
+                            'hover-dark': '#6BA4FA'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
 </head>
 <body>
-<main>"header part</main>
+<header class="flex justify-between items-center">
+<div>
+    <button>کوئرا لیست</button>
+    <button>صفحه اصلی</button>
+    <button>درباره ما</button>
+    <button>ارتباط با ما</button>
+</div>
+<div class="p-6 bg-white dark:bg-gray-900 flex items-center gap-4 transition-colors duration-300">
+    <button
+            id="toggle-mode"
+            class="px-3 py-2 bg-primary-light dark:bg-primary-dark text-white rounded-md transition-colors duration-300 flex items-center gap-2">
+        <img id="mode-icon" src="src/assets/icons/dark_icon.png" alt="mode icon" class="w-5 h-5">
+        Toggle Dark Mode
+    </button>
+</div>
+</header>
+<script src="./src/main.js"></script>
+
 
 <section class="relative z-10 flex flex-col items-center px-4 w-full gap-[24px] lg:gap[40px] mx-auto mt-[627px] ml-4 max-w-6xl">
     <div class="backgroundElement hidden lg:block absolute -z-10 -top-[50px] -right-[300px] rounded-full opacity-20 w-[452px] h-[452px] rotate-180"></div>
