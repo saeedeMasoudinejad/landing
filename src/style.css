@@ -83,13 +83,8 @@
     font: 10px Vazirmatn-Bold;
 }
 
-.s {
-    background-color: #EBEBFB;
-    box-shadow: -3px 4px 16px 0px rgba(0, 0, 0, 0.25);
-
-}
-.d{
-    background-color: #EBEBFB ;
+.backgroundElement {
+    background: linear-gradient(162.19deg, rgba(239, 235, 255, 0) 32.45%, #EBEBFB 79.35%);
     box-shadow: -3px 4px 16px 0px #00000000;
 
 }

@@ -12,9 +12,9 @@
 <body>
 <main>"header part</main>
 
-<section class="relative flex flex-col items-center px-4 w-full gap-[24px] lg:gap[40px] mx-auto mt-[627px] ml-4">
-    <div class="s hidden lg:block absolute  -top-[250px] -right-[300px] rounded-full opacity-20 w-[452px] h-[452px] rotate-180"></div>
-<!--    <div class="d  absolute  top-[1776px] left-[-132px] rounded-full opacity-30 w-[452px] h-[452px] rotate-180"></div>-->
+<section class="relative z-10 flex flex-col items-center px-4 w-full gap-[24px] lg:gap[40px] mx-auto mt-[627px] ml-4 max-w-6xl">
+    <div class="backgroundElement hidden lg:block absolute -z-10 -top-[50px] -right-[300px] rounded-full opacity-20 w-[452px] h-[452px] rotate-180"></div>
+    <div class="backgroundElement  absolute -z-10  top-[150px] left-[-200px] rounded-full opacity-30 w-[452px] h-[452px] rotate-180"></div>
 
     <!-- Header Section -->
     <div class="flex flex-col gap-2 lg:gap-[12px] items-center text-center">
@@ -25,7 +25,7 @@
     </div>
 
     <!-- Cards Section -->
-    <div class="grid grid-cols-2 justify-center item-center text-center md:grid-cols-4 mx-auto gap-[16px] lg:gap-[24px]">
+    <div class="grid grid-cols-2 justify-center item-center text-center md:grid-cols-4 mx-auto gap-[16px] lg:gap-[24px] ">
         <div class="feature py-[16px] lg:py-[32px] px-[12px] lg:px-[40px] rounded-[24px]  gap-[8px] lg:gap[24px]">
                 <img src="./src/assets/icons/paint_icon.png" alt="paint-icon"/>
                 <h4>رابط جذاب</h4>
