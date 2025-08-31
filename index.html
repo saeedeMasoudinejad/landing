@@ -42,7 +42,8 @@
         }
     </script>
 </head>
-<body class="bg-primary-background-light dark:bg-primary-background-Dark text-primary-on-background-light dark:text-primary-on-background-Dark">
+<body class="bg-primary-background-light dark:bg-primary-background-Dark text-primary-on-background-light dark:text-primary-on-background-Dark  relative overflow-x-hidden">
+
 <header class="flex justify-between items-center">
     <div>
         <button>کوئرا لیست</button>
@@ -58,16 +59,19 @@
         </button>
     </div>
 </header>
+<main  class="mx-auto max-w-[1120px] min-w-[360px]">
+
 <!-- Application Features -->
-<section
-        class="relative z-10 flex flex-col items-center px-4 w-full gap-[24px] lg:gap[40px] mx-auto mt-[627px] ml-4 max-w-6xl">
-    <div class="backgroundElement hidden dark:hidden lg:block absolute -z-10 -top-[50px] -right-[300px] rounded-full opacity-20 w-[452px] h-[452px] rotate-180"></div>
-    <div class="backgroundElement hidden dark:hidden lg:block absolute -z-10  top-[150px] left-[-200px] rounded-full opacity-30 w-[452px] h-[452px] rotate-180"></div>
+    <div class="backgroundElement  hidden dark:hidden lg:block absolute -z-10 top-1448px] -right-[200px] rounded-full opacity-20 w-[452px] h-[452px] rotate-180"></div>
+    <div class="backgroundElement hidden dark:hidden lg:block absolute -z-10  top-[1776px]  left-[-132px] rounded-full opacity-30 w-[452px] h-[452px] rotate-180"></div>
+
+    <section
+        class="flex flex-col items-center px-4 gap-[24px] lg:gap[40px]  mt-[1513px] ml-4">
 
     <!-- Header Section -->
-    <div class="flex flex-col gap-2 lg:gap-[12px] items-center text-center">
-        <h2 class="featureHeader h-[32px]">ویژگی‌های اپلیکیشن کوئرالیست</h2>
-        <p class="text-[10px]">زمان در یک روز برای ما محدود است، اما مهمترین کار این است که چگونه از آن استفاده می‌کنیم.
+    <div class="flex flex-col gap-2 lg:gap-[12px] items-center text-center max-w-[540px]">
+        <h2 class="featureHeader">ویژگی‌های اپلیکیشن کوئرالیست</h2>
+        <p class="text-[14px]  text-center leading-[30px] ">زمان در یک روز برای ما محدود است، اما مهمترین کار این است که چگونه از آن استفاده می‌کنیم.
             با اپلیکیشن کوییرا
             لیست، زمان خود را با هدف و برنامه‌ریزی موثر سپری کنید.</p>
     </div>
@@ -156,6 +160,7 @@
     </div>
 
 </section>
+</main>
 <script src="./src/main.js"></script>
 </body>
 </html>
