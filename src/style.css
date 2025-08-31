@@ -60,7 +60,7 @@
 }
 .featureHeader{
     font-family: "Vazirmatn-SemiBold";
-    color: var(--on-background-light);
+    /*color: var(--on-background-light);*/
 }
 /*flex flex-col items-center justify-center border py-1 px-[12px] rounded-[24px] h-[156px] gap-[8px] w-[156px] shadow-[0px_4px_63px_0px_#00000008]*/
 .feature{
