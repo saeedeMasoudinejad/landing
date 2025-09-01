@@ -58,11 +58,55 @@
     direction: rtl;
     font-family: "Vazirmatn-Regular";
 }
+
+/* ------------------------- <CSS by Mehdi Alizadeh> ------------------------ */
+.background-rectangle-18753 {
+    background: linear-gradient(to bottom, #ebf3ff 0%, #ffffff 83%);
+    font-family: "Vazirmatn-Regular";
+}
 .featureHeader{
     font-family: "Vazirmatn-SemiBold";
     font-size: 40px;
     /*color: var(--on-background-light);*/
 }
+.ellipse128 {
+    background: linear-gradient(-20deg, #efebff00 0%, #e0edffff 100%);
+}
+.ellipse129 {
+    background: linear-gradient(-20deg, #efebfb00 0%, #ebebfbff 100%);
+}
+.hero .title,
+.hero .title .highlighted-word {
+    font-family: "Vazirmatn-ExtraBold";
+}
+.hero .title .highlighted-word::after {
+    content: "";
+    background: url(../src/assets/icons/blueVector.png) no-repeat center /
+        contain;
+    position: absolute;
+    width: 180%;
+    height: 60px;
+    bottom: -50%;
+    left: -30%;
+}
+.btn-gotoapp {
+    color: var(--on-primary-light);
+    background-color: var(--primary-light);
+}
+.btn-aboutus {
+    flex: 1 0 auto;
+    color: var(--primary-light);
+    background-color: #ebf3fe;
+}
+@media (max-width: 360px) {
+    .hero .title .highlighted-word::after {
+        bottom: -100%;
+        width: 140%;
+        left: -20%;
+    }
+}
+/* ------------------------ </CSS by Mehdi Alizadeh> ------------------------ */
+
 /*flex flex-col items-center justify-center border py-1 px-[12px] rounded-[24px] h-[156px] gap-[8px] w-[156px] shadow-[0px_4px_63px_0px_#00000008]*/
 .feature{
     display: flex;
