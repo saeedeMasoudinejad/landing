@@ -1,58 +1,42 @@
 @font-face {
-    font-family: "Vazirmatn-Regular";
-    src: url("./assets/fonts/Vazirmatn-Regular.ttf");
-}
-@font-face {
-    font-family: "Vazirmatn-Black";
-    src: url("./assets/fonts/Vazirmatn-Black.ttf");
-}
-@font-face {
-    font-family: "Vazirmatn-Bold";
-    src: url("./assets/fonts/Vazirmatn-Bold.ttf");
-}
-@font-face {
-    font-family: "Vazirmatn-ExtraBold";
-    src: url("./assets/fonts/Vazirmatn-ExtraBold.ttf");
-}
-@font-face {
-    font-family: "Vazirmatn-ExtraLight";
-    src: url("./assets/fonts/Vazirmatn-ExtraLight.ttf");
-}
-@font-face {
-    font-family: "Vazirmatn-Light";
-    src: url("./assets/fonts/Vazirmatn-Light.ttf");
-}
-@font-face {
-    font-family: "Vazirmatn-Medium";
-    src: url("./assets/fonts/Vazirmatn-Medium.ttf");
-}
-@font-face {
-    font-family: "Vazirmatn-SemiBold";
-    src: url("./assets/fonts/Vazirmatn-SemiBold.ttf");
-}
-@font-face {
-    font-family: "Vazirmatn-Thin";
-    src: url("./assets/fonts/Vazirmatn-Thin.ttf");
+  font-family: "Vazirmatn-Regular";
+  src: url("./assets/fonts/Vazirmatn-Regular.woff2") format("woff2");
 }
 
-:root {
-    --primary-light: #2C7EF8;
-    --primary-hover-light: #075CD9;
-    --on-primary-light: #FFFFFF;
-    --background-light: #FFFFFF;
-    --on-background-light:#191C1E;
-    --surface-light:#FFFFFF;
-    --primary-Dark:  #3A86F8;
-    --primary-hover-Dark: #6BA4FA;
-    --background-Dark: #040810;
-    --on-background-Dark: #E6E9EF;
-    --surface-Dark: #E6E9EF;
+@font-face {
+  font-family: "Vazirmatn-Bold";
+  src: url("./assets/fonts/Vazirmatn-Bold.woff2") format("woff2");
 }
 
+@font-face {
+  font-family: "Vazirmatn-Medium";
+  src: url("./assets/fonts/Vazirmatn-Medium.woff2") format("woff2");
+}
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    direction: rtl;
+/* برای کل صفحه */
+body {
+  font-family: "Vazirmatn-Regular", sans-serif;
+  direction: rtl;
+  background-color: #ffffff;
+  color: #1a1a1a;
+}
+
+/* عنوان اصلی */
+h1 {
+  font-family: "Vazirmatn-Bold", sans-serif;
+}
+
+/* عنوان‌های فرعی */
+h2 {
+  font-family: "Vazirmatn-Medium", sans-serif;
+}
+
+/* متن کارت‌ها */
+.stats-cards div {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.stats-cards div:hover {
+  transform: translateY(-3px);
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
 }
