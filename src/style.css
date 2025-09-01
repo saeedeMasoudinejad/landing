@@ -1,58 +1,84 @@
 @font-face {
-    font-family: "Vazirmatn-Regular";
-    src: url("./assets/fonts/Vazirmatn-Regular.ttf");
+  font-family: "Vazirmatn-Regular";
+  src: url("./assets/fonts/Vazirmatn-Regular.ttf");
 }
 @font-face {
-    font-family: "Vazirmatn-Black";
-    src: url("./assets/fonts/Vazirmatn-Black.ttf");
+  font-family: "Vazirmatn-Black";
+  src: url("./assets/fonts/Vazirmatn-Black.ttf");
 }
 @font-face {
-    font-family: "Vazirmatn-Bold";
-    src: url("./assets/fonts/Vazirmatn-Bold.ttf");
+  font-family: "Vazirmatn-Bold";
+  src: url("./assets/fonts/Vazirmatn-Bold.ttf");
 }
 @font-face {
-    font-family: "Vazirmatn-ExtraBold";
-    src: url("./assets/fonts/Vazirmatn-ExtraBold.ttf");
+  font-family: "Vazirmatn-ExtraBold";
+  src: url("./assets/fonts/Vazirmatn-ExtraBold.ttf");
 }
 @font-face {
-    font-family: "Vazirmatn-ExtraLight";
-    src: url("./assets/fonts/Vazirmatn-ExtraLight.ttf");
+  font-family: "Vazirmatn-ExtraLight";
+  src: url("./assets/fonts/Vazirmatn-ExtraLight.ttf");
 }
 @font-face {
-    font-family: "Vazirmatn-Light";
-    src: url("./assets/fonts/Vazirmatn-Light.ttf");
+  font-family: "Vazirmatn-Light";
+  src: url("./assets/fonts/Vazirmatn-Light.ttf");
 }
 @font-face {
-    font-family: "Vazirmatn-Medium";
-    src: url("./assets/fonts/Vazirmatn-Medium.ttf");
+  font-family: "Vazirmatn-Medium";
+  src: url("./assets/fonts/Vazirmatn-Medium.ttf");
 }
 @font-face {
-    font-family: "Vazirmatn-SemiBold";
-    src: url("./assets/fonts/Vazirmatn-SemiBold.ttf");
+  font-family: "Vazirmatn-SemiBold";
+  src: url("./assets/fonts/Vazirmatn-SemiBold.ttf");
 }
 @font-face {
-    font-family: "Vazirmatn-Thin";
-    src: url("./assets/fonts/Vazirmatn-Thin.ttf");
+  font-family: "Vazirmatn-Thin";
+  src: url("./assets/fonts/Vazirmatn-Thin.ttf");
 }
 
 :root {
-    --primary-light: #2C7EF8;
-    --primary-hover-light: #075CD9;
-    --on-primary-light: #FFFFFF;
-    --background-light: #FFFFFF;
-    --on-background-light:#191C1E;
-    --surface-light:#FFFFFF;
-    --primary-Dark:  #3A86F8;
-    --primary-hover-Dark: #6BA4FA;
-    --background-Dark: #040810;
-    --on-background-Dark: #E6E9EF;
-    --surface-Dark: #E6E9EF;
+  --primary-light: #2c7ef8;
+  --primary-hover-light: #075cd9;
+  --on-primary-light: #ffffff;
+  --background-light: #ffffff;
+  --on-background-light: #191c1e;
+  --surface-light: #ffffff;
+  --primary-Dark: #3a86f8;
+  --primary-hover-Dark: #6ba4fa;
+  --background-Dark: #040810;
+  --on-background-Dark: #e6e9ef;
+  --surface-Dark: #e6e9ef;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  direction: rtl;
+}
+.heading-of-comment {
+  font-family: "Vazirmatn-Bold";
+}
+.paragraph-of-comment {
+  font-family: "Vazirmatn-regular";
+}
+figure h2 {
+  font-family: "Vazirmatn-Bold";
+  font-size: 15px;
+}
+figure p {
+  font-family: "Vazirmatn-regular";
+  font-size: 16px;
+}
+footer h3 {
+  font-family: "Vazirmatn-bold";
+}
+footer p {
+  font-family: "Vazirmatn-regular";
+}
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    direction: rtl;
+.circle-two {
+  z-index: -1;
+}
+.circle-one {
+  z-index: -1;
 }
