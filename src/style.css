@@ -36,22 +36,21 @@
 }
 
 :root {
-    --primary-light: #2C7EF8;
-    --primary-hover-light: #075CD9;
-    --on-primary-light: #FFFFFF;
-    --background-light: #FFFFFF;
-    --on-background-light:#191C1E;
-    --surface-light:#FFFFFF;;
-    --neutral-9: #F5F6F8;
-    --primary-Dark:  #3A86F8;
-    --primary-hover-Dark: #6BA4FA;
+    --primary-light: #2c7ef8;
+    --primary-hover-light: #075cd9;
+    --on-primary-light: #ffffff;
+    --background-light: #ffffff;
+    --on-background-light: #191c1e;
+    --surface-light: #ffffff;
+    --neutral-9: #f5f6f8;
+    --primary-Dark: #3a86f8;
+    --primary-hover-Dark: #6ba4fa;
     --background-Dark: #040810;
-    --on-background-Dark: #E6E9EF;
-    --surface-Dark: #E6E9EF;
+    --on-background-Dark: #e6e9ef;
+    --surface-Dark: #e6e9ef;
 }
 
-
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -62,9 +61,11 @@
 /* ------------------------- <CSS by Mehdi Alizadeh> ------------------------ */
 .background-rectangle-18753 {
     background: linear-gradient(to bottom, #ebf3ff 0%, #ffffff 83%);
-    font-family: "Vazirmatn-Regular";
 }
-.featureHeader{
+.dark .background-rectangle-18753 {
+    background: linear-gradient(to bottom, #0267ff40 0%, #1a202c00 70%);
+}
+.featureHeader {
     font-family: "Vazirmatn-SemiBold";
     font-size: 40px;
     /*color: var(--on-background-light);*/
@@ -93,10 +94,17 @@
     color: var(--on-primary-light);
     background-color: var(--primary-light);
 }
+.dark .btn-gotoapp {
+    background-color: var(--primary-Dark);
+}
 .btn-aboutus {
     flex: 1 0 auto;
     color: var(--primary-light);
     background-color: #ebf3fe;
+}
+.dark .btn-aboutus {
+    color: var(--on-primary-light);
+    background-color: #122549;
 }
 @media (max-width: 360px) {
     .hero .title .highlighted-word::after {
@@ -108,7 +116,7 @@
 /* ------------------------ </CSS by Mehdi Alizadeh> ------------------------ */
 
 /*flex flex-col items-center justify-center border py-1 px-[12px] rounded-[24px] h-[156px] gap-[8px] w-[156px] shadow-[0px_4px_63px_0px_#00000008]*/
-.feature{
+.feature {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -129,7 +137,10 @@
 }
 
 .backgroundElement {
-    background: linear-gradient(162.19deg, rgba(239, 235, 255, 0) 32.45%, #EBEBFB 79.35%);
+    background: linear-gradient(
+        162.19deg,
+        rgba(239, 235, 255, 0) 32.45%,
+        #ebebfb 79.35%
+    );
     box-shadow: -3px 4px 16px 0px #00000000;
-
 }
