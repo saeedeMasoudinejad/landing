@@ -4,42 +4,66 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>درباره ما</title>
-  <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="./src/style.css">
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-white text-gray-900 font-Vazirmatn-Regular">
 
-  <section class="flex flex-col md:flex-row items-start justify-center gap-10 p-6 md:p-20">
+<section class="bg-gray-100 rounded-2xl p-6 md:p-12 max-w-3xl mx-auto">
 
-    <!-- ستون عکس و کارت‌ها -->
-    <div class="photo-col flex-shrink-0 flex flex-col items-center md:items-start">
-      <img src="../src/assets/img/photo20580596094.jpg" alt="عکس معرفی"
-           class="w-64 h-64 rounded-lg object-cover shadow-lg">
+  <div class="hidden md:flex flex-row gap-6">
 
-      <!-- کارت‌های آماری -->
-      <div class="stats-cards grid grid-cols-2 grid-rows-2 gap-4 mt-6 text-right w-full md:w-72">
-        <div class="bg-gray-100 p-4 rounded shadow">
-          <div class="text-lg font-Vazirmatn-Bold">1403</div>
-          <div class="text-gray-500 text-sm">سال ساخت گروه</div>
+    <!-- برای ستون چپ که کارتاس و عکس -->
+    <div class="w-5/12 flex flex-col gap-4">
+      <div class="bg-white rounded-xl shadow p-4 flex-1">
+        <img src="../src/assets/img/photo20580596094.jpg" alt="عکس پروفایل گروه"
+             class="w-full h-64 object-cover rounded-lg">
+      </div>
+      <div class="bg-white rounded-xl shadow p-4 grid grid-cols-2 gap-4 flex-1">
+        <div class="stat-card bg-gray-200 p-4 rounded-lg text-center hover:-translate-y-1 hover:shadow-lg transition">
+          <div class="font-Vazirmatn-Bold text-lg">1403</div>
+          <div class="text-gray-600 text-sm">سال ساخت گروه</div>
         </div>
-        <div class="bg-gray-100 p-4 rounded shadow">
-          <div class="text-lg font-Vazirmatn-Bold">تلگرام</div>
-          <div class="text-gray-500 text-sm">محل گروه</div>
+        <div class="stat-card bg-gray-200 p-4 rounded-lg text-center hover:-translate-y-1 hover:shadow-lg transition">
+          <div class="font-Vazirmatn-Bold text-lg">تلگرام</div>
+          <div class="text-gray-600 text-sm">محل گروه</div>
         </div>
-        <div class="bg-gray-100 p-4 rounded shadow">
-          <div class="text-lg font-Vazirmatn-Bold">+20</div>
-          <div class="text-gray-500 text-sm">میانگین سنی</div>
+        <div class="stat-card bg-gray-200 p-4 rounded-lg text-center hover:-translate-y-1 hover:shadow-lg transition">
+          <div class="font-Vazirmatn-Bold text-lg">+20</div>
+          <div class="text-gray-600 text-sm">میانگین سنی</div>
         </div>
-        <div class="bg-gray-100 p-4 rounded shadow">
-          <div class="text-lg font-Vazirmatn-Bold">1</div>
-          <div class="text-gray-500 text-sm">پروژه‌های انجام شده</div>
+        <div class="stat-card bg-gray-200 p-4 rounded-lg text-center hover:-translate-y-1 hover:shadow-lg transition">
+          <div class="font-Vazirmatn-Bold text-lg">1</div>
+          <div class="text-gray-600 text-sm">پروژه‌های انجام شده</div>
         </div>
       </div>
     </div>
 
-    <!-- متن معرفی -->
-    <div class="flex flex-col gap-6 flex-1 text-right">
-      <h1 class="text-3xl font-Vazirmatn-Bold"><b>درباره ما</b></h1>
+<!-- برای ستون راست  -->
+    <div class="w-7/12 bg-white rounded-xl shadow p-6 flex flex-col gap-6 text-right">
+      <h1 class="text-3xl font-Vazirmatn-Bold">درباره ما</h1>
+      <h2 class="text-xl font-Vazirmatn-Medium">Group1</h2>
+      <p class="text-gray-700 leading-relaxed flex-1">
+        یک گروه خلاق و هدفمند هستیم که با تمرکز بر نوآوری، کیفیت و همکاری تیمی، تلاش می‌کنیم
+        ایده‌ها و پروژه‌ها را به بهترین شکل ممکن به واقعیت تبدیل کنیم. ارزش‌های ما شامل صداقت،
+        مسئولیت‌پذیری، خلاقیت و کیفیت است و این اصول، فرهنگ کاری و نگرش ما را شکل می‌دهد.
+      </p>
+      <p class="text-gray-700 leading-relaxed flex-1">
+        هدف ما ارائه راه‌حل‌های خلاقانه و تأثیرگذار است تا تجربه‌ای مثبت و مفید برای کاربران و اعضای گروه ایجاد کنیم.
+        ما معتقدیم موفقیت واقعی نتیجه تلاش جمعی است و با همکاری و نوآوری مستمر، حضورمان در حوزه فعالیت خود را ماندگار و ارزشمند می‌کنیم.
+      </p>
+    </div>
+  </div>
+
+
+  <!-- برای حالت موبایل -->
+  <div class="flex flex-col gap-6 md:hidden">
+    <div class="bg-white rounded-xl shadow p-6">
+      <img src="../src/assets/img/photo20580596094.jpg" alt="عکس پروفایل گروه"
+           class="w-full h-56 object-cover rounded-lg">
+    </div>
+    <div class="bg-white rounded-xl shadow p-6 flex flex-col gap-6 text-right">
+      <h1 class="text-3xl font-Vazirmatn-Bold">درباره ما</h1>
       <h2 class="text-xl font-Vazirmatn-Medium">Group1</h2>
       <p class="text-gray-700 leading-relaxed">
         یک گروه خلاق و هدفمند هستیم که با تمرکز بر نوآوری، کیفیت و همکاری تیمی، تلاش می‌کنیم
@@ -47,12 +71,30 @@
         مسئولیت‌پذیری، خلاقیت و کیفیت است و این اصول، فرهنگ کاری و نگرش ما را شکل می‌دهد.
       </p>
       <p class="text-gray-700 leading-relaxed">
-        هدف ما ارائه راه‌حل‌های خلاقانه و تأثیرگذار است تا تجربه‌ای مثبت و مفید برای کاربران و اعضای گروه ایجاد کنیم.
-        ما معتقدیم موفقیت واقعی نتیجه تلاش جمعی است و با همکاری و نوآوری مستمر، حضورمان در حوزه فعالیت خود را ماندگار و ارزشمند می‌کنیم.
+        هدف ما ارائه راه‌حل‌های خلاقانه و تأثیرگذار است تا تجربه‌ای مثبت و مفید برای کاربران و اعضای گروه ایجاد کنیم.ما معتقدیم موفقیت واقعی نتیجه تلاش جمعی است و با همکاری و نوآوری مستمر، حضورمان در حوزه فعالیت خود را ماندگار و ارزشمند می‌کنیم.
       </p>
+      <div class="bg-white rounded-xl shadow p-4 grid grid-cols-2 gap-4">
+        <div class="stat-card bg-gray-200 p-4 rounded-lg text-center hover:-translate-y-1 hover:shadow-lg transition">
+          <div class="font-Vazirmatn-Bold text-lg">1403</div>
+          <div class="text-gray-600 text-sm">سال ساخت گروه</div>
+        </div>
+        <div class="stat-card bg-gray-200 p-4 rounded-lg text-center hover:-translate-y-1 hover:shadow-lg transition">
+          <div class="font-Vazirmatn-Bold text-lg">تلگرام</div>
+          <div class="text-gray-600 text-sm">محل گروه</div>
+        </div>
+        <div class="stat-card bg-gray-200 p-4 rounded-lg text-center hover:-translate-y-1 hover:shadow-lg transition">
+          <div class="font-Vazirmatn-Bold text-lg">+20</div>
+          <div class="text-gray-600 text-sm">میانگین سنی</div>
+        </div>
+        <div class="stat-card bg-gray-200 p-4 rounded-lg text-center hover:-translate-y-1 hover:shadow-lg transition">
+          <div class="font-Vazirmatn-Bold text-lg">1</div>
+          <div class="text-gray-600 text-sm">پروژه‌های انجام شده</div>
+        </div>
+      </div>
     </div>
+  </div>
 
-  </section>
+</section>
 
 </body>
 </html>

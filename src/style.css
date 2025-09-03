@@ -2,18 +2,16 @@
   font-family: "Vazirmatn-Regular";
   src: url("./assets/fonts/Vazirmatn-Regular.woff2") format("woff2");
 }
-
 @font-face {
   font-family: "Vazirmatn-Bold";
   src: url("./assets/fonts/Vazirmatn-Bold.woff2") format("woff2");
 }
-
 @font-face {
   font-family: "Vazirmatn-Medium";
   src: url("./assets/fonts/Vazirmatn-Medium.woff2") format("woff2");
 }
 
-/* برای کل صفحه */
+/* برای بدنه */
 body {
   font-family: "Vazirmatn-Regular", sans-serif;
   direction: rtl;
@@ -21,22 +19,20 @@ body {
   color: #1a1a1a;
 }
 
-/* عنوان اصلی */
-h1 {
-  font-family: "Vazirmatn-Bold", sans-serif;
-}
+/* برای عنوانا */
+h1 { font-family: "Vazirmatn-Bold", sans-serif; }
+h2 { font-family: "Vazirmatn-Medium", sans-serif; }
 
-/* عنوان‌های فرعی */
-h2 {
-  font-family: "Vazirmatn-Medium", sans-serif;
-}
-
-/* متن کارت‌ها */
-.stats-cards div {
+.stat-card {
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
-
-.stats-cards div:hover {
+.stat-card:hover {
   transform: translateY(-3px);
-  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 4px 12px rgba(0,0,0,0.15);
+}
+
+section {
+  background-color: #f5f5f5;
+  border-radius: 16px;
+  padding: 2rem;
 }
