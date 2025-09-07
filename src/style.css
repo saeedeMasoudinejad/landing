@@ -89,3 +89,13 @@
     box-shadow: -3px 4px 16px 0px #00000000;
 
 }
+
+#task-info h2{
+    font-family: "Vazirmatn-ExtraBold";
+    font-size: 16px;
+}
+
+#task-info p {
+    font-family: "Vazirmatn-Regular";
+    font-size: 12px;
+}
