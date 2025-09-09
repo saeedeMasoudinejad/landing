@@ -26,6 +26,7 @@ export function addTask(onCreate) {
             description: taskDescription,
             priority: taskPriority,
             isDone: false,
+            isEditing: false,
         };
         onCreate(newTask);
         taskTitleInput.value = "";
