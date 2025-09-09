@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="fa-IR">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>todolist</title>
+        <meta name="description" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="stylesheet" href="" />
+    </head>
+    <body>
+        <!-- ---------------------------- tasks section ---------------------------- -->
+        <main class="pt-16 mx-auto flex flex-col w-[51%]">
+            <!-- ---------------------------- tasks summary ---------------------------- -->
+            <div class="mb-[21px]">
+                <h2 class="font-[900]">تسک‌های امروز</h2>
+                <p id="count-of-tasks-todo" class="font-[200]"></p>
+            </div>
+            <!-- --------------------------- adding new task --------------------------- -->
+            <div
+                class="adding-new-task w-full flex flex-col gap-[10px] mb-[10px]"
+            >
+                <!-- ------------------------ before click new task ------------------------ -->
+                <button
+                    id="add-task-btn"
+                    class="border border-dashed border-gray-300 rounded-lg text-blue-500 p-4 w-full text-right"
+                >
+                    + افزودن وظیفه جدید
+                </button>
+                <!-- ------------------------ after click new task ------------------------- -->
+                <form
+                    id="add-task-form"
+                    action=""
+                    class="hidden flex flex-col gap-2 border border-gray-150 rounded-lg p-4 shadow-[0_0_25px_rgba(0,0,0,0.05)]"
+                >
+                    <input
+                        type="text"
+                        id="task-title-input"
+                        placeholder="نام تسک"
+                    />
+                    <textarea
+                        name=""
+                        id="task-description-input"
+                        placeholder="توضیحات"
+                        class="resize-none overflow-auto min-h-12 text-sm"
+                    ></textarea>
+                    <div class="relative flex flex-col gap-3 items-start">
+                        <button
+                            type="button"
+                            id="priorityButton"
+                            class="flex align-middle gap-1 border border-gray-150 rounded px-2 py-1 text-sm text-gray-700 w-fit"
+                        >
+                            <img src="" alt="" />
+                            تگ‌ها
+                        </button>
+                        <ul
+                            id="priorityList"
+                            class="hidden flex p-2 gap-3 items-center bg-white border border-gray-150 rounded-md shadow-[0_0_25px_rgba(0,0,0,0.05)] w-fit"
+                        >
+                            <li
+                                class="cursor-pointer bg-green-100 text-green-600 px-2 py-0.5 rounded-md flex items-center text-sm"
+                            >
+                                پایین
+                            </li>
+                            <span class="text-gray-200">|</span>
+                            <li
+                                class="cursor-pointer bg-yellow-100 text-yellow-600 px-2 py-0.5 rounded-md flex items-center text-sm"
+                            >
+                                متوسط
+                            </li>
+                            <span class="text-gray-200">|</span>
+                            <li
+                                class="cursor-pointer bg-red-100 text-red-600 px-2 py-0.5 rounded-md flex items-center text-sm"
+                            >
+                                بالا
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="flex justify-end p-4 pb-0 mt-2 border-t -mx-4">
+                        <button
+                            id="submit-add-task"
+                            type="submit"
+                            class="bg-gray-400 text-white rounded px-4 py-2 text-sm cursor-not-allowed opacity-60"
+                            disabled
+                        >
+                            اضافه کردن تسک
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </main>
+        <script type="module" src="./src/main.js"></script>
+    </body>
+</html>
