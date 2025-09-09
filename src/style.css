@@ -100,8 +100,32 @@
   height: 100%;
   background: rgba(0, 0, 0, 0.5);
   display: none;
-  z-index: -10;
+  z-index: -1;
+  cursor: pointer;
 }
 .navigation-bar {
   z-index: 1;
+}
+.navigation-bar li {
+  font-family: "Vazirmatn-Medium";
+}
+#taskbar-nav h1,
+h3 {
+  font-family: "Vazirmatn-SemiBold";
+}
+#taskbar-nav p,
+h3 {
+  font-family: "Vazirmatn-Light";
+}
+.profile-user h1 {
+  font-family: "Vazirmatn-SemiBold";
+}
+.profile-user p {
+  font-family: "Vazirmatn-Light";
+}
+.switche-mode p {
+  font-family: "Vazirmatn-Medium";
+}
+.logout {
+  font-family: "Vazirmatn-bold";
 }
