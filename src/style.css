@@ -99,3 +99,10 @@
     font-family: "Vazirmatn-Regular";
     font-size: 12px;
 }
+
+#taskLabel{
+    font-family: "Vazirmatn-Bold";
+}
+#taskContent{
+    font-family: "Vazirmatn-regular";
+}

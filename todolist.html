@@ -1,71 +1,70 @@
 <!DOCTYPE html>
-
 <html dir="rtl" lang="fa-IR">
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>todolist</title>
-    <meta name="description" content="" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      // Enable Tailwind dark mode
-      tailwind.config = {
-        darkMode: 'class',
-        theme: {
-          extend: {
-            colors: {
-              primary: {
-                light: '#2C7EF8',
-                'hover-light': '#075CD9',
-                // 'primary-light': '#2C7EF8',
-                // 'primary-hover-light': '#075CD9',
-                'on-light': '#FFFFFF',
-                'background-light': '#FFFFFF',
-                'on-background-light': '#191C1E',
-                'surface-light': '#FFFFFF',
-                'neutral-9': '#F5F6F8',
-                'oil': '#696969',
-                'oil-04': '#CCCCCC',
-                'neutral-700': '#706f6f',
-                dark: '#3A86F8',
-                'hover-dark': '#6BA4FA',
-                'on-Dark': '#FFFFFF',
-                // 'primary-Dark': '#3A86F8',
-                // 'primary-hover-Dark': '#6BA4FA',
-                'background-Dark': '#040810',
-                'on-background-Dark': '#E6E9EF',
-                'surface-Dark': '#E6E9EF',
-              },
-              secondary: {
-                'background-dark': '#0B192D',
-              }
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>todolist</title>
+  <meta name="description" content="" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              light: '#2C7EF8',
+              'hover-light': '#075CD9',
+              'on-light': '#FFFFFF',
+              'background-light': '#FFFFFF',
+              'on-background-light': '#191C1E',
+              'surface-light': '#FFFFFF',
+              'neutral-9': '#F5F6F8',
+              oil: '#696969',
+              'oil-04': '#CCCCCC',
+              'neutral-700': '#706f6f',
+              dark: '#3A86F8',
+              'hover-dark': '#6BA4FA',
+              'on-Dark': '#FFFFFF',
+              'background-Dark': '#040810',
+              'on-background-Dark': '#E6E9EF',
+              'surface-Dark': '#E6E9EF',
+            },
+            secondary: {
+              'background-dark': '#0B192D',
             }
           }
         }
       }
-    </script>
-    <link rel="stylesheet" href="./src/style.css" />
-  </head>
-  <body id='body'>
-    <main id='main' class="mt-[32px] lg:mt-[84px] mx-[16px] lg:ml-[200px] lg:mr-[204px]">
-      <section id ='task-info'>
-        <h2 class="mb-[4px]">تسک‌های امروز</h2>
-        <p class="text-primary-oil text-[2px]">3 تسک را باید انجام دهید.</p>    <!-- TODO: number should be dynamic --->
-      </section>
-      <section class=" border border-dashed border-gray-300 rounded-lg p-4 flex items-center justify-start gap-[10px] cursor-pointer transition mt-[16px] lg:mt-[21px]">
-        <img src="./src/assets/icons/add.png" alt="add icon" class="w-[24px] h-[24px]" />
-        <p class="text-[14px] text-blue-600">افزودن وظیفه جدید</p>
-      </section>
-      <section class="text-center" >
-        <img src="./src/assets/images/Artboard.jpg" alt="artboard" class="inline-block mx-[44px] lg:mx-[34px] mb-[24px] "/>
-        <div class="inline-block w-full" >
-          <p class="text-[16px] text-gray-700">چه کارهایی امروز برای انجام داری؟</p>
-          <p class="text-gray-400 mt-[8px] lg:mt-[4px] text-[14px]">میتونی الان تسک‌هاتو اینجا بنویسی و برنامه ریزی رو شروع کنی!</p>
-        </div>
-      </section>
+    }
+  </script>
+  <link rel="stylesheet" href="./src/style.css" />
+</head>
+<body id="body">
+<main id="main" class="mt-8 lg:mt-20 mx-4 lg:ml-[200px] lg:mr-[204px]">
+  <section id="task-info">
+    <h2 class="mb-1">تسک‌های امروز</h2>
+    <p class="text-primary-oil text-[10px]">3 تسک را باید انجام دهید.</p>
+    <!-- TODO: number should be dynamic -->
+  </section>
 
-    </main>
-    <script type='module' src="src/main.js" async defer></script>
-  </body>
+  <section class="border border-dashed border-gray-300 rounded-lg p-4 flex items-center justify-start gap-2.5 cursor-pointer transition mt-4 lg:mt-5">
+    <img src="./src/assets/icons/add.png" alt="add icon" class="w-6 h-6" />
+    <p class="text-sm text-blue-600">افزودن وظیفه جدید</p>
+  </section>
+
+  <section class="text-center">
+    <img src="./src/assets/images/Artboard.jpg" alt="artboard" class="inline-block mx-11 lg:mx-9 mb-6" />
+    <div class="inline-block w-full">
+      <p class="text-base text-gray-700">چه کارهایی امروز برای انجام داری؟</p>
+      <p class="text-gray-400 mt-2 lg:mt-1 text-sm">
+        میتونی الان تسک‌هاتو اینجا بنویسی و برنامه ریزی رو شروع کنی!
+      </p>
+    </div>
+  </section>
+</main>
+
+<script type="module" src="src/main.js" async defer></script>
+</body>
 </html>
