@@ -129,3 +129,9 @@ h3 {
 .logout {
   font-family: "Vazirmatn-bold";
 }
+.task-down-header {
+  font-family: "Vazirmatn-ExtraBold";
+}
+.task-down-paragraph {
+  font-family: "Vazirmatn-Medium";
+}

@@ -52,5 +52,53 @@ function showtask() {
     op2.style.display = "none"; // هرجا کلیک شد، ببند
   });
 }
-
 showtask();
+
+function deletelist() {
+  const deleteIcons = document.querySelectorAll(
+    ".openin img[src*='delete'], .openin1 img[src*='delete'], .openin2 img[src*='delete']"
+  );
+
+  function deleteTask(e) {
+    const task = e.target.closest(
+      "section.taskbar-nav1, section.flex.flex-col"
+    );
+    if (task) task.remove();
+  }
+
+  deleteIcons.forEach((icon) => {
+    icon.addEventListener("click", (e) => {
+      e.stopPropagation();
+      deleteTask(e);
+    });
+  });
+}
+deletelist();
+
+function updatelist() {
+  document.addEventListener("DOMContentLoaded", () => {
+    const taskbarNav = document.getElementById("taskbar-nav");
+    const taskDownSection = document.querySelector(".task-down > section");
+
+    document.body.addEventListener("change", (event) => {
+      const checkbox = event.target;
+      if (checkbox.type === "checkbox") {
+        const taskItem = checkbox.closest("section");
+        if (!taskItem) return;
+
+        if (checkbox.checked) {
+          taskItem.classList.add("completed-task");
+          if (taskDownSection) {
+            taskDownSection.appendChild(taskItem);
+          }
+        } else {
+          taskItem.classList.remove("completed-task");
+          if (taskbarNav) {
+            taskbarNav.appendChild(taskItem);
+          }
+        }
+      }
+    });
+  });
+}
+updatelist();
