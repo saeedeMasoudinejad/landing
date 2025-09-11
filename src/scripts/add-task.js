@@ -33,7 +33,6 @@ export function addTask(onCreate) {
         taskTitleInput.value = "";
         taskDescriptionInput.value = "";
         resetSelectedPriority();
-        // resetTaskFrom(taskTitleInput, taskDescriptionInput);
 
         priorityList.classList.add("hidden");
         priorityButton.classList.toggle("hidden");

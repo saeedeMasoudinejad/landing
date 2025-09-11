@@ -1,7 +1,3 @@
-/* -------------------------------------------------------------------------- */
-/*                  THIS JS CODE IS WRITTEN BY MEHDI ALIZADEH                 */
-/* -------------------------------------------------------------------------- */
-
 import {resetSelectedPriority} from "./select-priority.js";
 
 export function taskFormToggle() {
@@ -13,7 +9,8 @@ export function taskFormToggle() {
     const clearNewTaskBtn = document.getElementById("clear-task-button");
     taskPriority.type = "button";
     taskPriority.id = "removePriority";
-    taskPriority.className = `flex gap-1 rounded px-2 py-1 mr-4 text-sm`;
+    const defaultTaskPriorityClass = `flex gap-1 rounded px-2 py-1 mr-4 text-sm`
+    taskPriority.className = defaultTaskPriorityClass;
     taskPriority.innerHTML = `
                 <img src="./src/assets/icons/close-circle.png" class="w-5 y-5"/>
                 <span></span>
@@ -43,6 +40,7 @@ export function taskFormToggle() {
                 بالا: {bg: "bg-red-100", text: "text-red-600"},
             };
             const color = colors[showingPriority];
+            console.log(taskPriority)
             taskPriority.classList.add(color.bg, color.text)
             taskPriority.querySelector("span").textContent = `${showingPriority}`;
             priorityButton.parentNode.appendChild(taskPriority);
@@ -56,6 +54,8 @@ export function taskFormToggle() {
         resetSelectedPriority();
         priorityButton.classList.toggle("hidden");
         taskPriority.remove()
+        taskPriority.className = defaultTaskPriorityClass;
+        console.log(taskPriority);
         priorityButton.querySelectorAll("img").forEach((img) => {
             img.classList.toggle('hidden')
         })
@@ -63,27 +63,24 @@ export function taskFormToggle() {
 
     });
 
-    // clearNewTaskBtn.addEventListener("click", (e) => {
-    //     console.log(e.target.id);
-    //     const taskTitleInput = document.getElementById("task-title-input");
-    //     const taskDescription = document.getElementById("task-description");
-    //     resetSelectedPriority()
-    //     resetTaskFrom(taskTitleInput,taskDescription)
-    //     taskPriority.remove();
-    //
-    // })
+    clearNewTaskBtn.addEventListener("click", (e) => {
+        // console.log(e.target.id);
+        const taskTitleInput = document.getElementById("task-title-input");
+        const taskDescription = document.getElementById("task-description");
+        taskTitleInput.value = "";
+        taskDescription.value = "";
+        priorityButton.classList.remove("hidden");
+        const [firstImg, secondImg] = priorityButton.querySelectorAll("img")
+        firstImg.classList.remove("hidden");
+        secondImg.classList.add("hidden");
+        resetSelectedPriority();
+        taskPriority.remove()
+        taskPriority.className = defaultTaskPriorityClass;
+        priorityList.classList.add("hidden");
+        resetSelectedPriority()
 
-    // document.addEventListener("click", (e) => {
-    //     if (e.target.id === "submit-add-task") {
-    //         showingPriority = null;
-    //         priorityList.classList.add("hidden");
-    //         priorityButton.classList.toggle("hidden");
-    //         priorityButton.querySelectorAll("img").forEach((img) => {
-    //             img.classList.toggle('hidden')
-    //         })
-    //         taskPriority.remove();
-    //     }
-    // });
+    })
+
 }
 
 
@@ -99,7 +96,7 @@ export function taskFormToggle() {
 //     tagImages.firstElementChild.classList.remove("hidden");
 //     tagImages.lastElementChild.classList.add("hidden");
 //     console.log(taskPriority);
-    // taskPriority.remove();
-    // taskPriorityButton?.remove();
+// taskPriority.remove();
+// taskPriorityButton?.remove();
 
 // }
