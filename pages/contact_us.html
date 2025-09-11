@@ -9,6 +9,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body>
+    <!-- contact us by mohammad for mobile screen -->
     <section
       class="menu-sm w-[360px] h-[49px] bg-[#FFFFFF] shadow-[0px_4px_63px_0px_#0000000A] flex justify-between items-center p-6 md:hidden"
     >
@@ -49,10 +50,10 @@
     </header>
 
     <section
-      class="contact-form flex flex-col justify-center items-center mt-5"
+      class="contact-form flex flex-col justify-center items-center mt-5 md:hidden"
     >
       <section class="flex flex-col justify-center items-center">
-        <h1 class="text-[24px] font-bold">تماس با ما</h1>
+        <h1 class="text-[24px] font-bold">تماس با من</h1>
         <br />
         <p class="text-[14px]">
           چیزی هست که بخوای ازم بپرسی؟ خوشحال میشم بتونم بهت کمکی کنم.
@@ -60,7 +61,10 @@
         <br />
       </section>
     </section>
-    <form action="" class="flex flex-col gap-4 p-4">
+    <form
+      action=""
+      class="flex flex-col gap-4 p-4 mx-5 bg-[#ffffff] border-2 border-gray-100 border-solid rounded-lg md:hidden"
+    >
       <section class="flex sm:flex-row sm:items-center gap-4">
         <div class="flex p-1.5">
           <label for="" class="p-1">نام:</label>
@@ -105,6 +109,44 @@
         ارسال پیام
       </button>
     </form>
+    <section
+      class="flex justify-center items-center gap-[30px] mt-[30px] md:hidden"
+    >
+      <section
+        class="flex items-center gap-3 p-3 bg-[#ffffff] border-2 border-gray-100 border-solid rounded-lg"
+      >
+        <span class="flex-shrink-0">
+          <img src="/src/assets/images/sms.svg" alt="ایمیل" class="w-9 h-9" />
+        </span>
+        <div class="flex flex-col">
+          <h3>ایمیل</h3>
+          <p>QueraList@gmail.com</p>
+        </div>
+      </section>
+
+      <section
+        class="flex items-center gap-3 p-3 bg-[#ffffff] border-2 border-gray-100 border-solid rounded-lg md:hidden"
+      >
+        <span class="flex-shrink-0">
+          <img src="/src/assets/images/call.svg" alt="تماس" class="w-9 h-9" />
+        </span>
+        <div class="flex flex-col">
+          <h3>تلفن</h3>
+          <p>09121234567</p>
+        </div>
+      </section>
+    </section>
+    <section
+      class="flex justify-center item-center gap-3 mt-3 mx-8 p-3 bg-[#ffffff] border-2 border-gray-100 border-solid rounded-lg md:hidden"
+    >
+      <img
+        src="/src/assets/images/linkedin.svg"
+        alt="linkedin"
+        class="w-9 h-9"
+      />
+      <img src="/src/assets/images/twitter.svg" alt="twitter" class="w-9 h-9" />
+      <img src="/src/assets/images/github.svg" alt="github" class="w-9 h-9" />
+    </section>
 
     <footer class="mt-20 bg-white dark:bg-[#0B192D] py-12 px-4 md:px-12">
       <div class="flex items-center w-full mb-8">
@@ -178,6 +220,7 @@
               ارسال
             </button>
           </form>
+          <!-- contact us by mohammad for mobile screen -->
         </div>
 
         <div class="md:col-span-2 order-3 flex flex-col items-center md:mt-0">
