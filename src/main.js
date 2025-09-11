@@ -28,6 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
         addTask((newTask) => {
             tasks = [...tasks, newTask];
         });
+        console.log(tasks);
         //renderTasks(tasks);
     });
 });

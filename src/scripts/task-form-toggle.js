@@ -66,13 +66,12 @@ export function taskFormToggle() {
     document.addEventListener("click", (e) => {
         if (e.target.id === "submit-add-task") {
             showingPriority = null;
+            priorityList.classList.add("hidden");
+            priorityButton.classList.toggle("hidden");
             priorityButton.querySelectorAll("img").forEach((img) => {
                 img.classList.toggle('hidden')
             })
-            // priorityButton.innerHTML = `<img src="./src/assets/icons/tags-closed.png" alt="tags" /> تگ‌ها`;
-            // priorityButton.className =
-            //     "flex gap-1 border border-gray-150 rounded px-2 py-1 text-sm text-gray-700 w-fit";
-            priorityList.classList.add("hidden");
+            taskPriority.remove();
         }
     });
 }
