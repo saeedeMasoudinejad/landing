@@ -1,3 +1,5 @@
+//////// show task function creat by mohammad ariani asl ///////
+
 function showtask() {
   const hamburger = document.querySelector(".hamburger");
   const nav = document.querySelector(".navigation-bar");
@@ -90,6 +92,12 @@ function showtask() {
 
 showtask();
 
+//////// End  show task function creat by mohammad ariani asl ///////
+
+///////////////////////////////////////////
+
+//////// Delete task function creat by zeinab  hosseini ///////
+
 function deletelist() {
   const deleteIcons = document.querySelectorAll(
     ".openin img[src*='delete'], .openin1 img[src*='delete'], .openin2 img[src*='delete']"
@@ -130,6 +138,12 @@ function deletelist() {
 
 deletelist();
 
+//////// End Delete task function creat by zeinab  hosseini ///////
+
+////////////////////////////////////////////////////
+
+//////// update task function creat by zeinab  hosseini ///////
+
 function updatelist() {
   const taskbarNav = document.getElementById("taskbar-nav");
   const taskDown = document.getElementById("task-down");
@@ -149,3 +163,4 @@ function updatelist() {
   });
 }
 updatelist();
+//////// End update task function creat by zeinab  hosseini ///////
