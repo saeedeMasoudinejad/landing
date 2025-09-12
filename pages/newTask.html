@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="fa-IR">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <title>New Task</title>
+    <meta name="description" content=""/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        // Enable Tailwind dark mode
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            light: '#2C7EF8',
+                            'hover-light': '#075CD9',
+                            // 'primary-light': '#2C7EF8',
+                            // 'primary-hover-light': '#075CD9',
+                            'on-light': '#FFFFFF',
+                            'background-light': '#FFFFFF',
+                            'on-background-light': '#191C1E',
+                            'surface-light': '#FFFFFF',
+                            'neutral-9': '#F5F6F8',
+                            'border-light': '#EBEDEF',
+                            'border-light_2': '#E9E9E9',
+                            'oil': '#696969',
+                            'oil-04': '#CCCCCC',
+                            'neutral-600': '#AFAEB2',
+                            'neutral-700': '#7D7D7F',
+                            'neutral-800': '#646466',
+                            'neutral-900': '#323233',
+                            dark: '#3A86F8',
+                            'hover-dark': '#6BA4FA',
+                            'on-Dark': '#FFFFFF',
+                            // 'primary-Dark': '#3A86F8',
+                            // 'primary-hover-Dark': '#6BA4FA',
+                            'background-Dark': '#040810',
+                            'on-background-Dark': '#E6E9EF',
+                            'surface-Dark': '#E6E9EF',
+                        },
+                        secondary: {
+                            'background-dark': '#0B192D',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="../src/style.css"/>
+</head>
+<body id='body'>
+<main id='main' class="mt-8 lg:mt-[84px] mx-4 lg:ml-[200px] lg:mr-[204px]">
+    <section id='task-info'>
+        <h2 class="mb-[4px]">تسک‌های امروز</h2>
+        <p class="text-primary-oil text-[2px]">3 تسک را باید انجام دهید.</p>    <!-- TODO: number should be dynamic --->
+    </section>
+    <section id="add-new-task"
+             class="border-[1px]  border-gray-300 rounded-lg mt-[45px] lg:mt-[20px] mr-[16px] shadow-[0px_4px_58.5px_0px_rgba(0,0,0,0.06)] border-primary-light_2">
+        <div class=" mb-[24px] mr-[16px]">
+            <input id="taskLabel" type="text"
+                   class="outline-none w-full block  placeholder:text-primary-neutral-700 placeholder:text-[14px] text-primary-neutral-900 mt-[16px]"
+                   placeholder="نام تسک "/>
+            <textarea id="taskContent" placeholder="توضیحات"
+                      class="outline-none resize-none w-full block placeholder:text-primary-neutral-600 placeholder:text-[12px] text-primary-neutral-800 mt-[8px] mb-[16px]"></textarea>
+        </div>
+
+        <div id='priority-button' class="flex justify-start">
+            <button type="button" id="tag" class="group flex items-center border border-primary-oil-04 rounded px-2 py-1 mr-4 gap-1 transition-all duration-200">
+                <img class="w-4 mr-1 group-hover:hidden" src="../src/assets/icons/Vector.png" alt="default tag icon"/>
+                <img class="w-4 mr-1 hidden group-hover:block" src="../src/assets/icons/tag-right.png" alt="hover tag icon"/>
+                <span class="text-primary-neutral-600 text-xs ml-1">تگ‌ها</span>
+            </button>
+        </div>
+        <div id="priority-value"
+             class="flex w-[213px] mt-6 mr-4 p-2 gap-4 rounded-lg border border-primary-border-light shadow-sm">
+            <!-- Low -->
+            <button type="button"
+                    class="px-2 py-0.5 text-xs rounded bg-green-100 text-green-700 hover:bg-green-200 focus:outline-none"
+                    data-priority="low">
+                پایین
+            </button>
+            <div class="w-px bg-primary-border-light"></div>
+
+            <!-- Medium -->
+            <button type="button"
+                    class="px-2 py-0.5 text-xs rounded bg-orange-100 text-orange-700 hover:bg-orange-200 focus:outline-none"
+                    data-priority="medium">
+                متوسط
+            </button>
+            <div class="w-px bg-primary-border-light"></div>
+
+            <!-- High -->
+            <button type="button"
+                    class="px-2 py-0.5 text-xs rounded bg-red-100 text-red-700 hover:bg-red-200 focus:outline-none"
+                    data-priority="high">
+                بالا
+            </button>
+        </div>
+        <!-- Divider -->
+        <hr id='divider' class="border-t border-primary-gray mt-6 mb-4">
+        <div class="flex justify-end items-center gap-[6px] mt-4 mb-4">
+            <!-- Clear / Cancel button -->
+            <button type="button" id="clear_task" class="w-8 h-8 mx-1">
+                <img src="../src/assets/icons/clear_icon.png" alt="clear form" class="w-full h-full object-contain"/>
+            </button>
+
+            <!-- Submit / Add Task button -->
+            <button type="submit" id="submit_task"
+                    class="border rounded-md px-4 py-1.5 text-primary-on-light text-xs bg-primary-light ml-4">
+                اضافه کردن تسک
+            </button>
+        </div>
+
+
+    </section>
+</main>
+<script type='module' src="../src/main.js" async defer></script>
+</body>
+</html>

@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="fa-IR">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <title>todolist</title>
+    <meta name="description" content=""/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            light: '#2C7EF8',
+                            'hover-light': '#075CD9',
+                            'on-light': '#FFFFFF',
+                            'background-light': '#FFFFFF',
+                            'on-background-light': '#191C1E',
+                            'surface-light': '#FFFFFF',
+                            'neutral-9': '#F5F6F8',
+                            oil: '#696969',
+                            'oil-04': '#CCCCCC',
+                            'oil-10': '#242424',
+                            'neutral-700': '#706f6f',
+                            dark: '#3A86F8',
+                            'hover-dark': '#6BA4FA',
+                            'on-Dark': '#FFFFFF',
+                            'background-Dark': '#040810',
+                            'on-background-Dark': '#E6E9EF',
+                            'surface-Dark': '#E6E9EF',
+                        },
+                        secondary: {
+                            'background-dark': '#0B192D',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="./src/style.css"/>
+</head>
+<body id="body">
+<!-------------start sidebar by mohammad ariani------------------------->
+<nav id="navigation" class="lg:mr-5 lg:ml-40 hidden">
+    <section
+            class="shadow-[50px_40px_58.5px_300px_#0000000F] w-[90%] mr-6 mt-3 p-2 rounded-lg h-[48px] lg:h-[0px] header flex justify-between navigation-display bg-[#FFFFFF] lg:hidden"
+    >
+        <span class="hamburger cursor-pointer lg:hidden"
+        ><img src="./src/assets/icons/menu.png" alt="menu"
+        /></span>
+        <h1 class="lg:hidden font-bold text-base text-[##242424] text-center">
+            کوئرالیست
+        </h1>
+        <span> </span>
+    </section>
+
+    <section
+            class="flex gap-3 lg:hidden profile-users border-b border-solid border-gray-300 py-8 w-[90%] mx-5"
+    >
+        <img src="./src/assets/icons/Ellipse 136.png" alt="user"/>
+        <section>
+            <h1 class="font-bold leading-[1.5]">سلام رویا</h1>
+            <p>سه شنبه ، 5 بهمن 1402</p>
+        </section>
+    </section>
+
+    <ul
+            class="hidden navigation-bar flex flex-col bg-light-500 gap-[35px] p-5 mt-3 w-[274px] h-[800px] bg-[#FFFFFF] lg:flex lg:bg-[#FFFFFF] lg:shadow-[0px_40px_58.5px_0px_#0000000F] lg:w-[272px] lg:h-[984px] lg:absolute lg:top-[34px] lg:right-[20px] lg:rounded-2xl"
+    >
+        <section class="hidden profile-user lg:flex lg:gap-5 lg:mt-[40px]">
+            <img
+                    src="./src/assets/icons/Ellipse 136.png"
+                    alt="user"
+                    class="w-[56px] h-[56px]"
+            />
+            <section>
+                <h1 class="font-bold leading-[3] text-[18px]">سلام رویا</h1>
+                <p class="text-[14px]">سه شنبه ، 5 بهمن 1402</p>
+            </section>
+        </section>
+        <section class="flex justify-between lg:hidden">
+            <h1 class="font-bold text-[14px]">کوئرالیست</h1>
+            <img
+                    class="close cursor-pointer"
+                    src="./src/assets/icons/close-circle.svg"
+                    alt=""
+            />
+        </section>
+
+        <li class="text-[14px]">
+            <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="blue"
+                    class="size-6 inline"
+            >
+                <path
+                        d="M11.47 3.841a.75.75 0 0 1 1.06 0l8.69 8.69a.75.75 0 1 0 1.06-1.061l-8.689-8.69a2.25 2.25 0 0 0-3.182 0l-8.69 8.69a.75.75 0 1 0 1.061 1.06l8.69-8.689Z"
+                />
+                <path
+                        d="m12 5.432 8.159 8.159c.03.03.06.058.091.086v6.198c0 1.035-.84 1.875-1.875 1.875H15a.75.75 0 0 1-.75-.75v-4.5a.75.75 0 0 0-.75-.75h-3a.75.75 0 0 0-.75.75V21a.75.75 0 0 1-.75.75H5.625a1.875 1.875 0 0 1-1.875-1.875v-6.198a2.29 2.29 0 0 0 .091-.086L12 5.432Z"
+                />
+            </svg>
+
+            خانه
+        </li>
+        <li class="text-[14px]">
+            <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="size-6 inline"
+            >
+                <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M6 6.878V6a2.25 2.25 0 0 1 2.25-2.25h7.5A2.25 2.25 0 0 1 18 6v.878m-12 0c.235-.083.487-.128.75-.128h10.5c.263 0 .515.045.75.128m-12 0A2.25 2.25 0 0 0 4.5 9v.878m13.5-3A2.25 2.25 0 0 1 19.5 9v.878m0 0a2.246 2.246 0 0 0-.75-.128H5.25c-.263 0-.515.045-.75.128m15 0A2.25 2.25 0 0 1 21 12v6a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 18v-6c0-.98.626-1.813 1.5-2.122"
+                />
+            </svg>
+            تسک ها
+        </li>
+        <li class="text-[14px]">
+            <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="size-6 inline"
+            >
+                <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M6.75 2.994v2.25m10.5-2.25v2.25m-14.252 13.5V7.491a2.25 2.25 0 0 1 2.25-2.25h13.5a2.25 2.25 0 0 1 2.25 2.25v11.251m-18 0a2.25 2.25 0 0 0 2.25 2.25h13.5a2.25 2.25 0 0 0 2.25-2.25m-18 0v-7.5a2.25 2.25 0 0 1 2.25-2.25h13.5a2.25 2.25 0 0 1 2.25 2.25v7.5m-6.75-6h2.25m-9 2.25h4.5m.002-2.25h.005v.006H12v-.006Zm-.001 4.5h.006v.006h-.006v-.005Zm-2.25.001h.005v.006H9.75v-.006Zm-2.25 0h.005v.005h-.006v-.005Zm6.75-2.247h.005v.005h-.005v-.005Zm0 2.247h.006v.006h-.006v-.006Zm2.25-2.248h.006V15H16.5v-.005Z"
+                />
+            </svg>
+
+            تقویم
+        </li>
+        <li class="text-[14px]">
+            <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="size-6 inline"
+            >
+                <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M6.75 2.994v2.25m10.5-2.25v2.25m-14.252 13.5V7.491a2.25 2.25 0 0 1 2.25-2.25h13.5a2.25 2.25 0 0 1 2.25 2.25v11.251m-18 0a2.25 2.25 0 0 0 2.25 2.25h13.5a2.25 2.25 0 0 0 2.25-2.25m-18 0v-7.5a2.25 2.25 0 0 1 2.25-2.25h13.5a2.25 2.25 0 0 1 2.25 2.25v7.5m-6.75-6h2.25m-9 2.25h4.5m.002-2.25h.005v.006H12v-.006Zm-.001 4.5h.006v.006h-.006v-.005Zm-2.25.001h.005v.006H9.75v-.006Zm-2.25 0h.005v.005h-.006v-.005Zm6.75-2.247h.005v.005h-.005v-.005Zm0 2.247h.006v.006h-.006v-.006Zm2.25-2.248h.006V15H16.5v-.005Z"
+                />
+            </svg>
+
+            گزارشات
+        </li>
+        <li class="text-[14px]">
+            <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="size-6 inline"
+            >
+                <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M10.343 3.94c.09-.542.56-.94 1.11-.94h1.093c.55 0 1.02.398 1.11.94l.149.894c.07.424.384.764.78.93.398.164.855.142 1.205-.108l.737-.527a1.125 1.125 0 0 1 1.45.12l.773.774c.39.389.44 1.002.12 1.45l-.527.737c-.25.35-.272.806-.107 1.204.165.397.505.71.93.78l.893.15c.543.09.94.559.94 1.109v1.094c0 .55-.397 1.02-.94 1.11l-.894.149c-.424.07-.764.383-.929.78-.165.398-.143.854.107 1.204l.527.738c.32.447.269 1.06-.12 1.45l-.774.773a1.125 1.125 0 0 1-1.449.12l-.738-.527c-.35-.25-.806-.272-1.203-.107-.398.165-.71.505-.781.929l-.149.894c-.09.542-.56.94-1.11.94h-1.094c-.55 0-1.019-.398-1.11-.94l-.148-.894c-.071-.424-.384-.764-.781-.93-.398-.164-.854-.142-1.204.108l-.738.527c-.447.32-1.06.269-1.45-.12l-.773-.774a1.125 1.125 0 0 1-.12-1.45l.527-.737c.25-.35.272-.806.108-1.204-.165-.397-.506-.71-.93-.78l-.894-.15c-.542-.09-.94-.56-.94-1.109v-1.094c0-.55.398-1.02.94-1.11l.894-.149c.424-.07.765-.383.93-.78.165-.398.143-.854-.108-1.204l-.526-.738a1.125 1.125 0 0 1 .12-1.45l.773-.773a1.125 1.125 0 0 1 1.45-.12l.737.527c.35.25.807.272 1.204.107.397-.165.71-.505.78-.929l.15-.894Z"
+                />
+                <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
+                />
+            </svg>
+
+            تنظیمات
+        </li>
+        <li class="text-[14px]">
+            <img
+                    class="inline"
+                    src="./src/assets/icons/24-support.svg"
+                    alt="support"
+            />
+            پشتیبانی
+        </li>
+        <li class="text-[14px]">
+            <img
+                    class="inline"
+                    src="./src/assets/icons/profile.svg"
+                    alt="support"
+            />
+            پروفایل
+        </li>
+        <section
+                class="switche-mode bg-[#F7F7F7] gap-7 flex justify-center rounded-[8px] relative top-[100px] lg:w-[209px] lg:h-[60px] lg:justify-center"
+        >
+            <div
+                    class="flex gap-2 py-3 rounded-lg lg:w-[35%] lg:h-auto bg-[#FFFFFF] lg:p-1.5 lg:my-2 lg:flex lg:gap-2 cursor-pointer"
+            >
+                <img
+                        src="./src/assets/icons/light_icon.png"
+                        alt="light"
+                        class=":w-[16px] h-[16px]"
+                />
+                <p
+                        class="lg:w-[99px] px-3 lg:h-auto lg:text-[14px] text-center lg:my-0 lg:mx-[-5px]"
+                >
+                    روشن
+                </p>
+            </div>
+
+            <div
+                    class="lg:w-[35%] w-[55px] flex py-3 gap-2 lg:h-full lg:p-1.5 lg:flex lg:my-2 cursor-pointer text-center"
+            >
+                <img
+                        src="./src/assets/icons/dark_icon.png"
+                        alt="dark"
+                        class="w-[16px] h-[16px]"
+                />
+                <p class="lg:text-[14px]">تاریک</p>
+            </div>
+        </section>
+        <div class="p-2"></div>
+        <span class="logout mt-[40px] border-t-2 border-gray-100 border-solid">
+          <img
+                  class="inline p-5"
+                  src="./src/assets/icons/logout.png"
+                  alt="logout"
+          />خروج</span
+        >
+    </ul>
+    <div class="overlay lg:hidden lg:hidden"></div>
+</nav>
+<!-------------End sidebar by mohammad ariani------------------------->
+<!-------------Task List ------------------>
+<main id="main" class="mt-8 lg:mt-20 mx-4 lg:ml-[200px] lg:mr-[204px]">
+    <!----------------------- Tasks In Progressing List Container --------------------->
+    <!----------------------- Label ---------------------------------------------------->
+    <section id="in-progress-task-info">
+        <h2 class="mb-1">تسک‌های امروز</h2>
+        <p class="text-primary-oil text-[10px]">3 تسک را باید انجام دهید.</p>
+        <!-- TODO: number should be dynamic -->
+    </section>
+    <!-----------------    New Task Form ------------------->
+    <button type="button" id="add-task-btn"
+            class="w-full border border-dashed border-gray-300 rounded-lg p-4 flex items-center justify-start gap-2.5 cursor-pointer transition mt-4 lg:mt-5">
+        <img src="./src/assets/icons/add.png" alt="add icon" class="w-6 h-6"/>
+        <p class="text-sm text-blue-600">افزودن وظیفه جدید</p>
+    </button>
+    <form id="add-task-form"
+          class="hidden border-[1px]  border-gray-300 rounded-lg mt-[45px] lg:mt-[20px] mr-[16px] shadow-[0px_4px_58.5px_0px_rgba(0,0,0,0.06)] border-primary-light_2">
+        <div class=" mb-[24px] mr-[16px]">
+            <input id="task-title-input" type="text"
+                   class="outline-none w-full block  placeholder:text-primary-neutral-700 placeholder:text-[14px] text-primary-neutral-900 mt-[16px]"
+                   placeholder="نام تسک "/>
+            <textarea id="task-description" placeholder="توضیحات"
+                      class="outline-none resize-none w-full block placeholder:text-primary-neutral-600 placeholder:text-[12px] text-primary-neutral-800 mt-[8px] mb-[16px]"></textarea>
+        </div>
+        <!------------------ Tags Button ----------------->
+        <div class="flex justify-start">
+            <button type="button" id="priority-button"
+                    class="flex items-center border border-primary-oil-04 rounded px-2 py-1 mr-4 gap-1 transition-all duration-200">
+                <img class="w-4 mr-1" src="src/assets/icons/tags_closed_icon.png" alt="default tag icon"/>
+                <img class="w-4 mr-1 hidden" src="src/assets/icons/tags_open_icon.png" alt="hover tag icon"/>
+                <span class="text-primary-neutral-600 text-xs ml-1">تگ‌ها</span>
+            </button>
+        </div>
+        <div id="priority-values"
+             class="flex w-[213px] mt-6 mr-4 p-2 gap-4 rounded-lg border border-primary-border-light shadow-sm">
+            <!-- Low -->
+            <button type="button" id="one"
+                    class="px-2 py-0.5 text-xs rounded bg-green-100 text-green-700 hover:bg-green-200 focus:outline-none"
+                    value="low">
+                پایین
+            </button>
+            <div class="w-px bg-primary-border-light"></div>
+
+            <!-- Medium -->
+            <button type="button"
+                    class="px-2 py-0.5 text-xs rounded bg-orange-100 text-orange-700 hover:bg-orange-200 focus:outline-none"
+                    value="medium">
+                متوسط
+            </button>
+            <div class="w-px bg-primary-border-light"></div>
+
+            <!-- High -->
+            <button type="button"
+                    class="px-2 py-0.5 text-xs rounded bg-red-100 text-red-700 hover:bg-red-200 focus:outline-none"
+                    value="high">
+                بالا
+            </button>
+        </div>
+        <!---------------------------- Divider ---------------------------->
+        <hr id='divider' class="border-t border-primary-gray mt-6 mb-4">
+        <div class="flex justify-end items-center gap-[6px] my-4 ml-4">
+            <!-- Clear / Cancel button -->
+            <button type="button" id="clear-task-button" class="w-8 h-8 mx-1">
+                <img src="./src/assets/icons/clear_icon.png" alt="clear form" class="w-full h-full object-contain"/>
+            </button>
+
+            <!-- Submit / Add Task button -->
+            <button type="submit" id="submit-add-task"
+                    class="border rounded-md px-4 py-1.5 text-primary-on-light text-xs bg-primary-light ml-4">
+                اضافه کردن تسک
+            </button>
+        </div>
+    </form>
+
+
+    <section class="text-center">
+        <img src="./src/assets/images/Artboard.jpg" alt="artboard" class="inline-block mx-11 lg:mx-9 mb-6"/>
+        <div class="inline-block w-full">
+            <p class="text-base text-gray-700">چه کارهایی امروز برای انجام داری؟</p>
+            <p class="text-gray-400 mt-2 lg:mt-1 text-sm">
+                میتونی الان تسک‌هاتو اینجا بنویسی و برنامه ریزی رو شروع کنی!
+            </p>
+        </div>
+    </section>
+
+    <!----------------------- Tasks In Progressing List Container --------------------->
+    <section id="in-progress-tasks-list" class="flex flex-col items-center justify-center"></section>
+
+
+    <!---------------- Task is Done Part ----------------->
+    <!---------------- Label ------------------------------>
+    <section id="completed-task-info">
+        <h2 class="mb-1">تسک‌های انجام شده</h2>
+        <p class="text-primary-oil text-[10px]">3 تسک را باید انجام دهید.</p>
+        <!-- TODO: number should be dynamic -->
+    </section>
+    <!----------------------- Tasks Is Done List Container --------------------->
+    <section id="is-done-tasks-list" class="flex flex-col items-center justify-center"></section>
+
+</main>
+
+<script type="module" src="./src/main.js"></script>
+<!--<script src="./todolist.js" defer></script>-->
+</body>
+</html>
