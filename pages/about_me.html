@@ -1,8 +1,271 @@
 <!DOCTYPE html>
-<html lang="fa" dir="rtl">
+
+<html lang="fa-IR" dir="rtl">
   <head>
     <meta charset="UTF-8" />
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>درباره ما</title>
+    <link rel="stylesheet" href="./src/style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body></body>
-</html>
+  <body class=" dark:bg-[#181A1B]  bg-white text-gray-900 font-Vazirmatn-Regular">
+    <section
+      class="dark:text-[#ffffff] dark:bg-[#181A1B] menu-sm w-[360px] h-[49px] bg-[#ffffff] flex justify-between items-center p-6 md:hidden"
+    >
+      <img
+        src="./src/assets/images/Frame 12160.svg"
+        alt="menu"
+        class="w-[24px] h-[24px]"
+      />
+      <h1 class="text-center">کوئرالیست</h1>
+    </section>
+    <header class="dark:text-[#ffffff] dark:bg-[#181A1B] hidden md:flex justify-between items-center">
+      <ul class="flex md:gap-20 md:mx-[20px]">
+        <h1 class="font-bold">کوئرالیست</h1>
+        <li class=" cursor-pointer">صفحه اصلی</li>
+        <li class="text-blue-500 cursor-pointer">درباره ما</li>
+        <li class="cursor-pointer">ارتباط با ما</li>
+      </ul>
+      <button
+        class="text-[#ffffff] bg-blue-500 rounded-lg p-3 absolute left-20 cursor-pointer"
+      >
+        ورود به اپلیکیشن
+      </button>
+      <div
+        class="p-6 flex items-center justify-between transition-colors duration-300"
+      >
+        <button
+          id="toggle-mode"
+          class="px-3 py-2 text-white rounded-md transition-colors duration-300 flex items-center gap-2"
+        >
+          <img
+            id="mode-icon"
+            src="src/assets/icons/dark_icon.png"
+            alt="mode icon"
+          />
+        </button>
+      </div>
+    </header>
+    <section class="rounded-2xl  p-6 md:p-12 max-w-3xl mx-auto " dir="ltr">
+      <div class="hidden  md:flex flex-row gap-6">
+        <div class="w-5/12 flex flex-col gap-4">
+          <div class="dark:bg-[#181A1B]  bg-white rounded-xl shadow p-4 flex-1">
+            <img
+              src="../src/assets/img/photo20580596094.jpg"
+              alt="عکس پروفایل گروه"
+              class="w-full h-full md:h-fit  object-cover rounded-lg "
+            />
+          </div>
+          <div
+            class="dark:text-[#ffffff] dark:bg-[#0B192D]  bg-white rounded-xl shadow p-4 grid grid-cols-2 gap-4 flex-1 "
+          >
+            <div
+              class="dark:text-[#ffffff] dark:bg-[#0E1E34]  stat-card bg-gray-200 p-4 rounded-lg text-center hover:-translate-y-1 hover:shadow-lg transition"
+            >
+              <div class="font-Vazirmatn-Bold text-lg dark:text-[#ffffff] dark:bg-[#0E1E34] ">1403</div>
+              <div class="text-gray-600 text-sm dark:text-[#ffffff] dark:bg-[#0E1E34] ">سال ساخت گروه</div>
+            </div>
+            <div
+              class="dark:text-[#ffffff] dark:bg-[#0E1E34]  stat-card bg-gray-200 p-4 rounded-lg text-center hover:-translate-y-1 hover:shadow-lg transition"
+            >
+              <div class="font-Vazirmatn-Bold text-lg dark:text-[#ffffff] dark:bg-[#0E1E34] ">تلگرام</div>
+              <div class="text-gray-600 text-sm dark:text-[#ffffff] dark:bg-[#0E1E34] ">محل گروه</div>
+            </div>
+            <div
+              class="dark:text-[#ffffff] dark:bg-[#0E1E34]  stat-card bg-gray-200 p-4 rounded-lg text-center hover:-translate-y-1 hover:shadow-lg transition"
+            >
+              <div class="font-Vazirmatn-Bold text-lg dark:text-[#ffffff] dark:bg-[#0E1E34] ">+20</div>
+              <div class="text-gray-600 text-sm dark:text-[#ffffff] dark:bg-[#0E1E34] ">میانگین سنی</div>
+            </div>
+            <div
+              class="dark:text-[#ffffff] dark:bg-[#0E1E34]  stat-card bg-gray-200 p-4 rounded-lg text-center hover:-translate-y-1 hover:shadow-lg transition"
+            >
+              <div class="font-Vazirmatn-Bold text-lg dark:text-[#ffffff] dark:bg-[#0E1E34] ">1</div>
+              <div class="text-gray-600 text-sm dark:text-[#ffffff] dark:bg-[#0E1E34] ">پروژه‌های انجام شده</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- برای ستون راست  -->
+        <div
+          class="dark:text-[#ffffff] dark:bg-[#0E1E34]  w-7/12 bg-white rounded-xl shadow p-6 flex flex-col gap-6 text-right"
+        >
+          <h1 class="text-3xl font-Vazirmatn-Bold dark:text-[#ffffff] dark:bg-[#0E1E34]">درباره ما</h1>
+          <h2 class="text-xl font-Vazirmatn-Medium dark:text-[#ffffff] dark:bg-[#0E1E34]">گروه یک</h2>
+          <p class="text-gray-700 leading-relaxed flex-1 dark:text-[#ffffff] dark:bg-[#0E1E34] ">
+            یک گروه خلاق و هدفمند هستیم که با تمرکز بر نوآوری، کیفیت و همکاری
+            تیمی، تلاش می‌کنیم ایده‌ها و پروژه‌ها را به بهترین شکل ممکن به
+            واقعیت تبدیل کنیم. ارزش‌های ما شامل صداقت، مسئولیت‌پذیری، خلاقیت و
+            کیفیت است و این اصول، فرهنگ کاری و نگرش ما را شکل می‌دهد.
+          </p>
+          <p class="text-gray-700 leading-relaxed flex-1 dark:text-[#ffffff] dark:bg-[#0E1E34]">
+            هدف ما ارائه راه‌حل‌های خلاقانه و تأثیرگذار است تا تجربه‌ای مثبت و
+            مفید برای کاربران و اعضای گروه ایجاد کنیم. ما معتقدیم موفقیت واقعی
+            نتیجه تلاش جمعی است و با همکاری و نوآوری مستمر، حضورمان در حوزه
+            فعالیت خود را ماندگار و ارزشمند می‌کنیم.
+          </p>
+        </div>
+      </div>
+
+      <!-- برای حالت موبایل -->
+      <div class="flex flex-col gap-6 md:hidden dark:text-[#ffffff] ">
+        <div class="rounded-xl shadow p-6 dark:text-[#ffffff] ">
+          <img
+            src="../src/assets/img/photo20580596094.jpg"
+            alt="عکس پروفایل گروه"
+            class="w-full h-full object-cover rounded-lg dark:text-[#ffffff] dark:bg-[#0E1E34]"
+          />
+        </div>
+        <div
+          class="bg-white dark:text-[#ffffff] dark:bg-[#0E1E34] rounded-xl shadow p-6 flex flex-col gap-6 text-right dark:text-[#ffffff] dark:bg-[#0E1E34] "
+        >
+          <h1 class="text-3xl font-Vazirmatn-Bold dark:text-[#ffffff] dark:bg-[#0E1E34]">درباره ما</h1>
+          <h2 class="text-xl font-Vazirmatn-Medium dark:text-[#ffffff] dark:bg-[#0E1E34] ">گروه یک</h2>
+          <p class="text-gray-700 leading-relaxed dark:text-[#ffffff] dark:bg-[#0E1E34]">
+            یک گروه خلاق و هدفمند هستیم که با تمرکز بر نوآوری، کیفیت و همکاری
+            تیمی، تلاش می‌کنیم ایده‌ها و پروژه‌ها را به بهترین شکل ممکن به
+            واقعیت تبدیل کنیم. ارزش‌های ما شامل صداقت، مسئولیت‌پذیری، خلاقیت و
+            کیفیت است و این اصول، فرهنگ کاری و نگرش ما را شکل می‌دهد.
+          </p>
+          <p class="text-gray-700 leading-relaxed dark:text-[#ffffff] dark:bg-[#0E1E34]">
+            هدف ما ارائه راه‌حل‌های خلاقانه و تأثیرگذار است تا تجربه‌ای مثبت و
+            مفید برای کاربران و اعضای گروه ایجاد کنیم.ما معتقدیم موفقیت واقعی
+            نتیجه تلاش جمعی است و با همکاری و نوآوری مستمر، حضورمان در حوزه
+            فعالیت خود را ماندگار و ارزشمند می‌کنیم.
+          </p>
+           </div>
+          <div class="dark:text-[#ffffff]  shadow p-8 grid grid-cols-2 gap-4">
+            <div
+              class="  dark:text-[#ffffff] dark:bg-[#0E1E34]  stat-card bg-gray-200 p-4 rounded-lg text-center hover:-translate-y-1 hover:shadow-lg transition"
+            >
+              <div class="dark:text-[#ffffff] dark:bg-[#0E1E34]  font-Vazirmatn-Bold text-lg">1403</div>
+              <div class="dark:text-[#ffffff] dark:bg-[#0E1E34]  text-gray-600 text-sm">سال ساخت گروه</div>
+            </div>
+            <div
+              class="dark:text-[#ffffff] dark:bg-[#0E1E34]  stat-card bg-gray-200 p-4 rounded-lg text-center hover:-translate-y-1 hover:shadow-lg transition"
+            >
+              <div class="dark:bg-[#0E1E34] dark:text-[#ffffff]  font-Vazirmatn-Bold text-lg">تلگرام</div>
+              <div class="dark:bg-[#0E1E34] dark:text-[#ffffff]  text-gray-600 text-sm">محل گروه</div>
+            </div>
+            <div
+              class="dark:bg-[#0E1E34]  stat-card bg-gray-200 p-4 rounded-lg text-center hover:-translate-y-1 hover:shadow-lg transition"
+            >
+              <div class="dark:bg-[#0E1E34] dark:text-[#ffffff]  font-Vazirmatn-Bold text-lg">+20</div>
+              <div class="dark:bg-[#0E1E34] dark:text-[#ffffff] text-gray-600 text-sm">میانگین سنی</div>
+            </div>
+            <div
+              class="dark:bg-[#0E1E34]  stat-card bg-gray-200 p-4 rounded-lg text-center hover:-translate-y-1 hover:shadow-lg transition"
+            >
+              <div class="dark:bg-[#0E1E34] dark:text-[#ffffff]  font-Vazirmatn-Bold text-lg">1</div>
+              <div class="dark:bg-[#0E1E34] dark:text-[#ffffff] text-gray-600 text-sm">پروژه‌های انجام شده</div>
+            </div>
+          </div>
+        </div>
+     
+    </section>
+    <footer class="mt-20 bg-white dark:bg-[#0B192D] py-12 px-4 md:px-12  ">
+      <div class="flex items-center w-full mb-8">
+        <div class="flex-grow border-t border-gray-300"></div>
+        <span
+          class="px-3 text-sm text-gray-700 whitespace-nowrap dark:text-gray-300"
+          >کوئرا لیست</span
+        >
+        <div
+          class="flex-grow border-t border-gray-300 dark:border-white-300"
+        ></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-4 md:gap-x-12">
+        <div
+          class="md:col-span-2 order-2 md:order-1 flex flex-col items-center mb-8 md:mb-0"
+        >
+          <div
+            class="border-2 p-4 rounded-lg flex items-center w-full max-w-sm mb-4 md:border-none"
+          >
+            <img
+              class="dark:bg-[#0B192D]  text-md "
+              src="/src/assets/images/call1.png"
+              alt="تلفن"
+              class="w-6 h-6 ml-2"
+            />
+            <p class="dark:text-gray-300 text-sm text-gray-600 p-3">
+              تلفن پشتیبانی: ۴۴۴۴۵۵۶۶ - ۰۲۱
+            </p>
+          </div>
+
+          <div
+            class="border-2 md:border-none p-4 rounded-lg flex items-center w-full max-w-sm"
+          >
+            <img
+              class="dark:bg-white text-md dark:bg-white"
+              src="/src/assets/images/fax1.png"
+              alt="فکس"
+              class="w-6 h-6 ml-2"
+            />
+            <p
+              class="text-sm text-gray-600 dark:text-white dark:text-gray-300 p-3"
+            >
+              فکس: ۴۴۴۴۵۵۶۶ - ۰۲۱
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="md:col-span-2 order-1 md:order-2 flex flex-col items-center mb-8 md:mb-0"
+        >
+          <h3 class="font-bold text-xl mb-2 dark:text-white">
+            با ما در ارتباط باش
+          </h3>
+          <p
+            class="text-sm text-gray-600 text-center max-w-xs mb-4 dark:text-gray-300"
+          >
+            اگه میخوای اولین نفری باشی که از فیچرهای جدید و تخفیفات با خبر بشی.
+          </p>
+          <form class="flex w-full max-w-xs md:max-w-md">
+            <input
+              type="email"
+              placeholder="ایمیل"
+              class="dark:bg-[#0B192D] flex-grow py-3 px-4 border border-gray-300 dark:border-white-300 rounded-lg rounded-r-none outline-none dark:focus:ring-white-500 focus:ring-2 focus:ring-blue-500 text-right"
+              dir="rtl"
+            />
+            <button
+              type="submit"
+              class="dark:bg-blue-600 dark:text-white text-white dark:hover:bg-blue-700 font-bold py-3 px-6 rounded-lg rounded-l-none hover:bg-blue-700 transition-colors"
+            >
+              ارسال
+            </button>
+          </form>
+        
+          </section>
+        </div>
+
+        <div class="md:col-span-2 order-3 flex flex-col items-center md:mt-0">
+          <div
+            class="border-2 md:border-none p-4 rounded-lg flex items-start w-full max-w-sm"
+          >
+            <img
+              class="text-md dark:bg-white"
+              src="/assets/images/Frame 1000005390.png"
+              alt="آدرس"
+              class="w-6 h-6 ml-2 mt-1"
+            />
+            <p
+              class="text-sm text-gray-600 leading-relaxed dark:text-gray-300 p-3"
+            >
+              آدرس دفتر مرکزی: پونک - خیابان اشرفی اصفهانی - خیابان صبحدل- بن
+              بست شب بو
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-8 pt-8">
+        <p
+          class="text-md text-center text-gray-500 dark:text-white-500 dark:text-gray-300"
+        >
+          تمامی حقوق مادی و معنوی این سایت متعلق به کوئرا لیست می‌باشد.
+        </p>
+      </div>
+    </footer>
+
+  </body>
