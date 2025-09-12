@@ -10,28 +10,31 @@
 //     }
 // }   < --! Todo:merge with task manage project ---!>
 
-
-
-
-
-console.log(document.body.dataset)
+console.log(document.body.dataset);
 import { addTask } from "./scripts/add-task.js";
 import { taskFormToggle } from "./scripts/task-form-toggle.js";
-import {Render} from "./scripts/render.js";
+import { Render } from "./scripts/render.js";
+import { editTask } from "./scripts/edit-task.js";
 
 document.addEventListener("DOMContentLoaded", () => {
     /* ------------------------- about showing task form ------------------------ */
     taskFormToggle();
     /* -------------------------- about rendering tasks ------------------------- */
     let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
-    ;
-    Render(tasks)
+    Render(tasks);
     const submitTaskButton = document.getElementById("submit-add-task");
     submitTaskButton.addEventListener("click", (e) => {
         e.preventDefault();
         addTask((newTask) => {
             tasks = [...tasks, newTask];
         });
+        Render(tasks);
+    });
+
+    editTask((id, updatedTask) => {
+        tasks = tasks.map((task) =>
+            task.id === id ? { ...task, ...updatedTask } : task
+        );
         Render(tasks);
     });
 });
