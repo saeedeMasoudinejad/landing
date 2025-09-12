@@ -42,17 +42,26 @@
         };
     </script>
 </head>
-<body
-        class="bg-primary-background-light dark:bg-primary-background-Dark text-primary-on-background-light dark:text-primary-on-background-Dark relative overflow-x-hidden"
->
-<!--------------- Header --------------------->
-<header class="flex justify-between items-center">
-    <div>
-        <button>کوئرا لیست</button>
-        <button>صفحه اصلی</button>
-        <button>درباره ما</button>
-        <button>ارتباط با ما</button>
-    </div>
+<header class="hidden md:flex justify-between items-center">
+    <ul class="flex md:gap-20 md:mx-[20px]">
+        <h1 class="font-bold">کوئرالیست</h1>
+        <li class="text-blue-500 cursor-pointer">صفحه اصلی</li>
+        <li class="cursor-pointer">
+            <a href="./pages/about_me.html">
+            درباره ما
+            </a>
+        </li>
+        <li class="cursor-pointer">
+            <a href="./pages/contact_us.html">
+            ارتباط با ما
+            </a>
+        </li>
+    </ul>
+    <button
+            class="text-[#ffffff] bg-blue-500 rounded-lg p-3 absolute left-20 cursor-pointer"
+    >
+        ورود به اپلیکیشن
+    </button>
     <div
             class="p-6 flex items-center justify-between transition-colors duration-300"
     >
@@ -68,6 +77,9 @@
         </button>
     </div>
 </header>
+<body
+        class="bg-primary-background-light dark:bg-primary-background-Dark text-primary-on-background-light dark:text-primary-on-background-Dark relative overflow-x-hidden"
+>
 <!-- ---------------------- Hero Section ----------------------- -->
 <section
         class="hero flex flex-col justify-center items-center relative min-w-[360px] pt-[113px] px-[10%] overflow-x-hidden max-[360px]:pt-[70px] max-[360px]:px-4"
