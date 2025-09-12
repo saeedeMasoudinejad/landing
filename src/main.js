@@ -24,15 +24,14 @@ document.addEventListener("DOMContentLoaded", () => {
     taskFormToggle();
     /* -------------------------- about rendering tasks ------------------------- */
     let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
-    //renderTasks(tasks);
-    Render()
+    ;
+    Render(tasks)
     const submitTaskButton = document.getElementById("submit-add-task");
     submitTaskButton.addEventListener("click", (e) => {
         e.preventDefault();
         addTask((newTask) => {
             tasks = [...tasks, newTask];
         });
-        console.log(tasks);
-        //renderTasks(tasks);
+        Render(tasks);
     });
 });
