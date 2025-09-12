@@ -242,7 +242,9 @@
 <!-------------End sidebar by mohammad ariani------------------------->
 <!-------------Task List ------------------>
 <main id="main" class="mt-8 lg:mt-20 mx-4 lg:ml-[200px] lg:mr-[204px]">
-    <section id="task-info">
+    <!----------------------- Tasks In Progressing List Container --------------------->
+    <!----------------------- Label ---------------------------------------------------->
+    <section id="in-progress-task-info">
         <h2 class="mb-1">تسک‌های امروز</h2>
         <p class="text-primary-oil text-[10px]">3 تسک را باید انجام دهید.</p>
         <!-- TODO: number should be dynamic -->
@@ -323,125 +325,19 @@
         </div>
     </section>
 
-    <!----------------------- Tasks List Container --------------------->
-    <section id="in-progress-tasks-list" class="flex flex-col items-center justify-center">
-        <!-------------------- Tasks 1 ------------------------------------>
-<!--        <div class="task border border-primary-oil-04 rounded p-4 relative flex items-start justify-between w-full  mx-auto mb-4">-->
-<!--            <div class="absolute top-0 right-0  w-1 rounded-tl rounded-bl h-[76px] my-4 lg:my-2  item-center bg-red-500"></div>-->
-<!--            &lt;!&ndash; Right section: Task info + checkbox &ndash;&gt;-->
-<!--            <div class="flex items-start gap-2">-->
-<!--                &lt;!&ndash; Checkbox &ndash;&gt;-->
-<!--                <input type="checkbox" class="mt-1 w-4 h-4 accent-blue-500">-->
+    <!----------------------- Tasks In Progressing List Container --------------------->
+    <section id="in-progress-tasks-list" class="flex flex-col items-center justify-center"></section>
 
-<!--                &lt;!&ndash; Task title + description &ndash;&gt;-->
-<!--                <div>-->
-<!--                    <div id="task-title-1" class="flex flex-col lg:flex-row items-start  lg:gap-4" >-->
-<!--                        <h3 class="text-4 font-bold text-primary-oil-10">جلسه با مدیران پروژه</h3>-->
-<!--                        <span class="text-[10px] font-semibold bg-red-100 text-red-600 rounded-[2px] px-2 py-0.5 mb-4 mt-1 lg:mb-[110x]">بالا</span>-->
-<!--                    </div>-->
-<!--                    <p class="text-[12px] text-primary-neutral-700">جلسه با محسن یگانه و مریم سالاری</p>-->
-<!--                </div>-->
 
-<!--            </div>-->
-<!--            &lt;!&ndash; Left section: Priority badge and menu icon &ndash;&gt;-->
-<!--            <div class="flex items-start gap-2">-->
-<!--                &lt;!&ndash; Menu icon &ndash;&gt;-->
-<!--                <button>-->
-<!--                    <img src="/src/assets/icons/edit_and_del_icon.png" alt="menu icon" class="w-4 h-4 object-contain"/>-->
-<!--                </button>-->
-<!--            </div>-->
-<!--        </div>-->
-        <!-------------------- Tasks 2 ------------------------------------>
-<!--        <div class="task border border-primary-oil-04 rounded p-4 relative flex items-start justify-between w-full  mx-auto mb-4">-->
-<!--            <div class="absolute top-0 right-0  w-1 rounded-tl rounded-bl h-[76px] my-4 lg:my-2  item-center bg-red-500"></div>-->
-<!--            &lt;!&ndash; Right section: Task info + checkbox &ndash;&gt;-->
-<!--            <div class="flex items-start gap-2">-->
-<!--                &lt;!&ndash; Checkbox &ndash;&gt;-->
-<!--                <input type="checkbox" class="mt-1 w-4 h-4 accent-blue-500">-->
-
-<!--                &lt;!&ndash; Task title + description &ndash;&gt;-->
-<!--                <div>-->
-<!--                    <div id="task-title-2" class="flex flex-col lg:flex-row items-start  lg:gap-4" >-->
-<!--                        <h3 class="text-4 font-bold text-primary-oil-10">جلسه با مدیران پروژه</h3>-->
-<!--                        <span class="text-[10px] font-semibold bg-red-100 text-red-600 rounded-[2px] px-2 py-0.5 mb-4 mt-1 lg:mb-[110x]">بالا</span>-->
-<!--                    </div>-->
-<!--                    <p class="text-[12px] text-primary-neutral-700">جلسه با محسن یگانه و مریم سالاری</p>-->
-<!--                </div>-->
-
-<!--            </div>-->
-<!--            &lt;!&ndash; Left section: Priority badge and menu icon &ndash;&gt;-->
-<!--            <div class="flex items-start gap-2">-->
-<!--                &lt;!&ndash; Menu icon &ndash;&gt;-->
-<!--                <button>-->
-<!--                    <img src="/src/assets/icons/edit_and_del_icon.png" alt="menu icon" class="w-4 h-4 object-contain"/>-->
-<!--                </button>-->
-<!--            </div>-->
-<!--        </div>-->
-    </section>
-
+    <!---------------- Task is Done Part ----------------->
+    <!---------------- Label ------------------------------>
     <section id="completed-task-info">
         <h2 class="mb-1">تسک‌های انجام شده</h2>
         <p class="text-primary-oil text-[10px]">3 تسک را باید انجام دهید.</p>
         <!-- TODO: number should be dynamic -->
     </section>
-
-    <!-----------------------Done Tasks List Container --------------------->
-    <section id="done-tasks-list" class="flex flex-col items-center justify-center">
-        <!-------------------- Tasks 1 ------------------------------------>
-        <div class="task border border-primary-oil-04 rounded p-4 relative flex items-start justify-between w-full  mx-auto mb-4">
-            <div class="absolute top-0 right-0  w-1 rounded-tl rounded-bl h-[76px] my-4 lg:my-2  item-center bg-red-500"></div>
-            <!-- Right section: Task info + checkbox -->
-            <div class="flex items-start gap-2">
-                <!-- Checkbox -->
-                <input type="checkbox" class="mt-1 w-4 h-4 accent-blue-500">
-
-                <!-- Task title + description -->
-                <div>
-                    <div  class="flex flex-col lg:flex-row items-start  lg:gap-4" >
-                        <h3 class="text-4 font-bold text-primary-oil-10">جلسه با مدیران پروژه</h3>
-                        <span class="text-[10px] font-semibold bg-red-100 text-red-600 rounded-[2px] px-2 py-0.5 mb-4 mt-1 lg:mb-[110x]">بالا</span>
-                    </div>
-                    <p class="text-[12px] text-primary-neutral-700">جلسه با محسن یگانه و مریم سالاری</p>
-                </div>
-
-            </div>
-            <!-- Left section: Priority badge and menu icon -->
-            <div class="flex items-start gap-2">
-                <!-- Menu icon -->
-                <button>
-                    <img src="/src/assets/icons/edit_and_del_icon.png" alt="menu icon" class="w-4 h-4 object-contain"/>
-                </button>
-            </div>
-        </div>
-        <!-------------------- Tasks 1 ------------------------------------>
-        <div class="task border border-primary-oil-04 rounded p-4 relative flex items-start justify-between w-full  mx-auto mb-4">
-            <div class="absolute top-0 right-0  w-1 rounded-tl rounded-bl h-[76px] my-4 lg:my-2  item-center bg-red-500"></div>
-            <!-- Right section: Task info + checkbox -->
-            <div class="flex items-start gap-2">
-                <!-- Checkbox -->
-                <input type="checkbox" class="mt-1 w-4 h-4 accent-blue-500">
-
-                <!-- Task title + description -->
-                <div>
-                    <div class="flex flex-col lg:flex-row items-start  lg:gap-4" >
-                        <h3 class="text-4 font-bold text-primary-oil-10">جلسه با مدیران پروژه</h3>
-                        <span class="text-[10px] font-semibold bg-red-100 text-red-600 rounded-[2px] px-2 py-0.5 mb-4 mt-1 lg:mb-[110x]">بالا</span>
-                    </div>
-                    <p class="text-[12px] text-primary-neutral-700">جلسه با محسن یگانه و مریم سالاری</p>
-                </div>
-
-            </div>
-            <!-- Left section: Priority badge and menu icon -->
-            <div class="flex items-start gap-2">
-                <!-- Menu icon -->
-                <button>
-                    <img src="/src/assets/icons/edit_and_del_icon.png" alt="menu icon" class="w-4 h-4 object-contain"/>
-                </button>
-            </div>
-        </div>
-
-
-    </section>
+    <!----------------------- Tasks Is Done List Container --------------------->
+    <section id="is-done-tasks-list" class="flex flex-col items-center justify-center"></section>
 
 </main>
 
