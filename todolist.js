@@ -109,6 +109,25 @@ function deletelist() {
     });
   });
 }
+
+function deletelist() {
+  const deleteIcons = document.querySelectorAll(
+    ".updating img[src*='delete'], .updating1 img[src*='delete'], .updating2 img[src*='delete']"
+  );
+
+  function deleteTask(e) {
+    const task = e.target.closest("section#task-down, section.flex.flex-col");
+    if (task) task.remove();
+  }
+
+  deleteIcons.forEach((icon) => {
+    icon.addEventListener("click", (e) => {
+      e.stopPropagation();
+      deleteTask(e);
+    });
+  });
+}
+
 deletelist();
 
 function updatelist() {
