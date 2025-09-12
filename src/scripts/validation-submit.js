@@ -1,7 +1,4 @@
 
-/* -------------------------------------------------------------------------- */
-/*                  THIS JS CODE IS WRITTEN BY MEHDI ALIZADEH                 */
-/* -------------------------------------------------------------------------- */
 import { getSelectedPriority } from "./select-priority.js";
 const submitTaskButton = document.getElementById("submit-add-task");
 const taskTitleInput = document.getElementById("task-title-input");
