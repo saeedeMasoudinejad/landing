@@ -1,7 +1,4 @@
 
-/* -------------------------------------------------------------------------- */
-/*                  THIS JS CODE IS WRITTEN BY MEHDI ALIZADEH                 */
-/* -------------------------------------------------------------------------- */
 import { getSelectedPriority } from "./select-priority.js";
 const submitTaskButton = document.getElementById("submit-add-task");
 const taskTitleInput = document.getElementById("task-title-input");
@@ -15,7 +12,6 @@ export function isSubmitValid() {
         const title = taskTitleInput.value.trim();
         const description = taskDescription.value;
         const priority = getSelectedPriority();
-        console.log(title, description, priority);
         submitTaskButton.disabled = !(title && description && priority);
         if (submitTaskButton.disabled) {
             submitTaskButton.className =
