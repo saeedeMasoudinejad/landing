@@ -98,7 +98,7 @@ showtask();
 
 //////// Delete task function creat by zeinab  hosseini ///////
 
-function deletelist() {
+function deletelist1() {
   const deleteIcons = document.querySelectorAll(
     ".openin img[src*='delete'], .openin1 img[src*='delete'], .openin2 img[src*='delete']"
   );
@@ -117,7 +117,7 @@ function deletelist() {
     });
   });
 }
-
+deletelist1();
 function deletelist() {
   const deleteIcons = document.querySelectorAll(
     ".updating img[src*='delete'], .updating1 img[src*='delete'], .updating2 img[src*='delete']"
