@@ -23,6 +23,7 @@
                 "neutral-9": "#F5F6F8",
                 oil: "#696969",
                 "oil-04": "#CCCCCC",
+                "oil-10": "#242424",
                 "neutral-700": "#706f6f",
                 dark: "#3A86F8",
                 "hover-dark": "#6BA4FA",
@@ -41,6 +42,7 @@
     </script>
     <link rel="stylesheet" href="./src/style.css" />
   </head>
+
 <body id="body">
     <!-------------start sidebar by mohammad ariani------------------------->
 
@@ -241,81 +243,108 @@
     </nav>
     <!-------------End sidebar by mohammad ariani------------------------->
 <div id="container" class=" md:w-[744px] md:h-[956px] md:flex flex-col justify-center items-center mx-auto lg:mt-[130px]"> 
-    <main id="main" class="mt-8 lg:mr-[290px] lg:mt-0 lg:pt-8">
-      <section id="task-info   ">
-        <h2 class="mb-1 ">تسک‌های امروز</h2>
-        <p class="text-primary-oil text-[10px] ">3 تسک را باید انجام دهید.</p>
+   
+ 
+   
+   <main id="main" class="mt-8 lg:mt-20 mx-4 lg:ml-[200px] lg:mr-[204px]">
+      <!----------------------- Tasks In Progressing List Container --------------------->
+      <!----------------------- Label ---------------------------------------------------->
+      <section id="in-progress-task-info">
+        <h2 class="mb-1">تسک‌های امروز</h2>
+        <p class="text-primary-oil text-[10px]">3 تسک را باید انجام دهید.</p>
         <!-- TODO: number should be dynamic -->
       </section>
-<div class=" flex items-center justify-center">
+      <!-----------------    New Task Form ------------------->
       <button
         type="button"
         id="add-task-btn"
-        class="w-full border border-dashed border-gray-300 rounded-lg p-4 flex items-center justify-center gap-2.5 cursor-pointer transition mt-4 lg:mt-5 lg:w-[744px] lg:h-[57px]"
+        class="w-full border border-dashed border-gray-300 rounded-lg p-4 flex items-center justify-start gap-2.5 cursor-pointer transition mt-4 lg:mt-5"
       >
         <img src="./src/assets/icons/add.png" alt="add icon" class="w-6 h-6" />
         <p class="text-sm text-blue-600">افزودن وظیفه جدید</p>
       </button>
-      </div>
-    <form
-
-  id="add-task-form"
-
-  class="hidden border border-gray-300 rounded-lg mt-[45px] lg:mt-[20px] mx-auto shadow-[0px_4px_58.5px_0px_rgba(0,0,0,0.06)] border-primary-light_2 lg:w-[744px] "
-
->
-
-
-
+      <form
+        id="add-task-form"
+        class="hidden border-[1px] border-gray-300 rounded-lg mt-[45px] lg:mt-[20px] mr-[16px] shadow-[0px_4px_58.5px_0px_rgba(0,0,0,0.06)] border-primary-light_2"
+      >
         <div class="mb-[24px] mr-[16px]">
-
           <input
-
             id="task-title-input"
-
             type="text"
-
             class="outline-none w-full block placeholder:text-primary-neutral-700 placeholder:text-[14px] text-primary-neutral-900 mt-[16px]"
-
             placeholder="نام تسک "
-
           />
-
           <textarea
-
             id="task-description"
-
             placeholder="توضیحات"
-
             class="outline-none resize-none w-full block placeholder:text-primary-neutral-600 placeholder:text-[12px] text-primary-neutral-800 mt-[8px] mb-[16px]"
-
           ></textarea>
-
         </div>
-
-
-
+        <!------------------ Tags Button ----------------->
         <div class="flex justify-start">
-
           <button
-
             type="button"
-
             id="priority-button"
-
             class="flex items-center border border-primary-oil-04 rounded px-2 py-1 mr-4 gap-1 transition-all duration-200"
-
           >
-
             <img
-
               class="w-4 mr-1"
-
               src="src/assets/icons/tags_closed_icon.png"
-
               alt="default tag icon"
-
             />
+            <img
+              class="w-4 mr-1 hidden"
+              src="src/assets/icons/tags_open_icon.png"
+              alt="hover tag icon"
+            />
+            <span class="text-primary-neutral-600 text-xs ml-1">تگ‌ها</span>
+          </button>
+        </div>
+        <div
+          id="priority-values"
+          class="flex w-[213px] mt-6 mr-4 p-2 gap-4 rounded-lg border border-primary-border-light shadow-sm"
+        >
+          <!-- Low -->
+          <button
+            type="button"
+            id="one"
+            class="px-2 py-0.5 text-xs rounded bg-green-100 text-green-700 hover:bg-green-200 focus:outline-none"
+            value="low"
+          >
+            پایین
+          </button>
+          <div class="w-px bg-primary-border-light"></div>
+
+          <!-- Medium -->
+          <button
+            type="button"
+            class="px-2 py-0.5 text-xs rounded bg-orange-100 text-orange-700 hover:bg-orange-200 focus:outline-none"
+            value="medium"
+          >
+            متوسط
+          </button>
+          <div class="w-px bg-primary-border-light"></div>
+
+          <!-- High -->
+          <button
+            type="button"
+            class="px-2 py-0.5 text-xs rounded bg-red-100 text-red-700 hover:bg-red-200 focus:outline-none"
+            value="high"
+          >
+            بالا
+          </button>
+        </div>
+        <!---------------------------- Divider ---------------------------->
+        <hr id="divider" class="border-t border-primary-gray mt-6 mb-4" />
+        <div class="flex justify-end items-center gap-[6px] my-4 ml-4">
+          <!-- Clear / Cancel button -->
+          <button type="button" id="clear-task-button" class="w-8 h-8 mx-1">
+            <img
+              src="./src/assets/icons/clear_icon.png"
+              alt="clear form"
+              class="w-full h-full object-contain"
+            />
+          </button>
 
             <img
 
@@ -754,7 +783,56 @@
       </section>
       </section>
 </div>
-</body>
+   
+=======
+          <!-- Submit / Add Task button -->
+          <button
+            type="submit"
+            id="submit-add-task"
+            class="border rounded-md px-4 py-1.5 text-primary-on-light text-xs bg-primary-light ml-4"
+          >
+            اضافه کردن تسک
+          </button>
+        </div>
+      </form>
+
+      <section class="text-center">
+        <img
+          src="./src/assets/images/Artboard.jpg"
+          alt="artboard"
+          class="inline-block mx-11 lg:mx-9 mb-6"
+        />
+        <div class="inline-block w-full">
+          <p class="text-base text-gray-700">
+            چه کارهایی امروز برای انجام داری؟
+          </p>
+          <p class="text-gray-400 mt-2 lg:mt-1 text-sm">
+            میتونی الان تسک‌هاتو اینجا بنویسی و برنامه ریزی رو شروع کنی!
+          </p>
+        </div>
+      </section>
+
+      <!----------------------- Tasks In Progressing List Container --------------------->
+      <section
+        id="in-progress-tasks-list"
+        class="flex flex-col items-center justify-center"
+      ></section>
+
+      <!---------------- Task is Done Part ----------------->
+      <!---------------- Label ------------------------------>
+      <section id="completed-task-info">
+        <h2 class="mb-1">تسک‌های انجام شده</h2>
+        <p class="text-primary-oil text-[10px]">3 تسک را باید انجام دهید.</p>
+        <!-- TODO: number should be dynamic -->
+      </section>
+      <!----------------------- Tasks Is Done List Container --------------------->
+      <section
+        id="is-done-tasks-list"
+        class="flex flex-col items-center justify-center"
+      ></section>
+    </main>
+
+    <script type="module" src="./src/main.js"></script>
     <script src="./todolist.js" defer></script>
   </body>
 </html>
