@@ -137,6 +137,33 @@
             left: -20%;
         }
     }
+.heading-of-comment {
+    font-family: "Vazirmatn-Bold";
+}
+.paragraph-of-comment {
+    font-family: "Vazirmatn-regular";
+}
+figure h2 {
+    font-family: "Vazirmatn-Bold";
+    font-size: 15px;
+}
+figure p {
+    font-family: "Vazirmatn-regular";
+    font-size: 16px;
+}
+footer h3 {
+    font-family: "Vazirmatn-bold";
+}
+footer p {
+    font-family: "Vazirmatn-regular";
+}
+
+.circle-two {
+    z-index: -1;
+}
+.circle-one {
+    z-index: -1;
+}
 
 
     .feature {
