@@ -42,9 +42,9 @@
     </script>
     <link rel="stylesheet" href="./src/style.css"/>
 </head>
-<body id="body">
-<!-------------start sidebar by mohammad ariani------------------------->
-<nav id="navigation" class="lg:mr-5 lg:ml-40 hidden">
+<body id="body" class="lg:flex">
+<!-------------SideBar Section------------------------->
+<nav id="navigation" class="lg:top-[5px]  lg:right-[0px] lg:w-[274px] lg:z-50">
     <section
             class="shadow-[50px_40px_58.5px_300px_#0000000F] w-[90%] mr-6 mt-3 p-2 rounded-lg h-[48px] lg:h-[0px] header flex justify-between navigation-display bg-[#FFFFFF] lg:hidden"
     >
@@ -60,7 +60,7 @@
     <section
             class="flex gap-3 lg:hidden profile-users border-b border-solid border-gray-300 py-8 w-[90%] mx-5"
     >
-        <img src="./src/assets/icons/Ellipse 136.png" alt="user"/>
+        <img src="./src/assets/icons/Ellipse 136.png" alt="user" />
         <section>
             <h1 class="font-bold leading-[1.5]">سلام رویا</h1>
             <p>سه شنبه ، 5 بهمن 1402</p>
@@ -68,7 +68,7 @@
     </section>
 
     <ul
-            class="hidden navigation-bar flex flex-col bg-light-500 gap-[35px] p-5 mt-3 w-[274px] h-[800px] bg-[#FFFFFF] lg:flex lg:bg-[#FFFFFF] lg:shadow-[0px_40px_58.5px_0px_#0000000F] lg:w-[272px] lg:h-[984px] lg:absolute lg:top-[34px] lg:right-[20px] lg:rounded-2xl"
+            class="hidden navigation-bar flex flex-col bg-light-500 gap-[35px] p-5 w-[274px] h-[800px] bg-[#FFFFFF] lg:flex lg:bg-[#FFFFFF] lg:shadow-[0px_40px_58.5px_0px_#0000000F] lg:rounded-2xl"
     >
         <section class="hidden profile-user lg:flex lg:gap-5 lg:mt-[40px]">
             <img
@@ -90,7 +90,7 @@
             />
         </section>
 
-        <li class="text-[14px]">
+        <li class="text-[14px] hover:bg-blue-200 hover:rounded-2xl hover:text-lg hover:font-semibold hover:cursor-pointer">
             <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
@@ -107,7 +107,7 @@
 
             خانه
         </li>
-        <li class="text-[14px]">
+        <li class="text-[14px] hover:bg-blue-200 hover:rounded-2xl hover:text-lg hover:font-semibold hover:cursor-pointer">
             <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -124,7 +124,7 @@
             </svg>
             تسک ها
         </li>
-        <li class="text-[14px]">
+        <li class="text-[14px] hover:bg-blue-200 hover:rounded-2xl hover:text-lg hover:font-semibold hover:cursor-pointer">
             <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -142,7 +142,7 @@
 
             تقویم
         </li>
-        <li class="text-[14px]">
+        <li class="text-[14px] hover:bg-blue-200 hover:rounded-2xl hover:text-lg hover:font-semibold hover:cursor-pointer">
             <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -160,7 +160,7 @@
 
             گزارشات
         </li>
-        <li class="text-[14px]">
+        <li class="text-[14px] hover:bg-blue-200 hover:rounded-2xl hover:text-lg hover:font-semibold hover:cursor-pointer">
             <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -183,7 +183,7 @@
 
             تنظیمات
         </li>
-        <li class="text-[14px]">
+        <li class="text-[14px] hover:bg-blue-200 hover:rounded-2xl hover:text-lg hover:font-semibold hover:cursor-pointer">
             <img
                     class="inline"
                     src="./src/assets/icons/24-support.svg"
@@ -191,7 +191,7 @@
             />
             پشتیبانی
         </li>
-        <li class="text-[14px]">
+        <li class="text-[14px] hover:bg-blue-200 hover:rounded-2xl hover:text-lg hover:font-semibold hover:cursor-pointer">
             <img
                     class="inline"
                     src="./src/assets/icons/profile.svg"
@@ -200,7 +200,7 @@
             پروفایل
         </li>
         <section
-                class="switche-mode bg-[#F7F7F7] gap-7 flex justify-center rounded-[8px] relative top-[100px] lg:w-[209px] lg:h-[60px] lg:justify-center"
+                class="switche-mode bg-[#F7F7F7] gap-7 flex justify-center rounded-[8px]  lg:justify-center"
         >
             <div
                     class="flex gap-2 py-3 rounded-lg lg:w-[35%] lg:h-auto bg-[#FFFFFF] lg:p-1.5 lg:my-2 lg:flex lg:gap-2 cursor-pointer"
@@ -228,20 +228,20 @@
                 <p class="lg:text-[14px]">تاریک</p>
             </div>
         </section>
-        <div class="p-2"></div>
-        <span class="logout mt-[40px] border-t-2 border-gray-100 border-solid">
-          <img
-                  class="inline p-5"
-                  src="./src/assets/icons/logout.png"
-                  alt="logout"
-          />خروج</span
+
+        <section class="logout mt-[-20px] ">
+            <img
+                    class="inline p-5"
+                    src="./src/assets/icons/logout.png"
+                    alt="logout"
+            />خروج</section
         >
     </ul>
     <div class="overlay lg:hidden lg:hidden"></div>
 </nav>
-<!-------------End sidebar by mohammad ariani------------------------->
+
 <!-------------Task List ------------------>
-<main id="main" class="mt-8 lg:mt-20 mx-4 lg:ml-[200px] lg:mr-[204px]">
+<main id="main" class="border border-red-400 mt-8 lg:mt-20 mx-4 lg:ml-[200px] lg:mr-[204px] lg:w-full">
     <!----------------------- Tasks In Progressing List Container --------------------->
     <!----------------------- Label ---------------------------------------------------->
     <section id="in-progress-task-info">
@@ -326,7 +326,7 @@
     </section>
 
     <!----------------------- Tasks In Progressing List Container --------------------->
-    <section id="in-progress-tasks-list" class="flex flex-col items-center justify-center"></section>
+    <section id="in-progress-tasks-list" class="flex flex-col items-center justify-center mx-auto"></section>
 
 
     <!---------------- Task is Done Part ----------------->
@@ -340,7 +340,6 @@
     <section id="is-done-tasks-list" class="flex flex-col items-center justify-center"></section>
 
 </main>
-
 <script type="module" src="./src/main.js"></script>
 <!--<script src="./todolist.js" defer></script>-->
 </body>
