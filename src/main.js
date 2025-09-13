@@ -14,6 +14,10 @@
 
 
 
+// import {attachTaskMenuListeners, toggleTaskList} from "./scripts/task-list-toggle.js";
+import {attachTaskMenuListeners, toggleTaskList} from "./scripts/task-list-toggle.js";
+
+
 console.log(document.body.dataset)
 import { addTask } from "./scripts/add-task.js";
 import { taskFormToggle } from "./scripts/task-form-toggle.js";
@@ -34,4 +38,5 @@ document.addEventListener("DOMContentLoaded", () => {
         });
         Render(tasks);
     });
+    // attachTaskMenuListeners()
 });
