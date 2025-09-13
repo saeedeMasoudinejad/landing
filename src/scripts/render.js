@@ -30,14 +30,27 @@ function generateHtmlTask(task) {
 
             </div>
             <!-- Left section: Priority badge and menu icon -->
-            <div class="flex items-start gap-2">
+            <div class="flex items-start gap-2 group relative" id="task-menu-${task.id}">
                 <!-- Menu icon -->
                 <button>
                     <img src="/src/assets/icons/edit_and_del_icon.png" alt="menu icon" class="w-4 h-4 object-contain"/>
                 </button>
-            </div>
+                <section class="flex gap-3 absolute top-[45px] left-0 hidden group-hover:flex" id="optionList">
+                  <img
+                    src="./src/assets/icons/delete.svg"
+                    alt="delete"
+                    class="w-[20px] h-[20px] cursor-pointer"
+                  />
+                  <img
+                    src="./src/assets/icons/edite.svg"
+                    alt="edit"
+                    class="w-[20px] h-[20px] cursor-pointer"
+                  />
+            </section>
+            </div> 
         </div>
     `
+
     return taskHtml;
 }
 
@@ -58,7 +71,18 @@ export function Render(tasks) {
         document.getElementById('add-task-form').nextElementSibling.style.display = 'none';
     }
     inProgressTaskContainer.innerHTML = inProgressTaskList.sort((a, b) => a.id - a.id).map((task) => generateHtmlTask(task)).join("");
-    // console.log(inProgressTaskList);
+    // inProgressTaskList.forEach(task => {
+    //     const taskMenu = inProgressTaskContainer.querySelector(`#task-menu-${task.id}`);
+    //     const openinMenu = taskMenu.querySelector("#optionList");
+    //     taskMenu.addEventListener("mouseenter", () => {
+    //         openinMenu.classList.remove("hidden");
+    //     });
+    //
+    //     taskMenu.addEventListener("mouseleave", () => {
+    //         openinMenu.classList.add("hidden");
+    //     });
+    // })
+
     isDoneTaskContainer.innerHTML = isDoneTaskList.sort((a, b) => a.id - a.id).map((task) => generateHtmlTask(task)).join("");
     // console.log(isDoneTaskList);
 
