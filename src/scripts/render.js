@@ -76,7 +76,7 @@ function generateHtmlTask(task) {
                   <img
                     src="./src/assets/icons/delete.svg"
                     alt="delete"
-                    class="w-[20px] h-[20px] cursor-pointer"
+                    class="w-[20px] h-[20px] cursor-pointer delete-btn"
                     id="delete"
                   />
                   
@@ -139,16 +139,19 @@ export function Render(tasks) {
     // console.log(isDoneTaskList);
     const doneInfoText = document.querySelector("#completed-task-info p");
     if (doneInfoText) {
-        doneInfoText.textContent = isDoneTaskList.length > 0
-            ? `${isDoneTaskList.length} تسک انجام شده است.`
-            : 'تسکی برای امروز نداری!';
+        doneInfoText.textContent =
+            isDoneTaskList.length > 0
+                ? `${isDoneTaskList.length} تسک انجام شده است.`
+                : "تسکی برای امروز نداری!";
     }
 
-    const inProgressInfoText = document.querySelector("#in-progress-task-info p");
+    const inProgressInfoText = document.querySelector(
+        "#in-progress-task-info p"
+    );
     if (inProgressInfoText) {
-        inProgressInfoText.textContent = inProgressTaskList.length > 0
-            ? `${inProgressTaskList.length} تسک برای انجام داری.`
-            : 'تسکی برای امروز نداری!';
+        inProgressInfoText.textContent =
+            inProgressTaskList.length > 0
+                ? `${inProgressTaskList.length} تسک برای انجام داری.`
+                : "تسکی برای امروز نداری!";
     }
-
 }
