@@ -23,7 +23,7 @@ function generateHtmlTask(task) {
     console.log(priorityStyle[task.priority]);
     console.log(task.priority);
     const taskHtml = `
-        <div class="task border border-primary-oil-04 rounded p-4 relative flex items-start justify-between w-full  mx-auto mb-4" id="task-container-${
+        <div class="task border border-primary-oil-04 rounded p-4 relative flex items-start justify-between w-full  mx-auto mt-4" id="task-container-${
             task.id
         }"
         data-id="${task.id}">
