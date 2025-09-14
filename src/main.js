@@ -10,27 +10,24 @@
 //     }
 // }   < --! Todo:merge with task manage project ---!>
 
-
-
-
-
 // import {attachTaskMenuListeners, toggleTaskList} from "./scripts/task-list-toggle.js";
-import {attachTaskMenuListeners, toggleTaskList} from "./scripts/task-list-toggle.js";
+import {
+    attachTaskMenuListeners,
+    toggleTaskList,
+} from "./scripts/task-list-toggle.js";
 
-
-console.log(document.body.dataset)
+console.log(document.body.dataset);
 import { addTask } from "./scripts/add-task.js";
 import { taskFormToggle } from "./scripts/task-form-toggle.js";
-import {Render} from "./scripts/render.js";
-import {editTask} from "./scripts/edit-task.js";
+import { Render } from "./scripts/render.js";
+import { editTask } from "./scripts/edit-task.js";
 
 document.addEventListener("DOMContentLoaded", () => {
     /* ------------------------- about showing task form ------------------------ */
     taskFormToggle();
     /* -------------------------- about rendering tasks ------------------------- */
-    let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
-    ;
-    Render(tasks)
+    let tasks = [];
+    Render(tasks);
     const submitTaskButton = document.getElementById("submit-add-task");
     submitTaskButton.addEventListener("click", (e) => {
         e.preventDefault();
@@ -39,10 +36,13 @@ document.addEventListener("DOMContentLoaded", () => {
         });
         Render(tasks);
     });
-    // editTask((id, updatedTask) => {
-    //     tasks = tasks.map((task) =>
-    //         task.id === id ? { ...task, ...updatedTask } : task
-    //     );
-    //     Render(tasks);
-    // });
+    editTask((id, updatedTask) => {
+        console.log("old tasks:", tasks);
+        console.log("task to be updated:", id, updatedTask);
+        tasks = tasks.map((task) =>
+            task.id === id ? { ...task, ...updatedTask } : task
+        );
+        console.log("updated tasks:", tasks);
+        Render(tasks);
+    });
 });
