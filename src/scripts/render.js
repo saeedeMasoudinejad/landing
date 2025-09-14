@@ -11,7 +11,7 @@ function generateHtmlTask(task) {
     console.log(priorityStyle[task.priority]);
     console.log(task.priority);
     const taskHtml = `
-        <div class="task border border-primary-oil-04 rounded p-4 relative flex items-start justify-between w-full  mx-auto mb-4" id="task-container-${task.id}">
+        <div class="task border border-primary-oil-04 rounded p-4 relative flex items-start justify-between w-full  mx-auto mt-4" id="task-container-${task.id}">
             <div class="absolute top-0 right-0  w-1 rounded-tl rounded-bl h-[76px] my-4 lg:my-2  item-center ${priorityStyle[task.priority].bgLabel}"></div>
             <!-- Right section: Task info + checkbox -->
             <div class="flex items-start gap-2">
@@ -72,5 +72,17 @@ export function Render(tasks) {
     }
     inProgressTaskContainer.innerHTML = inProgressTaskList.sort((a, b) => a.id - a.id).map((task) => generateHtmlTask(task)).join("");
     isDoneTaskContainer.innerHTML = isDoneTaskList.sort((a, b) => a.id - a.id).map((task) => generateHtmlTask(task)).join("");
+    const doneInfoText = document.querySelector("#completed-task-info p");
+    if (doneInfoText) {
+        doneInfoText.textContent = isDoneTaskList.length > 0
+            ? `${isDoneTaskList.length} تسک انجام شده است.`
+            : 'تسکی برای امروز نداری!';
+    }
 
+    const inProgressInfoText = document.querySelector("#in-progress-task-info p");
+    if (inProgressInfoText) {
+        inProgressInfoText.textContent = inProgressTaskList.length > 0
+            ? `${inProgressTaskList.length} تسک برای انجام داری.`
+            : 'تسکی برای امروز نداری!';
+    }
 }
