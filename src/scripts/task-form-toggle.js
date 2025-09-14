@@ -12,7 +12,7 @@ export function taskFormToggle() {
     const defaultTaskPriorityClass = `flex gap-1 rounded px-2 py-1 mr-4 text-sm`
     taskPriority.className = defaultTaskPriorityClass;
     taskPriority.innerHTML = `
-                <img src="./src/assets/icons/close-circle.png" class="w-5 y-5"/>
+                <img src="../assets/icons/close-circle.png" class="w-5 y-5"/>
                 <span></span>
             `
 
