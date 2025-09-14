@@ -21,6 +21,7 @@ import { addTask } from "./scripts/add-task.js";
 import { taskFormToggle } from "./scripts/task-form-toggle.js";
 import { Render } from "./scripts/render.js";
 import { editTask } from "./scripts/edit-task.js";
+import { deleteTask } from "./scripts/delete-task.js";
 
 document.addEventListener("DOMContentLoaded", () => {
     /* ------------------------- about showing task form ------------------------ */
@@ -43,6 +44,10 @@ document.addEventListener("DOMContentLoaded", () => {
             task.id === id ? { ...task, ...updatedTask } : task
         );
         console.log("updated tasks:", tasks);
+        Render(tasks);
+    });
+    deleteTask((id) => {
+        tasks = tasks.filter((task) => task.id !== id);
         Render(tasks);
     });
 });
