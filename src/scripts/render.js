@@ -1,12 +1,10 @@
-import {editTask} from "./edit-task.js";
-
 const priorityEnum = {
     low: 'پایین', medium: 'متوسط', high: 'بالا'
 }
 const priorityStyle = {
-    low: {bg: "bg-green-100", text: "text-green-700", bgLabel:"bg-green-700"},
-    medium: {bg: "bg-orange-100", text: "text-orange-500", bgLabel:"bg-orange-500"},
-    high: {bg: "bg-red-100", text: "text-red-500", bgLabel:"bg-red-500"},
+    low: {bg: "bg-green-100", text: "text-green-700", bgLabel: "bg-green-700"},
+    medium: {bg: "bg-orange-100", text: "text-orange-500", bgLabel: "bg-orange-500"},
+    high: {bg: "bg-red-100", text: "text-red-500", bgLabel: "bg-red-500"},
 };
 
 function generateHtmlTask(task) {
@@ -61,8 +59,6 @@ function generateHtmlTask(task) {
 
 export function Render(tasks) {
 
-
-    // console.log(tasks);
     let isDoneTaskList = [];
     let inProgressTaskList = [];
     const inProgressTaskContainer = document.getElementById('in-progress-tasks-list');
@@ -75,29 +71,6 @@ export function Render(tasks) {
         document.getElementById('add-task-form').nextElementSibling.style.display = 'none';
     }
     inProgressTaskContainer.innerHTML = inProgressTaskList.sort((a, b) => a.id - a.id).map((task) => generateHtmlTask(task)).join("");
-    inProgressTaskList.forEach(task => {
-        const taskMenu = inProgressTaskContainer.querySelector(`#task-menu-${task.id}`);
-        const openinMenu = taskMenu.querySelector("#optionList");
-        taskMenu.firstElementChild.addEventListener("click", (e) => {
-            e.stopPropagation();
-            openinMenu.classList.remove("hidden");
-        });
-        openinMenu.addEventListener("click", (e) => {
-            e.stopPropagation();
-            if (e.target)
-            openinMenu.classList.add("hidden");
-        })
-        openinMenu.addEventListener("click", (e) => {
-            e.stopPropagation();
-            if(e.target.id === 'edit') editTask(task);
-        })
-
-        document.addEventListener("click", () => {
-            openinMenu.classList.add("hidden");
-        });
-    })
-
     isDoneTaskContainer.innerHTML = isDoneTaskList.sort((a, b) => a.id - a.id).map((task) => generateHtmlTask(task)).join("");
-    // console.log(isDoneTaskList);
 
 }
