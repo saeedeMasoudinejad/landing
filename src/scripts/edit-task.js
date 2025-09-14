@@ -1,17 +1,6 @@
+import {resetSelectedPriority} from "./select-priority.js";
+
 export function editTask(onEditTask) {
-    // document.addEventListener("click", (event) => {
-    //     console.log("clicked");
-    //     console.log(onEdit.getAttribute("id"));
-    //
-    //     const editBtn = event.target.closest("#task-menu-button");
-    //     console.log("editBtn", editBtn);
-    //     if (editBtn) {
-    //         const taskElement = editBtn.closest(".task");
-    //         const id = taskElement.dataset.id;
-    //
-    //         const editingTitle = taskElement.querySelector("h3").innerText;
-    //         const editingDescription = taskElement.querySelector("p").innerText;
-    //         const editingPriority = taskElement.querySelector("span").innerText;
     const taskElement = onEditTask
     const id = taskElement.id;
 
@@ -24,11 +13,16 @@ export function editTask(onEditTask) {
         medium: "bg-amber-100 text-amber-400",
         high: "bg-rose-100 text-orange-600",
     };
+    const priorities = {
+        پایین: "low",
+        متوسط: "medium",
+        بالا: "high",
+    };
     const editingTitle = taskElement.title;
     const editingDescription = taskElement.description;
     const editingPriority = priorityEnum[taskElement.priority];
     const color = colors[taskElement.priority];
-
+    const editDefaultTaskPriorityClass = `flex gap-1 cursor-pointer rounded px-2 py-1 mr-4 text-sm w-fit`
     const editForm = document.createElement("form");
     editForm.id = `edit-task-form-${taskElement.id}`;
     editForm.className =
@@ -42,41 +36,44 @@ export function editTask(onEditTask) {
               class="outline-none resize-none w-full block placeholder:text-primary-neutral-600 placeholder:text-[12px] text-primary-neutral-800 mt-[8px] mb-[16px]">${editingDescription}</textarea>
         </div>
         <!------------------ Tags Button ----------------->
-        <div class="relative flex flex-col gap-3 items-start mr-4">        
-            <button id="task-priority-button-${taskElement.id}" class="flex gap-1 cursor-pointer rounded px-2 py-1 mr-4 text-sm ${color} w-fit">
+        <div class="relative flex flex-col gap-3 items-start mr-4"> 
+<!--        <div>      -->
+            <button type="button" id="task-priority-button-${taskElement.id}" class="${editDefaultTaskPriorityClass} ${color}">
                 <img class="w-5 y-5"  src="./src/assets/icons/close-circle.png" id="edit-task-img"/>
                 <span>${editingPriority}</span>
             </button>
-<!--                        <div class="flex justify-start hidden">-->
-                <button type="button" id="priority-button"
-                class="flex items-center border border-primary-oil-04 rounded px-2 py-1 mr-4 gap-1 transition-all duration-200">
-                    <img class="w-4 mr-1" src="src/assets/icons/tags_closed_icon.png" alt="default tag icon"/>
-                    <img class="w-4 mr-1 hidden" src="src/assets/icons/tags_open_icon.png" alt="hover tag icon"/>
-                    <span class="text-primary-neutral-600 text-xs ml-1">تگ‌ها</span>
-                </button>
-<!--                        </div>-->
-            <ul
-                id="editPriorityList"
-                class="hidden flex p-2 gap-3 items-center bg-white border border-gray-150 rounded-md shadow-[0_0_25px_rgba(0,0,0,0.05)] w-fit"
-            >
-                <li
-                    class="cursor-pointer bg-green-100 text-green-600 px-2 py-0.5 rounded-md flex items-center text-sm"
-                >
-                    پایین
-                </li>
-                <span class="text-gray-200">|</span>
-                <li
-                    class="cursor-pointer bg-yellow-100 text-yellow-600 px-2 py-0.5 rounded-md flex items-center text-sm"
-                >
-                    متوسط
-                </li>
-                <span class="text-gray-200">|</span>
-                <li
-                    class="cursor-pointer bg-red-100 text-red-600 px-2 py-0.5 rounded-md flex items-center text-sm"
-                >
-                    بالا
-                </li>
-            </ul>
+
+            <button type="button" id="edit-priority-button" class="hidden flex items-center border border-primary-oil-04 rounded px-2 py-1 mr-4 gap-1 transition-all duration-200">
+                <img class="w-4 mr-1" src="src/assets/icons/tags_closed_icon.png" alt="default tag icon"/>
+                <img class="w-4 mr-1 hidden" src="src/assets/icons/tags_open_icon.png" alt="hover tag icon"/>
+                <span class="text-primary-neutral-600 text-xs ml-1">تگ‌ها</span>
+            </button>
+<!--        </div>         -->
+            <div id="edit-priority-values"
+             class="hidden flex w-[213px] mt-6 mr-4 p-2 gap-4 rounded-lg border border-primary-border-light shadow-sm">
+            <!-- Low -->
+            <button type="button" id="one"
+                    class="px-2 py-0.5 text-xs rounded bg-green-100 text-green-700 hover:bg-green-200 focus:outline-none"
+                    value="low">
+                پایین
+            </button>
+            <div class="w-px bg-primary-border-light"></div>
+
+            <!-- Medium -->
+            <button type="button"
+                    class="px-2 py-0.5 text-xs rounded bg-orange-100 text-orange-700 hover:bg-orange-200 focus:outline-none"
+                    value="medium">
+                متوسط
+            </button>
+            <div class="w-px bg-primary-border-light"></div>
+
+            <!-- High -->
+            <button type="button"
+                    class="px-2 py-0.5 text-xs rounded bg-red-100 text-red-700 hover:bg-red-200 focus:outline-none"
+                    value="high">
+                بالا
+            </button>
+        </div>
         </div>
         <!---------------------------- Divider ---------------------------->
         <hr id='divider' class="border-t border-primary-gray mt-6 mb-4">
@@ -94,26 +91,73 @@ export function editTask(onEditTask) {
         </div>
             `;
     const taskElementContainer = document.getElementById(`task-container-${taskElement.id}`);
-    // console.log(taskElementContainer);
+    const editButton = document.getElementById("edit-task-button");
+
     if (taskElementContainer) {
-        console.log(taskElementContainer);
         taskElementContainer.insertAdjacentElement("afterend", editForm);
         const editTaskForm = document.getElementById(`edit-task-form-${taskElement.id}`);
-        console.log("@@@@@@@@@")
-        console.log(editTaskForm);
+        let showingPriority = null;
         if (editTaskForm) {
             const taskPriorityBtn = document.getElementById(`task-priority-button-${taskElement.id}`);
-            const PriorityBtn = document.getElementById('priority-button');
-            console.log(taskPriorityBtn);
-            console.log(PriorityBtn);
+            const PriorityBtn = document.getElementById('edit-priority-button');
+            const PriorityList = document.getElementById('edit-priority-values');
+            console.log(PriorityList);
             taskPriorityBtn.addEventListener("click", (e) => {
-                console.log(e.target);
-                console.log("injjjjjja")
-                // if (e.target.type ==='img') {
-                //     taskPriorityBtn.classList.add("hidden");
-                //     PriorityBtn.classList.remove("hidden");
-                // }
+               console.log(e.target.tagName.toLowerCase());
+                if (e.target.tagName.toLowerCase() ==='img') {
+                    console.log(e.target);
+                    console.log("injjjjjja")
+                    taskPriorityBtn.classList.add("hidden");
+                    // taskPriorityBtn.removeAttribute(value);
+                    console.log("PriorityBtn is:", PriorityBtn);
+                    PriorityBtn.classList.remove("hidden");
+                }
             })
+            console.log(PriorityBtn);
+            PriorityBtn.addEventListener("click", (e) => {
+                console.log(e.target);
+                PriorityList.classList.remove("hidden");
+                PriorityBtn.querySelectorAll("img").forEach((img) => {
+                    img.classList.toggle('hidden')
+                })
+            })
+            PriorityList.querySelectorAll("button").forEach((button) => {
+                button.addEventListener("click", () => {
+                    showingPriority = button.textContent.trim();
+
+                    const colors = {
+                        پایین: {bg: "bg-green-100", text: "text-green-600"},
+                        متوسط: {bg: "bg-yellow-100", text: "text-yellow-600"},
+                        بالا: {bg: "bg-red-100", text: "text-red-600"},
+                    };
+                    const color = colors[showingPriority];
+                    taskPriorityBtn.classList.add(color.bg, color.text)
+                    taskPriorityBtn.querySelector("span").textContent = `${showingPriority}`;
+                    // taskPriorityBtn.value = priorities[showingPriority];
+                    PriorityList.classList.add("hidden");
+                    PriorityBtn.classList.add("hidden");
+                    taskPriorityBtn.classList.remove("hidden");
+                });
+            });
+
+            editButton.addEventListener("click", (e) => {
+                e.preventDefault();
+                const newTitle =
+                    editForm.querySelector("#edit-title-input").value;
+                const newDescription = editForm.querySelector(
+                    "#edit-description-input"
+                ).value;
+                const finalPriority = 'low';
+                if (newTitle && newTitle.trim() && finalPriority) {
+                    onEdit(id, {
+                        title: newTitle,
+                        description: newDescription,
+                        priority:priorities[finalPriority],
+                    });
+                    editForm.remove();
+                }
+            });
+
         }
 
 
