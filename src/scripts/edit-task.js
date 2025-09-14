@@ -63,10 +63,10 @@ export function editTask(onEdit) {
         <!---------------------------- Divider ---------------------------->
         <hr id='divider' class="border-t border-primary-gray mt-6 mb-4">
         <div class="flex justify-end items-center gap-[6px] my-4 ml-4">
-            <!-- Clear / Cancel button -->
-            <button type="button" id="clear-task-button" class="w-8 h-8 mx-1">
-                <img src="./src/assets/icons/clear_icon.png" alt="clear form" class="w-full h-full object-contain"/>
-            </button>
+<!--            &lt;!&ndash; Clear / Cancel button &ndash;&gt;-->
+<!--            <button type="button" id="clear-task-button" class="w-8 h-8 mx-1">-->
+<!--                <img src="./src/assets/icons/clear_icon.png" alt="clear form" class="w-full h-full object-contain"/>-->
+<!--            </button>-->
 
             <!-- Submit / Add Task button -->
             <button type="submit" id="edit-task-button"
