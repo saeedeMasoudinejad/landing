@@ -391,16 +391,282 @@
 
       <!---------------- Task is Done Part ----------------->
       <!---------------- Label ------------------------------>
-      <section id="completed-task-info">
-        <h2 class="mb-1">تسک‌های انجام شده</h2>
-        <p class="text-primary-oil text-[10px]">3 تسک را باید انجام دهید.</p>
-        <!-- TODO: number should be dynamic -->
-      </section>
-      <!----------------------- Tasks Is Done List Container --------------------->
+    <section id="taskbar-nav" class="flex flex-col items-center lg:mr-[290px]">
       <section
-        id="is-done-tasks-list"
-        class="flex flex-col items-center justify-center"
-      ></section>
+        class="taskbar-nav1 flex flex-col w-[328px] mt-[12px] h-auto border-2 border-gray-100 rounded-lg px-8 py-5 relative lg:w-[744px] lg:h-auto lg:mt-[24px] lg:flex lg:flex-col"
+      >
+        <section class="w-[4px] h-full bg-red-500 absolute right-0 top-0"></section>
+        <h1 class="px-3 text-[14px] font-semibold">جلسه با مدیران پروژه</h1>
+        <h3
+  class="p-3 text-red-500 bg-red-100 w-fit rounded-[10px] text-[10px] lg:absolute lg:left-[71%] lg:top-3"
+>
+  بالا
+</h3>
+        <p class="p-3 text-[12px]">جلسه با محسن یگانه و مریم جلالی</p>
+        <input
+          type="checkbox"
+          name=""
+          id=""
+          class="absolute right-[0px] w-[50px] h-[20px] rounded-[50px] accent-red-500 transition delay-20 duration-20 ease-in-out"
+        />
+
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="menuhov size-6 absolute left-0 cursor-pointer"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M12 6.75a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5ZM12 12.75a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5ZM12 18.75a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5Z"
+          />
+        </svg>
+        <section class="flex gap-3 absolute top-[45px] left-0 openin hidden">
+          <img
+            src="./src/assets/icons/delete.svg"
+            alt=""
+            class="w-[20px] h-[20px] cursor-pointer"
+          />
+          <img
+            src="./src/assets/icons/edite.svg"
+            alt=""
+            class="w-[20px] h-[20px] cursor-pointer"
+          />
+        </section>
+      </section>
+
+      <section
+        class="flex flex-col w-[328px] h-auto mt-[12px] border-2 border-gray-100 rounded-lg px-8 py-5 relative gap-3 md:mt-[24px] md:w-[744px] md:h-auto"
+      >
+        <section
+          class="w-[4px] h-full bg-orange-500 absolute right-0 top-0"
+        ></section>
+        <h1 class="px-3 text-[14px] font-semibold">
+          خرید میوه و سبزیجات و لبنیات برای خانه
+        </h1>
+       <h3
+  class="p-3 text-orange-500 bg-orange-100 w-fit rounded-[10px] text-[10px] lg:absolute lg:left-[55%] lg:top-3"
+>
+  متوسط
+</h3>
+        <p class="px-3 text-[12px]">سوپرمارکت یاران دریایی</p>
+        <input
+          type="checkbox"
+          name=""
+          id=""
+          class="absolute right-[0px] w-[50px] h-[20px] rounded-[50px] accent-orange-500"
+        />
+
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="menuhov1 size-6 absolute left-0 cursor-pointer"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M12 6.75a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5ZM12 12.75a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5ZM12 18.75a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5Z"
+          />
+        </svg>
+        <section class="openin1 flex gap-3 absolute top-[45px] left-0 hidden">
+          <img
+            src="./src/assets/icons/delete.svg"
+            alt=""
+            class="w-[20px] h-[20px] cursor-pointer"
+          />
+          <img
+            src="./src/assets/icons/edite.svg"
+            alt=""
+            class="w-[20px] h-[20px] cursor-pointer"
+          />
+        </section>
+      </section>
+      <section
+        class="flex flex-col w-[328px] h-auto mt-[12px] border-2 border-gray-100 rounded-lg px-8 py-5 relative gap-3 md:mt-[24px] md:w-[744px] md:h-auto"
+      >
+        <section
+          class="w-[4px] h-[76px] h-full bg-green-500 absolute right-0 top-0"
+        ></section>
+        <h1 class="px-3 text-[14px] font-semibold">تماس با جمشید</h1>
+        <h3
+          class="text-green-500 bg-green-100 w-fit rounded-[10px] p-3 text-[10px] md:absolute md:left-[71%] md:top-3"
+        >
+          پایین
+        </h3>
+        <p class="px-3 text-[12px]">
+          باید در مورد کارهای باقیمانده از پروژه قبلی صحبت کنیم.
+        </p>
+        <input
+          type="checkbox"
+          name=""
+          id=""
+          class="absolute right-[0px] w-[50px] h-[20px] rounded-[50px] accent-green-500"
+        />
+
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="size-6 absolute left-0 cursor-pointer menuhov2"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M12 6.75a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5ZM12 12.75a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5ZM12 18.75a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5Z"
+          />
+        </svg>
+        <section class="openin2 flex gap-3 absolute top-[45px] left-0 hidden">
+          <img
+            src="./src/assets/icons/delete.svg"
+            alt=""
+            class="w-[20px] h-[20px] cursor-pointer"
+          />
+          <img
+            src="./src/assets/icons/edite.svg"
+            alt=""
+            class="w-[20px] h-[20px] cursor-pointer"
+          />
+        </section>
+      </section>
+    </section>
+<!-------task down-->
+   <section class="flex flex-col mt-[20px] lg:ml-[260px]">
+  <h1 class="text-[20px] font-bold">تسک‌های انجام شده</h1>
+  <p class="text-[14px]">3 تسک را باید انجام دهید.</p>
+</section>
+    <section id="task-down" class="flex flex-col items-center lg:mr-[290px] mt-[20px]">
+     
+      <section
+        class="taskbar-down-list flex flex-col w-[328px] mt-[12px] h-auto border-2 border-gray-100 rounded-lg px-8 py-5 relative lg:w-[744px] lg:h-auto lg:mt-[24px] lg:flex lg:flex-col"
+      >
+        <section class="w-[4px] h-full bg-orange-500 absolute right-0 top-0"></section>
+      
+        <p class="px-3 ">جلسه با محسن یگانه و مریم جلالی</p>
+        <input
+          type="checkbox"
+          name=""
+          id=""
+          class="absolute right-[0px] w-[50px] h-[20px] rounded-[50px] accent-red-500 transition delay-20 duration-20 ease-in-out"
+        />
+
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="threepint size-6 absolute left-0 cursor-pointer"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M12 6.75a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5ZM12 12.75a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5ZM12 18.75a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5Z"
+          />
+        </svg>
+        <section class="flex gap-3 absolute top-[45px] left-0 updating hidden">
+          <img
+            src="./src/assets/icons/delete.svg"
+            alt=""
+            class="w-[20px] h-[20px] cursor-pointer"
+          />
+          <img
+            src="./src/assets/icons/edite.svg"
+            alt=""
+            class="w-[20px] h-[20px] cursor-pointer"
+          />
+        </section>
+      </section>
+    
+        <section
+        class="taskbar-down-list flex flex-col w-[328px] mt-[12px] h-auto border-2 border-gray-100 rounded-lg px-8 py-5 relative lg:w-[744px] lg:h-auto lg:mt-[24px] lg:flex lg:flex-col"
+      >
+        <section class="w-[4px] h-full bg-red-500 absolute right-0 top-0"></section>
+      
+        <p class="px-3 ">جلسه با محسن یگانه و مریم جلالی</p>
+        <input
+          type="checkbox"
+          name=""
+          id=""
+          class="absolute right-[0px] w-[50px] h-[20px] rounded-[50px] accent-red-500 transition delay-20 duration-20 ease-in-out"
+        />
+
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="threepint1 size-6 absolute left-0 cursor-pointer"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M12 6.75a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5ZM12 12.75a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5ZM12 18.75a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5Z"
+          />
+        </svg>
+        <section class="flex gap-3 absolute top-[45px] left-0   updating1 hidden">
+          <img
+            src="./src/assets/icons/delete.svg"
+            alt=""
+            class="w-[20px] h-[20px] cursor-pointer"
+          />
+          <img
+            src="./src/assets/icons/edite.svg"
+            alt=""
+            class="w-[20px] h-[20px] cursor-pointer"
+          />
+        </section>
+      </section>
+        <section
+        class="taskbar-down-list flex flex-col w-[328px] mt-[12px] h-auto border-2 border-gray-100 rounded-lg px-8 py-5 relative lg:w-[744px] lg:h-auto lg:mt-[24px] lg:flex lg:flex-col"
+      >
+        <section class="w-[4px] h-full bg-green-500 absolute right-0 top-0"></section>
+      
+        <p class="px-3 ">جلسه با محسن یگانه و مریم جلالی</p>
+        <input
+          type="checkbox"
+          name=""
+          id=""
+          class="absolute right-[0px] w-[50px] h-[20px] rounded-[50px] accent-red-500 transition delay-20 duration-20 ease-in-out"
+        />
+
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="threepint2 size-6 absolute left-0 cursor-pointer"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M12 6.75a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5ZM12 12.75a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5ZM12 18.75a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5Z"
+          />
+        </svg>
+        <section class="flex gap-3 absolute top-[45px] left-0 updating2 hidden">
+          <img
+            src="./src/assets/icons/delete.svg"
+            alt=""
+            class="w-[20px] h-[20px] cursor-pointer"
+          />
+          <img
+            src="./src/assets/icons/edite.svg"
+            alt=""
+            class="w-[20px] h-[20px] cursor-pointer"
+          />
+        </section>
+      </section>
+      </section>
+</div>
     </main>
 
     <script type="module" src="/src/main.js"></script>
