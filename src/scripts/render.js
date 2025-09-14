@@ -2,16 +2,16 @@ const priorityEnum = {
     low: 'پایین', medium: 'متوسط', high: 'بالا'
 }
 const priorityStyle = {
-    low: {bg: "bg-green-100", text: "text-green-700", bgLabel:"bg-green-700"},
-    medium: {bg: "bg-orange-100", text: "text-orange-500", bgLabel:"bg-orange-500"},
-    high: {bg: "bg-red-100", text: "text-red-500", bgLabel:"bg-red-500"},
+    low: {bg: "bg-green-100", text: "text-green-700", bgLabel: "bg-green-700"},
+    medium: {bg: "bg-orange-100", text: "text-orange-500", bgLabel: "bg-orange-500"},
+    high: {bg: "bg-red-100", text: "text-red-500", bgLabel: "bg-red-500"},
 };
 
 function generateHtmlTask(task) {
     console.log(priorityStyle[task.priority]);
     console.log(task.priority);
     const taskHtml = `
-        <div class="task border border-primary-oil-04 rounded p-4 relative flex items-start justify-between w-full  mx-auto mb-4">
+        <div class="task border border-primary-oil-04 rounded p-4 relative flex items-start justify-between w-full  mx-auto mt-4" id="task-container-${task.id}">
             <div class="absolute top-0 right-0  w-1 rounded-tl rounded-bl h-[76px] my-4 lg:my-2  item-center ${priorityStyle[task.priority].bgLabel}"></div>
             <!-- Right section: Task info + checkbox -->
             <div class="flex items-start gap-2">
@@ -30,22 +30,35 @@ function generateHtmlTask(task) {
 
             </div>
             <!-- Left section: Priority badge and menu icon -->
-            <div class="flex items-start gap-2">
+            <div class="flex items-start gap-2  relative" id="task-menu-${task.id}">
                 <!-- Menu icon -->
                 <button>
-                    <img src="/src/assets/icons/edit_and_del_icon.png" alt="menu icon" class="w-4 h-4 object-contain"/>
+                    <img src="/src/assets/icons/edit_and_del_icon.png" alt="menu icon" class="w-4 h-4 object-contain group-hover:flex"/>
                 </button>
-            </div>
+                <section class="flex gap-3 absolute top-[45px] left-0  border border-gray-300" id="optionList">
+                  <img
+                    src="./src/assets/icons/delete.svg"
+                    alt="delete"
+                    class="w-[20px] h-[20px] cursor-pointer"
+                    id="delete"
+                  />
+                  <img
+                    src="./src/assets/icons/edite.svg"
+                    alt="edit"
+                    class="w-[20px] h-[20px] cursor-pointer"
+                    id="edit"
+                  />
+            </section>
+            </div> 
         </div>
     `
+
     return taskHtml;
 }
 
 
 export function Render(tasks) {
 
-
-    // console.log(tasks);
     let isDoneTaskList = [];
     let inProgressTaskList = [];
     const inProgressTaskContainer = document.getElementById('in-progress-tasks-list');
@@ -58,8 +71,18 @@ export function Render(tasks) {
         document.getElementById('add-task-form').nextElementSibling.style.display = 'none';
     }
     inProgressTaskContainer.innerHTML = inProgressTaskList.sort((a, b) => a.id - a.id).map((task) => generateHtmlTask(task)).join("");
-    // console.log(inProgressTaskList);
     isDoneTaskContainer.innerHTML = isDoneTaskList.sort((a, b) => a.id - a.id).map((task) => generateHtmlTask(task)).join("");
-    // console.log(isDoneTaskList);
+    const doneInfoText = document.querySelector("#completed-task-info p");
+    if (doneInfoText) {
+        doneInfoText.textContent = isDoneTaskList.length > 0
+            ? `${isDoneTaskList.length} تسک انجام شده است.`
+            : 'تسکی برای امروز نداری!';
+    }
 
+    const inProgressInfoText = document.querySelector("#in-progress-task-info p");
+    if (inProgressInfoText) {
+        inProgressInfoText.textContent = inProgressTaskList.length > 0
+            ? `${inProgressTaskList.length} تسک برای انجام داری.`
+            : 'تسکی برای امروز نداری!';
+    }
 }
