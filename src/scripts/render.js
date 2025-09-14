@@ -82,7 +82,7 @@ export function Render(tasks) {
     const inProgressInfoText = document.querySelector("#in-progress-task-info p");
     if (inProgressInfoText) {
         inProgressInfoText.textContent = inProgressTaskList.length > 0
-            ? `${inProgressTaskList.length} تسک برای انجام داری.`
-            : 'تسکی برای امروز نداری!';
+            ? `${inProgressTaskList.length} تسک برای انجام شده است.`
+            : 'تسکی  امروز انجام ندادی!';
     }
 }
