@@ -11,10 +11,10 @@
 // }   < --! Todo:merge with task manage project ---!>
 
 // import {attachTaskMenuListeners, toggleTaskList} from "./scripts/task-list-toggle.js";
-import {
-    attachTaskMenuListeners,
-    toggleTaskList,
-} from "./scripts/task-list-toggle.js";
+// import {
+//     attachTaskMenuListeners,
+//     toggleTaskList,
+// } from "./scripts/task-list-toggle.js";
 
 console.log(document.body.dataset);
 import { addTask } from "./scripts/add-task.js";
