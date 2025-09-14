@@ -34,7 +34,7 @@ function generateHtmlTask(task) {
             <div class="flex items-start gap-2">
                 <!-- Checkbox -->
                 
-                <input type="checkbox"  class="mt-1 w-4 h-4 accent-blue-500 " ${
+                <input type="checkbox"  class="mt-1 w-4 h-4 accent-blue-500 check-box " ${
                     task.isDone ? "checked" : ""
                 }>
 

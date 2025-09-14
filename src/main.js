@@ -22,6 +22,7 @@ import { taskFormToggle } from "./scripts/task-form-toggle.js";
 import { Render } from "./scripts/render.js";
 import { editTask } from "./scripts/edit-task.js";
 import { deleteTask } from "./scripts/delete-task.js";
+import { checkTask } from "./scripts/done-task.js";
 
 document.addEventListener("DOMContentLoaded", () => {
     /* ------------------------- about showing task form ------------------------ */
@@ -48,6 +49,12 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     deleteTask((id) => {
         tasks = tasks.filter((task) => task.id !== id);
+        Render(tasks);
+    });
+    checkTask((id) => {
+        tasks = tasks.map((task) =>
+            task.id === id ? { ...task, isDone: !task.isDone } : task
+        );
         Render(tasks);
     });
 });
