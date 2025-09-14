@@ -384,14 +384,16 @@
       </section>
 
       <!----------------------- Tasks In Progressing List Container --------------------->
-      <section
-        id="in-progress-tasks-list"
-        class="flex flex-col items-center justify-center"
-      ></section>
+      <section id="in-progress-tasks-list" class="flex flex-col items-center justify-center"></section>
 
-      <!---------------- Task is Done Part ----------------->
-      <!---------------- Label ------------------------------>
-    <section id="taskbar-nav" class="flex flex-col items-center lg:mr-[290px]">
+---
+<section class="flex flex-col mt-[20px] lg:ml-[260px]">
+  <h1 class="text-[20px] font-bold">تسک‌های انجام شده</h1>
+  <p class="text-[14px]">0 تسک انجام شده است.</p>
+</section>
+<section id="done-tasks-list" class="flex flex-col items-center lg:mr-[290px] mt-[20px]">
+</section>
+    <section id="taskbar-nav" class="hidden flex flex-col items-center lg:mr-[290px]">
       <section
         class="taskbar-nav1 flex flex-col w-[328px] mt-[12px] h-auto border-2 border-gray-100 rounded-lg px-8 py-5 relative lg:w-[744px] lg:h-auto lg:mt-[24px] lg:flex lg:flex-col"
       >
@@ -538,138 +540,11 @@
       </section>
     </section>
 <!-------task down-->
-   <section class="flex flex-col mt-[20px] lg:ml-[260px]">
-  <h1 class="text-[20px] font-bold">تسک‌های انجام شده</h1>
-  <p class="text-[14px]">3 تسک را باید انجام دهید.</p>
-</section>
-    <section id="task-down" class="flex flex-col items-center lg:mr-[290px] mt-[20px]">
-     
-      <section
-        class="taskbar-down-list flex flex-col w-[328px] mt-[12px] h-auto border-2 border-gray-100 rounded-lg px-8 py-5 relative lg:w-[744px] lg:h-auto lg:mt-[24px] lg:flex lg:flex-col"
-      >
-        <section class="w-[4px] h-full bg-orange-500 absolute right-0 top-0"></section>
-      
-        <p class="px-3 ">جلسه با محسن یگانه و مریم جلالی</p>
-        <input
-          type="checkbox"
-          name=""
-          id=""
-          class="absolute right-[0px] w-[50px] h-[20px] rounded-[50px] accent-red-500 transition delay-20 duration-20 ease-in-out"
-        />
-
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke-width="1.5"
-          stroke="currentColor"
-          class="threepint size-6 absolute left-0 cursor-pointer"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="M12 6.75a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5ZM12 12.75a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5ZM12 18.75a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5Z"
-          />
-        </svg>
-        <section class="flex gap-3 absolute top-[45px] left-0 updating hidden">
-          <img
-            src="./src/assets/icons/delete.svg"
-            alt=""
-            class="w-[20px] h-[20px] cursor-pointer"
-          />
-          <img
-            src="./src/assets/icons/edite.svg"
-            alt=""
-            class="w-[20px] h-[20px] cursor-pointer"
-          />
-        </section>
-      </section>
-    
-        <section
-        class="taskbar-down-list flex flex-col w-[328px] mt-[12px] h-auto border-2 border-gray-100 rounded-lg px-8 py-5 relative lg:w-[744px] lg:h-auto lg:mt-[24px] lg:flex lg:flex-col"
-      >
-        <section class="w-[4px] h-full bg-red-500 absolute right-0 top-0"></section>
-      
-        <p class="px-3 ">جلسه با محسن یگانه و مریم جلالی</p>
-        <input
-          type="checkbox"
-          name=""
-          id=""
-          class="absolute right-[0px] w-[50px] h-[20px] rounded-[50px] accent-red-500 transition delay-20 duration-20 ease-in-out"
-        />
-
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke-width="1.5"
-          stroke="currentColor"
-          class="threepint1 size-6 absolute left-0 cursor-pointer"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="M12 6.75a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5ZM12 12.75a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5ZM12 18.75a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5Z"
-          />
-        </svg>
-        <section class="flex gap-3 absolute top-[45px] left-0   updating1 hidden">
-          <img
-            src="./src/assets/icons/delete.svg"
-            alt=""
-            class="w-[20px] h-[20px] cursor-pointer"
-          />
-          <img
-            src="./src/assets/icons/edite.svg"
-            alt=""
-            class="w-[20px] h-[20px] cursor-pointer"
-          />
-        </section>
-      </section>
-        <section
-        class="taskbar-down-list flex flex-col w-[328px] mt-[12px] h-auto border-2 border-gray-100 rounded-lg px-8 py-5 relative lg:w-[744px] lg:h-auto lg:mt-[24px] lg:flex lg:flex-col"
-      >
-        <section class="w-[4px] h-full bg-green-500 absolute right-0 top-0"></section>
-      
-        <p class="px-3 ">جلسه با محسن یگانه و مریم جلالی</p>
-        <input
-          type="checkbox"
-          name=""
-          id=""
-          class="absolute right-[0px] w-[50px] h-[20px] rounded-[50px] accent-red-500 transition delay-20 duration-20 ease-in-out"
-        />
-
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke-width="1.5"
-          stroke="currentColor"
-          class="threepint2 size-6 absolute left-0 cursor-pointer"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="M12 6.75a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5ZM12 12.75a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5ZM12 18.75a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5Z"
-          />
-        </svg>
-        <section class="flex gap-3 absolute top-[45px] left-0 updating2 hidden">
-          <img
-            src="./src/assets/icons/delete.svg"
-            alt=""
-            class="w-[20px] h-[20px] cursor-pointer"
-          />
-          <img
-            src="./src/assets/icons/edite.svg"
-            alt=""
-            class="w-[20px] h-[20px] cursor-pointer"
-          />
-        </section>
-      </section>
-      </section>
+  
 </div>
     </main>
 
-    <script type="module" src="/src/main.js"></script>
+    <!-- <script type="module" src="/src/main.js"></script> -->
     <script src="/todolist.js"></script>
   </body>
 </html>
