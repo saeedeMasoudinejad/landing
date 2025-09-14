@@ -1,3 +1,5 @@
+import {editTask} from "./edit-task.js";
+
 const priorityEnum = {
     low: 'پایین', medium: 'متوسط', high: 'بالا'
 }
@@ -11,7 +13,7 @@ function generateHtmlTask(task) {
     console.log(priorityStyle[task.priority]);
     console.log(task.priority);
     const taskHtml = `
-        <div class="task border border-primary-oil-04 rounded p-4 relative flex items-start justify-between w-full  mx-auto mb-4">
+        <div class="task border border-primary-oil-04 rounded p-4 relative flex items-start justify-between w-full  mx-auto mb-4" id="task-container-${task.id}">
             <div class="absolute top-0 right-0  w-1 rounded-tl rounded-bl h-[76px] my-4 lg:my-2  item-center ${priorityStyle[task.priority].bgLabel}"></div>
             <!-- Right section: Task info + checkbox -->
             <div class="flex items-start gap-2">
@@ -30,21 +32,23 @@ function generateHtmlTask(task) {
 
             </div>
             <!-- Left section: Priority badge and menu icon -->
-            <div class="flex items-start gap-2 group relative" id="task-menu-${task.id}">
+            <div class="flex items-start gap-2  relative" id="task-menu-${task.id}">
                 <!-- Menu icon -->
                 <button>
-                    <img src="/src/assets/icons/edit_and_del_icon.png" alt="menu icon" class="w-4 h-4 object-contain"/>
+                    <img src="/src/assets/icons/edit_and_del_icon.png" alt="menu icon" class="w-4 h-4 object-contain group-hover:flex"/>
                 </button>
-                <section class="flex gap-3 absolute top-[45px] left-0 hidden group-hover:flex" id="optionList">
+                <section class="flex gap-3 absolute top-[45px] left-0  border border-gray-300" id="optionList">
                   <img
                     src="./src/assets/icons/delete.svg"
                     alt="delete"
                     class="w-[20px] h-[20px] cursor-pointer"
+                    id="delete"
                   />
                   <img
                     src="./src/assets/icons/edite.svg"
                     alt="edit"
                     class="w-[20px] h-[20px] cursor-pointer"
+                    id="edit"
                   />
             </section>
             </div> 
@@ -71,17 +75,27 @@ export function Render(tasks) {
         document.getElementById('add-task-form').nextElementSibling.style.display = 'none';
     }
     inProgressTaskContainer.innerHTML = inProgressTaskList.sort((a, b) => a.id - a.id).map((task) => generateHtmlTask(task)).join("");
-    // inProgressTaskList.forEach(task => {
-    //     const taskMenu = inProgressTaskContainer.querySelector(`#task-menu-${task.id}`);
-    //     const openinMenu = taskMenu.querySelector("#optionList");
-    //     taskMenu.addEventListener("mouseenter", () => {
-    //         openinMenu.classList.remove("hidden");
-    //     });
-    //
-    //     taskMenu.addEventListener("mouseleave", () => {
-    //         openinMenu.classList.add("hidden");
-    //     });
-    // })
+    inProgressTaskList.forEach(task => {
+        const taskMenu = inProgressTaskContainer.querySelector(`#task-menu-${task.id}`);
+        const openinMenu = taskMenu.querySelector("#optionList");
+        taskMenu.firstElementChild.addEventListener("click", (e) => {
+            e.stopPropagation();
+            openinMenu.classList.remove("hidden");
+        });
+        openinMenu.addEventListener("click", (e) => {
+            e.stopPropagation();
+            if (e.target)
+            openinMenu.classList.add("hidden");
+        })
+        openinMenu.addEventListener("click", (e) => {
+            e.stopPropagation();
+            if(e.target.id === 'edit') editTask(task);
+        })
+
+        document.addEventListener("click", () => {
+            openinMenu.classList.add("hidden");
+        });
+    })
 
     isDoneTaskContainer.innerHTML = isDoneTaskList.sort((a, b) => a.id - a.id).map((task) => generateHtmlTask(task)).join("");
     // console.log(isDoneTaskList);
