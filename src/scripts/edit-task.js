@@ -15,7 +15,6 @@ export function editTask(onEdit) {
                 بالا: "bg-rose-100 text-orange-600",
             };
             const color = colors[editingPriority];
-
             const editForm = document.createElement("form");
             editForm.id = "edit-task-form";
             editForm.className =

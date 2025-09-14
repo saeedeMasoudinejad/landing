@@ -56,5 +56,9 @@ document.addEventListener("DOMContentLoaded", () => {
             task.id === id ? { ...task, isDone: !task.isDone } : task
         );
         Render(tasks);
+        const optionMenu = document.querySelector(".option-list");
+        // if (!optionMenu.classList.contains("hidden")) {
+        //     optionMenu.classList.toggle("hidden");
+        // }
     });
 });

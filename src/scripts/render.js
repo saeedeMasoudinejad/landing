@@ -66,7 +66,7 @@ function generateHtmlTask(task) {
                 <button>
                     <img src="/src/assets/icons/edit_and_del_icon.png" alt="menu icon" class="w-4 h-4 object-contain"/>
                 </button>
-                <section class="flex gap-3 absolute top-[45px] left-0  border border-gray-300" id="optionList">
+                <section class="flex gap-3 absolute top-[45px] left-0  border border-gray-300 option-list" id="optionList">
                 <img
                     src="./src/assets/icons/edite.svg"
                     alt="edit"
