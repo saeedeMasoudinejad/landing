@@ -1,394 +1,867 @@
 <!DOCTYPE html>
 <html lang="fa-IR">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-        <script src="https://cdn.tailwindcss.com"></script>
-        <link rel="stylesheet" href="./src/style.css" />
-        <title>Title</title>
-        <script>
-            // Enable Tailwind dark mode
-            tailwind.config = {
-                darkMode: "class",
-                theme: {
-                    extend: {
-                        colors: {
-                            primary: {
-                                light: "#2C7EF8",
-                                "hover-light": "#075CD9",
-                                // 'primary-light': '#2C7EF8',
-                                // 'primary-hover-light': '#075CD9',
-                                "on-light": "#FFFFFF",
-                                "background-light": "#FFFFFF",
-                                "on-background-light": "#191C1E",
-                                "surface-light": "#FFFFFF",
-                                "neutral-9": "#F5F6F8",
-                                dark: "#3A86F8",
-                                "hover-dark": "#6BA4FA",
-                                "on-Dark": "#FFFFFF",
-                                // 'primary-Dark': '#3A86F8',
-                                // 'primary-hover-Dark': '#6BA4FA',
-                                "background-Dark": "#040810",
-                                "on-background-Dark": "#E6E9EF",
-                                "surface-Dark": "#E6E9EF",
-                            },
-                            secondary: {
-                                "background-dark": "#0B192D",
-                            },
-                        },
-                    },
-                },
-            };
-        </script>
-    </head>
-    <body
-        class="bg-primary-background-light dark:bg-primary-background-Dark text-primary-on-background-light dark:text-primary-on-background-Dark relative overflow-x-hidden"
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/src/style.css" />
+    <title>کوئرالیست</title>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: {
+                light: "#2C7EF8",
+                "hover-light": "#075CD9",
+                "on-light": "#FFFFFF",
+                "background-light": "#FFFFFF",
+                "on-background-light": "#191C1E",
+                "surface-light": "#FFFFFF",
+                "neutral-9": "#F5F6F8",
+                dark: "#3A86F8",
+                "hover-dark": "#6BA4FA",
+                "on-dark": "#FFFFFF",
+                "background-dark": "#040810",
+                "on-background-dark": "#E6E9EF",
+                "surface-dark": "#E6E9EF",
+              },
+              secondary: {
+                "background-dark": "#0B192D",
+              },
+            },
+          },
+        },
+        plugins: [],
+      };
+    </script>
+  </head>
+
+  <body
+    class="bg-primary-background-light dark:bg-primary-background-dark text-primary-on-background-light dark:text-primary-on-background-dark relative overflow-x-hidden"
+  >
+    <section
+      class="dark:text-[#ffffff] dark:bg-[#000000] menu-sm w-[360px] h-[49px] bg-[#ffffff] flex justify-between items-center p-6 md:hidden"
     >
-        <header class="flex justify-between items-center">
-            <div>
-                <button>کوئرا لیست</button>
-                <button>صفحه اصلی</button>
-                <button>درباره ما</button>
-                <button>ارتباط با ما</button>
-            </div>
-            <div
-                class="p-6 flex items-center justify-between transition-colors duration-300"
-            >
-                <button
-                    id="toggle-mode"
-                    class="px-3 py-2 text-white rounded-md transition-colors duration-300 flex items-center gap-2"
-                >
-                    <img
-                        id="mode-icon"
-                        src="src/assets/icons/dark_icon.png"
-                        alt="mode icon"
-                    />
-                </button>
-            </div>
-        </header>
-        <!-- ---------------------- <HTML by Mehdi Alizadeh> ----------------------- -->
-        <section
-            class="hero flex flex-col justify-center items-center relative min-w-[360px] pt-[113px] px-[10%] overflow-x-hidden max-[360px]:pt-[70px] max-[360px]:px-4"
+      <img
+        src="/src/assets/images/menu.svg"
+        alt="menu"
+        class="w-[24px] h-[24px] dark:invert"
+      />
+      <h1 class="text-center">کوئرالیست</h1>
+    </section>
+    <header class="hidden md:flex justify-between items-center">
+      <ul class="flex md:gap-20 md:mx-[20px]">
+        <h1 class="font-bold">کوئرالیست</h1>
+        <li class="text-blue-500 cursor-pointer">
+          <a href="index.html">صفحه اصلی</a>
+        </li>
+        <li class="cursor-pointer">
+          <a href="./pages/about_me.html"> درباره ما </a>
+        </li>
+        <li class="cursor-pointer">
+          <a href="./pages/contact_us.html"> ارتباط با ما </a>
+        </li>
+      </ul>
+      <button
+        class="text-[#ffffff] bg-blue-500 rounded-lg p-3 absolute left-20 cursor-pointer"
+      >
+        ورود به اپلیکیشن
+      </button>
+      <div
+        class="p-6 flex items-center justify-between transition-colors duration-300"
+      >
+        <button
+          id="theme-toggle"
+          class="px-3 py-2 text-white rounded-md transition-colors duration-300 flex items-center gap-2"
         >
-            <div
-                class="background-rectangle-18753 absolute top-0 left-0 w-full h-[1228px] -z-10 max-[360px]:h-[583px]"
+          <img
+            id="mode-icon"
+            src="src/assets/icons/dark_icon.png"
+            alt="mode icon"
+          />
+        </button>
+      </div>
+    </header>
+    <!-- ---------------------- Hero Section ----------------------- -->
+    <section
+      class="hero flex flex-col justify-center items-center relative min-w-[360px] pt-[113px] px-[10%] overflow-x-hidden max-[360px]:pt-[70px] max-[360px]:px-4"
+    >
+      <div
+        class="background-rectangle-18753 absolute top-0 left-0 w-full h-[1228px] -z-10 max-[360px]:h-[583px]"
+      >
+        <div
+          class="ellipse128 absolute w-[452px] h-[452px] rounded-full -z-10 left-[2.5%] top-[60px] opacity-70 max-[360px]:w-[228px] max-[360px]:h-[228px] max-[360px]:left-0 max-[360px]:-translate-x-1/2 max-[360px]:top-[14px] dark:hidden"
+        ></div>
+        <div
+          class="ellipse129 absolute w-[452px] h-[452px] rounded-full -z-10 right-[-2.5%] top-[224px] opacity-60 max-[360px]:w-[228px] max-[360px]:h-[228px] max-[360px]:right-0 max-[360px]:translate-x-1/3 max-[360px]:top-[113px] dark:hidden"
+        ></div>
+      </div>
+      <img
+        class="absolute w-[32px] h-[32px] -z-10 top-[148px] left-[74.72%] max-[360px]:w-[24px] max-[360px]:h-[24px] max-[360px]:top-[40px] dark:hidden"
+        src="./src/assets/icons/blueStar.png"
+        alt="little-blue-star"
+      />
+      <img
+        class="absolute w-[32px] h-[32px] -z-10 top-[148px] left-[74.72%] max-[360px]:w-[24px] max-[360px]:h-[24px] max-[360px]:top-[40px] hidden dark:block"
+        src="./src/assets/icons/whiteStar.png"
+        alt="little-blue-star"
+      />
+      <img
+        class="absolute w-[32px] h-[32px] -z-10 top-[423px] left-[13.33%] max-[360px]:w-[24px] max-[360px]:h-[24px] max-[360px]:top-[169px] dark:hidden"
+        src="./src/assets/icons/blueStar.png"
+        alt="little-blue-star"
+      />
+      <img
+        class="absolute w-[32px] h-[32px] -z-10 top-[423px] left-[13.33%] max-[360px]:w-[24px] max-[360px]:h-[24px] max-[360px]:top-[169px] hidden dark:block"
+        src="./src/assets/icons/whiteStar.png"
+        alt="little-blue-star"
+      />
+      <p
+        class="subtitle text-[46px] text-center mb-[5px] max-[360px]:text-[24px]"
+      >
+        تمرکز رو وارد زندگیت کن
+      </p>
+      <h1
+        class="title text-[64px] text-center mb-[86px] max-[360px]:text-[28px] dark:text-primary-on-dark"
+      >
+        به سمت
+        <span class="highlighted-word relative dark:text-primary-on-dark"
+          >اهداف</span
+        >
+        اوج بگیر
+      </h1>
+      <p
+        class="text-[20px] max-w-[827px] text-center mb-[40px] max-[360px]:max-w-[312px] max-[360px]:text-[12px] dark:text-primary-on-dark"
+      >
+        زمان در یک روز برای ما محدود است. اما مهم‌ترین کار این است که چگونه از
+        آن استفاده می‌کنیم. با اپلیکیشن کوپرا لیست، زمان خود را با هدف و
+        برنامه‌ریزی موثر سپری کنید.
+      </p>
+
+      <div
+        class="flex justify-between gap-4 mb-[80px] w-full max-w-[395px] h-[48px] max-[360px]:mb-[40px] max-[360px]:h-[40px]"
+      >
+        <a
+          href="todolist.html"
+          target="_blank"
+          class="btn-gotoapp flex justify-center items-center no-underline px-[40px] py-2 border-0 rounded-[8px] text-[16px] h-full gotoapp max-[360px]:text-[12px]"
+          >ورود به اپلیکیشن</a
+        >
+        <a
+          href="#"
+          class="btn-aboutus flex justify-center items-center no-underline px-[40px] py-2 border-0 rounded-[8px] text-[16px] h-full aboutus max-[360px]:text-[12px]"
+          >درباره ما</a
+        >
+      </div>
+
+      <img
+        class="w-full max-w-[1120px] h-auto mx-auto"
+        src="./src/assets/icons/dashboard.png"
+        alt="image of the dashboard of the application"
+      />
+    </section>
+
+    <main class="mx-auto max-w-[1120px] min-w-[360px]">
+      <!-- Application Features -->
+      <div
+        class="backgroundElement hidden dark:hidden lg:block absolute -z-10 top-1448px] -right-[200px] rounded-full opacity-20 w-[452px] h-[452px] rotate-180"
+      ></div>
+      <div
+        class="backgroundElement hidden dark:hidden lg:block absolute -z-10 top-[1776px] left-[-132px] rounded-full opacity-30 w-[452px] h-[452px] rotate-180"
+      ></div>
+      <section
+        class="flex flex-col items-center px-4 gap-[24px] lg:gap[40px] mt-[24px] lg:mt-[124px] ml-4"
+      >
+        <div
+          class="flex flex-col gap-2 lg:gap-[12px] items-center text-center max-w-[540px]"
+        >
+          <h2 class="featureHeader">ویژگی‌های اپلیکیشن کوئرالیست</h2>
+          <p class="text-[14px] text-center leading-[30px]">
+            زمان در یک روز برای ما محدود است، اما مهمترین کار این است که چگونه
+            از آن استفاده می‌کنیم. با اپلیکیشن کوییرا لیست، زمان خود را با هدف و
+            برنامه‌ریزی موثر سپری کنید.
+          </p>
+        </div>
+
+        <!-- Cards Section -->
+        <div
+          class="grid grid-cols-2 justify-center item-center text-center md:grid-cols-4 mx-auto gap-[16px] lg:gap-[24px]"
+        >
+          <div
+            class="feature dark:bg-secondary-background-dark dark:border-secondary-background-dark py-[16px] lg:py-[32px] px-[12px] lg:px-[40px] rounded-[24px] gap-[8px] lg:gap[24px]"
+          >
+            <!--            <img src="./src/assets/icons/paint_icon.svg" class="text-red-400 bg-blue-400 dark:text-primary-on-background-dark" alt="paint-icon"/>-->
+            <svg
+              width="48"
+              height="48"
+              viewBox="0 0 48 48"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              class="text-primary-light dark:text-primary-on-dark"
             >
-                <div
-                    class="ellipse128 absolute w-[452px] h-[452px] rounded-full -z-10 left-[2.5%] top-[60px] opacity-70 max-[360px]:w-[228px] max-[360px]:h-[228px] max-[360px]:left-0 max-[360px]:-translate-x-1/2 max-[360px]:top-[14px] dark:hidden"
-                ></div>
-                <div
-                    class="ellipse129 absolute w-[452px] h-[452px] rounded-full -z-10 right-[-2.5%] top-[224px] opacity-60 max-[360px]:w-[228px] max-[360px]:h-[228px] max-[360px]:right-0 max-[360px]:translate-x-1/3 max-[360px]:top-[113px] dark:hidden"
-                ></div>
-            </div>
-            <img
-                class="absolute w-[32px] h-[32px] -z-10 top-[148px] left-[74.72%] max-[360px]:w-[24px] max-[360px]:h-[24px] max-[360px]:top-[40px] dark:hidden"
-                src="./src/assets/icons/blueStar.png"
-                alt="little-blue-star"
-            />
-            <img
-                class="absolute w-[32px] h-[32px] -z-10 top-[148px] left-[74.72%] max-[360px]:w-[24px] max-[360px]:h-[24px] max-[360px]:top-[40px] hidden dark:block"
-                src="./src/assets/icons/whiteStar.png"
-                alt="little-blue-star"
-            />
-            <img
-                class="absolute w-[32px] h-[32px] -z-10 top-[423px] left-[13.33%] max-[360px]:w-[24px] max-[360px]:h-[24px] max-[360px]:top-[169px] dark:hidden"
-                src="./src/assets/icons/blueStar.png"
-                alt="little-blue-star"
-            />
-            <img
-                class="absolute w-[32px] h-[32px] -z-10 top-[423px] left-[13.33%] max-[360px]:w-[24px] max-[360px]:h-[24px] max-[360px]:top-[169px] hidden dark:block"
-                src="./src/assets/icons/whiteStar.png"
-                alt="little-blue-star"
-            />
-            <p
-                class="subtitle text-[46px] text-center mb-[5px] max-[360px]:text-[24px]"
-            >
-                تمرکز رو وارد زندگیت کن
+              <rect
+                width="48"
+                height="48"
+                rx="24"
+                fill="#D4DEE8"
+                fill-opacity="0.08"
+              />
+              <g clip-path="url(#clip0_60_748)">
+                <path
+                  d="M22.97 14H20.97C15.97 14 13.97 16 13.97 21V27C13.97 32 15.97 34 20.97 34H26.97C31.97 34 33.97 32 33.97 27V25"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M33.88 15.56C32.65 18.63 29.56 22.81 26.98 24.88L25.4 26.14C25.2 26.29 25 26.41 24.77 26.5C24.77 26.35 24.76 26.2 24.74 26.04C24.65 25.37 24.35 24.74 23.81 24.21C23.26 23.66 22.6 23.35 21.92 23.26C21.76 23.25 21.6 23.24 21.44 23.25C21.53 23 21.66 22.77 21.83 22.58L23.09 21C25.16 18.42 29.35 15.31 32.41 14.08C32.88 13.9 33.34 14.04 33.63 14.33C33.93 14.63 34.07 15.09 33.88 15.56Z"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M24.78 26.49C24.78 27.37 24.44 28.21 23.81 28.85C23.32 29.34 22.66 29.68 21.87 29.78L19.9 29.99C18.83 30.11 17.91 29.2 18.03 28.11L18.24 26.14C18.43 24.39 19.89 23.27 21.45 23.24C21.61 23.23 21.77 23.24 21.93 23.25C22.61 23.34 23.27 23.65 23.82 24.2C24.36 24.74 24.66 25.36 24.75 26.03C24.77 26.19 24.78 26.35 24.78 26.49Z"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M27.82 23.9799C27.82 21.8899 26.13 20.1899 24.03 20.1899"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </g>
+              <defs>
+                <clipPath id="clip0_60_748">
+                  <rect
+                    width="24"
+                    height="24"
+                    fill="white"
+                    transform="translate(12 12)"
+                  />
+                </clipPath>
+              </defs>
+            </svg>
+            <h4>رابط جذاب</h4>
+            <p class="text-[10px]">
+              اگه از سردرگمی و بی برنامگی خسته شدی این اپلیکیشن مخصوص خودته!
             </p>
-            <h1
-                class="title text-[64px] text-center mb-[86px] max-[360px]:text-[28px] dark:text-primary-on-Dark"
+          </div>
+          <div
+            class="feature dark:bg-secondary-background-dark dark:border-secondary-background-dark py-[16px] lg:py-[32px] px-[12px] lg:px-[40px] rounded-[24px] gap-[8px] lg:gap[24px]"
+          >
+            <!--            <img src="./src/assets/icons/category_icon.svg" class="text-red-400 bg-blue-400 dark:text-primary-on-background-dark" alt="category-icon"/>-->
+            <svg
+              width="48"
+              height="48"
+              viewBox="0 0 48 48"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              class="text-primary-light dark:text-primary-on-dark"
             >
-                به سمت
-                <span
-                    class="highlighted-word relative dark:text-primary-on-Dark"
-                    >اهداف</span
-                >
-                اوج بگیر
-            </h1>
-            <p
-                class="text-[20px] max-w-[827px] text-center mb-[40px] max-[360px]:max-w-[312px] max-[360px]:text-[12px] dark:text-primary-on-Dark"
-            >
-                زمان در یک روز برای ما محدود است. اما مهم‌ترین کار این است که
-                چگونه از آن استفاده می‌کنیم. با اپلیکیشن کوپرا لیست، زمان خود را
-                با هدف و برنامه‌ریزی موثر سپری کنید.
+              <rect
+                width="48"
+                height="48"
+                rx="24"
+                fill="#D4DEE8"
+                fill-opacity="0.08"
+              />
+              <path
+                d="M17 22H19C21 22 22 21 22 19V17C22 15 21 14 19 14H17C15 14 14 15 14 17V19C14 21 15 22 17 22Z"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-miterlimit="10"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M29 22H31C33 22 34 21 34 19V17C34 15 33 14 31 14H29C27 14 26 15 26 17V19C26 21 27 22 29 22Z"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-miterlimit="10"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M29 34H31C33 34 34 33 34 31V29C34 27 33 26 31 26H29C27 26 26 27 26 29V31C26 33 27 34 29 34Z"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-miterlimit="10"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M17 34H19C21 34 22 33 22 31V29C22 27 21 26 19 26H17C15 26 14 27 14 29V31C14 33 15 34 17 34Z"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-miterlimit="10"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+
+            <h4>قابلیت دسته‌بندی کارها</h4>
+            <p class="text-[10px]">
+              اگه از سردرگمی و بی برنامگی خسته شدی این اپلیکیشن مخصوص خودته!
             </p>
-
-            <div
-                class="flex justify-between gap-4 mb-[80px] w-full max-w-[395px] h-[48px] max-[360px]:mb-[40px] max-[360px]:h-[40px]"
+          </div>
+          <div
+            class="feature dark:bg-secondary-background-dark dark:border-secondary-background-dark py-[16px] lg:py-[32px] px-[12px] lg:px-[40px] rounded-[24px] gap-[8px] lg:gap[24px]"
+          >
+            <!--            <img src="./src/assets/icons/access_icon.svg" class="text-red-400 bg-blue-400 dark:text-primary-on-background-dark" alt="access-icon"/>-->
+            <svg
+              width="48"
+              height="48"
+              viewBox="0 0 48 48"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              class="text-primary-light dark:text-primary-on-dark"
             >
-                <a
-                    href="todolist.html" target="_blank"
-                    class="btn-gotoapp flex justify-center items-center no-underline px-[40px] py-2 border-0 rounded-[8px] text-[16px] h-full gotoapp max-[360px]:text-[12px]"
-                    >ورود به اپلیکیشن</a
-                >
-                <a
-                    href="#"
-                    class="btn-aboutus flex justify-center items-center no-underline px-[40px] py-2 border-0 rounded-[8px] text-[16px] h-full aboutus max-[360px]:text-[12px]"
-                    >درباره ما</a
-                >
-            </div>
+              <rect
+                width="48"
+                height="48"
+                rx="24"
+                fill="#D4DEE8"
+                fill-opacity="0.08"
+              />
+              <path
+                d="M30 30.86H29.24C28.44 30.86 27.68 31.17 27.12 31.73L25.41 33.42C24.63 34.19 23.36 34.19 22.58 33.42L20.87 31.73C20.31 31.17 19.54 30.86 18.75 30.86H18C16.34 30.86 15 29.53 15 27.89V16.98C15 15.34 16.34 14.01 18 14.01H30C31.66 14.01 33 15.34 33 16.98V27.89C33 29.52 31.66 30.86 30 30.86Z"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-miterlimit="10"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M24 22.0001C25.2868 22.0001 26.33 20.9569 26.33 19.67C26.33 18.3832 25.2868 17.3401 24 17.3401C22.7132 17.3401 21.67 18.3832 21.67 19.67C21.67 20.9569 22.7132 22.0001 24 22.0001Z"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M28 27.6601C28 25.8601 26.21 24.4001 24 24.4001C21.79 24.4001 20 25.8601 20 27.6601"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
 
-            <img
-                class="w-full max-w-[1120px] h-auto mx-auto"
-                src="./src/assets/icons/dashboard.png"
-                alt="image of the dashboard of the application"
-            />
-        </section>
-        <!-- ---------------------- </HTML by Mehdi Alizadeh> ---------------------- -->
-        <main class="mx-auto max-w-[1120px] min-w-[360px]">
-            <!-- Application Features -->
-            <div
-                class="backgroundElement hidden dark:hidden lg:block absolute -z-10 top-1448px] -right-[200px] rounded-full opacity-20 w-[452px] h-[452px] rotate-180"
-            ></div>
-            <div
-                class="backgroundElement hidden dark:hidden lg:block absolute -z-10 top-[1776px] left-[-132px] rounded-full opacity-30 w-[452px] h-[452px] rotate-180"
-            ></div>
-            <section
-                class="flex flex-col items-center px-4 gap-[24px] lg:gap[40px] mt-[24px] lg:mt-[124px] ml-4"
+            <h4>دسترسی آسان</h4>
+            <p class="text-[10px]">
+              اگه از سردرگمی و بی برنامگی خسته شدی این اپلیکیشن مخصوص خودته!
+            </p>
+          </div>
+          <div
+            class="feature dark:bg-secondary-background-dark dark:border-secondary-background-dark py-[16px] lg:py-[32px] px-[12px] lg:px-[40px] rounded-[24px] gap-[8px] lg:gap[24px]"
+          >
+            <!--            <img src="./src/assets/icons/place_icon.svg" class="text-red-400 bg-blue-400 dark:text-primary-on-background-dark" alt="pain-icon"/>-->
+            <svg
+              id="palace_icon"
+              width="48"
+              height="48"
+              viewBox="0 0 48 48"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              class="text-primary-light dark:text-primary-on-dark"
             >
-                <!-- Header Section -->
-                <div
-                    class="flex flex-col gap-2 lg:gap-[12px] items-center text-center max-w-[540px]"
-                >
-                    <h2 class="featureHeader">ویژگی‌های اپلیکیشن کوئرالیست</h2>
-                    <p class="text-[14px] text-center leading-[30px]">
-                        زمان در یک روز برای ما محدود است، اما مهمترین کار این
-                        است که چگونه از آن استفاده می‌کنیم. با اپلیکیشن کوییرا
-                        لیست، زمان خود را با هدف و برنامه‌ریزی موثر سپری کنید.
-                    </p>
-                </div>
+              <rect
+                width="48"
+                height="48"
+                rx="24"
+                fill="#D4DEE8"
+                fill-opacity="0.08"
+              />
+              <path
+                d="M15.62 20.49C17.59 11.83 30.42 11.84 32.38 20.5C33.53 25.58 30.37 29.88 27.6 32.54C25.59 34.48 22.41 34.48 20.39 32.54C17.63 29.88 14.47 25.57 15.62 20.49Z"
+                stroke="currentColor"
+                stroke-width="1.5"
+              />
+              <path
+                d="M21.25 23.5L22.75 25L26.75 21"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+            <h4>پشتیبانی آنلاین</h4>
+            <p class="text-[10px]">
+              اگه از سردرگمی و بی برنامگی خسته شدی این اپلیکیشن مخصوص خودته!
+            </p>
+          </div>
+        </div>
+      </section>
 
-                <!-- Cards Section -->
-                <div
-                    class="grid grid-cols-2 justify-center item-center text-center md:grid-cols-4 mx-auto gap-[16px] lg:gap-[24px]"
-                >
-                    <div
-                        class="feature dark:bg-secondary-background-dark dark:border-secondary-background-dark py-[16px] lg:py-[32px] px-[12px] lg:px-[40px] rounded-[24px] gap-[8px] lg:gap[24px]"
-                    >
-                        <!--            <img src="./src/assets/icons/paint_icon.svg" class="text-red-400 bg-blue-400 dark:text-primary-on-background-Dark" alt="paint-icon"/>-->
-                        <svg
-                            width="48"
-                            height="48"
-                            viewBox="0 0 48 48"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                            class="text-primary-light dark:text-primary-on-Dark"
-                        >
-                            <rect
-                                width="48"
-                                height="48"
-                                rx="24"
-                                fill="#D4DEE8"
-                                fill-opacity="0.08"
-                            />
-                            <g clip-path="url(#clip0_60_748)">
-                                <path
-                                    d="M22.97 14H20.97C15.97 14 13.97 16 13.97 21V27C13.97 32 15.97 34 20.97 34H26.97C31.97 34 33.97 32 33.97 27V25"
-                                    stroke="currentColor"
-                                    stroke-width="1.5"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                />
-                                <path
-                                    d="M33.88 15.56C32.65 18.63 29.56 22.81 26.98 24.88L25.4 26.14C25.2 26.29 25 26.41 24.77 26.5C24.77 26.35 24.76 26.2 24.74 26.04C24.65 25.37 24.35 24.74 23.81 24.21C23.26 23.66 22.6 23.35 21.92 23.26C21.76 23.25 21.6 23.24 21.44 23.25C21.53 23 21.66 22.77 21.83 22.58L23.09 21C25.16 18.42 29.35 15.31 32.41 14.08C32.88 13.9 33.34 14.04 33.63 14.33C33.93 14.63 34.07 15.09 33.88 15.56Z"
-                                    stroke="currentColor"
-                                    stroke-width="1.5"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                />
-                                <path
-                                    d="M24.78 26.49C24.78 27.37 24.44 28.21 23.81 28.85C23.32 29.34 22.66 29.68 21.87 29.78L19.9 29.99C18.83 30.11 17.91 29.2 18.03 28.11L18.24 26.14C18.43 24.39 19.89 23.27 21.45 23.24C21.61 23.23 21.77 23.24 21.93 23.25C22.61 23.34 23.27 23.65 23.82 24.2C24.36 24.74 24.66 25.36 24.75 26.03C24.77 26.19 24.78 26.35 24.78 26.49Z"
-                                    stroke="currentColor"
-                                    stroke-width="1.5"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                />
-                                <path
-                                    d="M27.82 23.9799C27.82 21.8899 26.13 20.1899 24.03 20.1899"
-                                    stroke="currentColor"
-                                    stroke-width="1.5"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                />
-                            </g>
-                            <defs>
-                                <clipPath id="clip0_60_748">
-                                    <rect
-                                        width="24"
-                                        height="24"
-                                        fill="white"
-                                        transform="translate(12 12)"
-                                    />
-                                </clipPath>
-                            </defs>
-                        </svg>
-                        <h4>رابط جذاب</h4>
-                        <p class="text-[10px]">
-                            اگه از سردرگمی و بی برنامگی خسته شدی این اپلیکیشن
-                            مخصوص خودته!
-                        </p>
-                    </div>
-                    <div
-                        class="feature dark:bg-secondary-background-dark dark:border-secondary-background-dark py-[16px] lg:py-[32px] px-[12px] lg:px-[40px] rounded-[24px] gap-[8px] lg:gap[24px]"
-                    >
-                        <!--            <img src="./src/assets/icons/category_icon.svg" class="text-red-400 bg-blue-400 dark:text-primary-on-background-Dark" alt="category-icon"/>-->
-                        <svg
-                            width="48"
-                            height="48"
-                            viewBox="0 0 48 48"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                            class="text-primary-light dark:text-primary-on-Dark"
-                        >
-                            <rect
-                                width="48"
-                                height="48"
-                                rx="24"
-                                fill="#D4DEE8"
-                                fill-opacity="0.08"
-                            />
-                            <path
-                                d="M17 22H19C21 22 22 21 22 19V17C22 15 21 14 19 14H17C15 14 14 15 14 17V19C14 21 15 22 17 22Z"
-                                stroke="currentColor"
-                                stroke-width="1.5"
-                                stroke-miterlimit="10"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                            />
-                            <path
-                                d="M29 22H31C33 22 34 21 34 19V17C34 15 33 14 31 14H29C27 14 26 15 26 17V19C26 21 27 22 29 22Z"
-                                stroke="currentColor"
-                                stroke-width="1.5"
-                                stroke-miterlimit="10"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                            />
-                            <path
-                                d="M29 34H31C33 34 34 33 34 31V29C34 27 33 26 31 26H29C27 26 26 27 26 29V31C26 33 27 34 29 34Z"
-                                stroke="currentColor"
-                                stroke-width="1.5"
-                                stroke-miterlimit="10"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                            />
-                            <path
-                                d="M17 34H19C21 34 22 33 22 31V29C22 27 21 26 19 26H17C15 26 14 27 14 29V31C14 33 15 34 17 34Z"
-                                stroke="currentColor"
-                                stroke-width="1.5"
-                                stroke-miterlimit="10"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                            />
-                        </svg>
+      <!-- ---------------------- Download Section ----------------------- -->
+      <section
+        class="flex flex-col-reverse md:flex-row items-center justify-between px-12 md:px-20 py-12 gap-4"
+      >
+        <div class="w-full md:w-1/2 space-y-6 text-center md:text-right">
+          <h4 class="text-gray-800 dark:text-gray-200 md:block">
+            اپلیکیشن اندروید و iOS
+          </h4>
+          <h2 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
+            دانلود اپلیکیشن
+          </h2>
+          <p class="w-[90%] text-gray-800 dark:text-gray-300 leading-8">
+            کاربران اندروید می‌توانند اپلیکیشن کوئرا لیست را از استورهای معتبر
+            اندروید دانلود نمایند. همچنین کاربران سیستم عامل اپل علاوه بر دانلود
+            نرم‌افزار از اپ‌استور می‌توانند از نسخه مبتنی بر وب آن استفاده
+            نمایند.
+          </p>
+          <a
+            href="todolist.html"
+            target="_blank"
+            class="inline-flex items-center gap-2 text-blue-600 font-semibold hover:underline"
+          >
+            ورود به اپلیکیشن ←
+          </a>
+        </div>
 
-                        <h4>قابلیت دسته‌بندی کارها</h4>
-                        <p class="text-[10px]">
-                            اگه از سردرگمی و بی برنامگی خسته شدی این اپلیکیشن
-                            مخصوص خودته!
-                        </p>
-                    </div>
-                    <div
-                        class="feature dark:bg-secondary-background-dark dark:border-secondary-background-dark py-[16px] lg:py-[32px] px-[12px] lg:px-[40px] rounded-[24px] gap-[8px] lg:gap[24px]"
-                    >
-                        <!--            <img src="./src/assets/icons/access_icon.svg" class="text-red-400 bg-blue-400 dark:text-primary-on-background-Dark" alt="access-icon"/>-->
-                        <svg
-                            width="48"
-                            height="48"
-                            viewBox="0 0 48 48"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                            class="text-primary-light dark:text-primary-on-Dark"
-                        >
-                            <rect
-                                width="48"
-                                height="48"
-                                rx="24"
-                                fill="#D4DEE8"
-                                fill-opacity="0.08"
-                            />
-                            <path
-                                d="M30 30.86H29.24C28.44 30.86 27.68 31.17 27.12 31.73L25.41 33.42C24.63 34.19 23.36 34.19 22.58 33.42L20.87 31.73C20.31 31.17 19.54 30.86 18.75 30.86H18C16.34 30.86 15 29.53 15 27.89V16.98C15 15.34 16.34 14.01 18 14.01H30C31.66 14.01 33 15.34 33 16.98V27.89C33 29.52 31.66 30.86 30 30.86Z"
-                                stroke="currentColor"
-                                stroke-width="1.5"
-                                stroke-miterlimit="10"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                            />
-                            <path
-                                d="M24 22.0001C25.2868 22.0001 26.33 20.9569 26.33 19.67C26.33 18.3832 25.2868 17.3401 24 17.3401C22.7132 17.3401 21.67 18.3832 21.67 19.67C21.67 20.9569 22.7132 22.0001 24 22.0001Z"
-                                stroke="currentColor"
-                                stroke-width="1.5"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                            />
-                            <path
-                                d="M28 27.6601C28 25.8601 26.21 24.4001 24 24.4001C21.79 24.4001 20 25.8601 20 27.6601"
-                                stroke="currentColor"
-                                stroke-width="1.5"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                            />
-                        </svg>
+        <div class="w-full md:w-1/2 flex justify-center relative">
+          <img
+            src="assets/images/app-mobile-small-light.png"
+            alt="نسخه موبایل (Light)"
+            class="block md:hidden w-3/4 rounded-2xl dark:hidden"
+          />
 
-                        <h4>دسترسی آسان</h4>
-                        <p class="text-[10px]">
-                            اگه از سردرگمی و بی برنامگی خسته شدی این اپلیکیشن
-                            مخصوص خودته!
-                        </p>
-                    </div>
-                    <div
-                        class="feature dark:bg-secondary-background-dark dark:border-secondary-background-dark py-[16px] lg:py-[32px] px-[12px] lg:px-[40px] rounded-[24px] gap-[8px] lg:gap[24px]"
-                    >
-                        <!--            <img src="./src/assets/icons/place_icon.svg" class="text-red-400 bg-blue-400 dark:text-primary-on-background-Dark" alt="pain-icon"/>-->
-                        <svg
-                            id="palace_icon"
-                            width="48"
-                            height="48"
-                            viewBox="0 0 48 48"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                            class="text-primary-light dark:text-primary-on-Dark"
-                        >
-                            <rect
-                                width="48"
-                                height="48"
-                                rx="24"
-                                fill="#D4DEE8"
-                                fill-opacity="0.08"
-                            />
-                            <path
-                                d="M15.62 20.49C17.59 11.83 30.42 11.84 32.38 20.5C33.53 25.58 30.37 29.88 27.6 32.54C25.59 34.48 22.41 34.48 20.39 32.54C17.63 29.88 14.47 25.57 15.62 20.49Z"
-                                stroke="currentColor"
-                                stroke-width="1.5"
-                            />
-                            <path
-                                d="M21.25 23.5L22.75 25L26.75 21"
-                                stroke="currentColor"
-                                stroke-width="1.5"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                            />
-                        </svg>
-                        <h4>پشتیبانی آنلاین</h4>
-                        <p class="text-[10px]">
-                            اگه از سردرگمی و بی برنامگی خسته شدی این اپلیکیشن
-                            مخصوص خودته!
-                        </p>
-                    </div>
-                </div>
+          <img
+            src="assets/images/app-mobile-small-dark.png"
+            alt="نسخه موبایل (Dark)"
+            class="hidden dark:block dark:md:hidden w-3/4 rounded-2xl"
+          />
+
+          <img
+            src="assets/images/app-light-desktop.png"
+            alt="نسخه دسکتاپ (Light)"
+            class="hidden md:block w-full rounded-xl dark:hidden"
+          />
+
+          <img
+            src="assets/images/app-dark-desktop.png"
+            alt="نسخه دسکتاپ (Dark)"
+            class="hidden dark:md:block w-full rounded-xl"
+          />
+
+          <img
+            src="assets/images/app-mobile-small-light.png"
+            alt="موبایل روی دسکتاپ (Light)"
+            class="hidden w-1/2 rounded-2xl absolute top-1/4 left-1/3 dark:hidden"
+          />
+
+          <img
+            src="assets/images/app-mobile-small-dark.png"
+            alt="موبایل روی دسکتاپ (Dark)"
+            class="hidden dark:hidden w-1/2 rounded-2xl absolute top-1/4 left-1/3"
+          />
+        </div>
+
+        <div class="md:hidden w-full text-center space-y-2 mb-4">
+          <h4 class="text-gray-500 dark:text-gray-400">
+            اپلیکیشن اندروید و iOS
+          </h4>
+          <h2 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
+            دانلود اپلیکیشن
+          </h2>
+        </div>
+      </section>
+      <!------------------- Opinion Section ------------------ ------>
+      <div id="downloadApplication"></div>
+      <section class="flex flex-col text-center">
+        <div
+          class="hidden dark:hidden circle-two md:absolute md:top-[50px] md:left-[0px] md:block"
+        >
+          <img src="./src/assets/images/Ellipse 131.png" alt="" />
+        </div>
+        <h1 class="heading-of-comment text-2xl dark:text-gray-300">
+          نظرات کاربران
+        </h1>
+        <p class="paragraph-of-comment font-normal mt-[16px] text-md">
+          بیش از یک دهه است که کوئرا لیست به مردم در سراسر جهان کمک<br />
+          می‌کند تا سازماندهی شوند و به اهداف خود برسند.
+        </p>
+      </section>
+
+      <figure
+        class="md:z-[2px] relative md:relative section-of-comments flex justify-center md:gap-[32px] md:grid md:grid-cols-3 md:grid-rows-1 md:justify-items-center md:justify-self-center md:mt-[48px]"
+      >
+        <div
+          class="hidden dark:hidden circle-one md:absolute md:top-[310px] md:right-[-320px] md:z-[1px] md:block"
+        >
+          <img src="./src/assets/images/Ellipse 130.png" alt="" />
+        </div>
+
+        <section
+          class="hidden dark:bg-[#0B192D] dark:shadow-none shadow-[0px_4px_63px_0px_#0000000A] cmone md:block md:w-[357px] md:h-[340px] md:px-[24px] md:py-[32px]"
+        >
+          <section class="flex">
+            <img src="./src/assets/images/user3.png" alt="user3" />
+
+            <section class="flex flex-col p-3">
+              <h2 class="sec-one-header dark:text-white">رویا ملکی</h2>
+              <p class="sec-one-paragraph-header dark:text-white">
+                مهندس نرم افزار دیجی‌کالا
+              </p>
             </section>
-        </main>
-        <script src="./src/main.js"></script>
-    </body>
+          </section>
+
+          <p class="seconeplus-paragraph-header py-[20px] dark:text-white">
+            تجربه من با کوئرا لیست زندگی من رو تغییر داده است. من از دنیایی
+            اومدم که همه چیز من در اکسل بود. استفاده از کوئرا لیست به ما این
+            امکان رو می‌دهد که باهوش‌تر، سریع‌تر و سازمان دهی شده تر زندگی کنیم
+            و هم چینین همه چیز به گونه‌ای ساده تنظیم شده و میتونیم از یکپارچگی
+            اطلاعات و دیتاها لذت ببریم.
+          </p>
+        </section>
+        <section
+          class="hidden border-2 dark:shadow-none dark:bg-[#0B192D] dark:border-gray-300 rounded-xl shadow-[0px_4px_63px_0px_#0000000A] cmone md:block md:w-[357px] md:h-[240px] md:px-[24px] md:py-[32px]"
+        >
+          <section class="flex">
+            <img src="./src/assets/images/user2.png" alt="user3" />
+
+            <section class="flex flex-col p-3">
+              <h2 class="sec-one-header dark:text-white">رویا ملکی</h2>
+              <p class="sec-one-paragraph-header dark:text-white">
+                مهندس نرم افزار دیجی‌کالا
+              </p>
+            </section>
+          </section>
+
+          <p class="seconeplus-paragraph-header py-[20px] dark:text-white">
+            تجربه من با کوئرا لیست زندگی من رو تغییر داده است. من از دنیایی
+            اومدم که همه چیز من در اکسل بود. استفاده از کوئرا لیست به ما این
+            امکان رو می‌دهد که سریع تر باشیم
+          </p>
+        </section>
+
+        <section
+          class="shadow-[0px_4px_63px_0px_#0000000A] rounded-lg dark:shadow-none dark:bg-[#0B192D] bg-white mt-[100px] overflow-hidden bg-white w-[320px] h-[320px] px-[32px] py-[20px] cmone md:block md:w-[357px] md:h-[340px] md:px-[24px] md:py-[32px] md:m-0"
+        >
+          <section class="flex">
+            <img src="./src/assets/images/user1.png" alt="user3" />
+
+            <section class="flex flex-col md:p-3 px-3">
+              <h2 class="sec-one-header dark:text-white">رویا ملکی</h2>
+              <p class="sec-one-paragraph-header dark:text-white">
+                مهندس نرم افزار دیجی‌کالا
+              </p>
+            </section>
+          </section>
+
+          <p class="seconeplus-paragraph-header md:py-[20px] dark:text-white">
+            تجربه من با کوئرا لیست زندگی من رو تغییر داده است. من از دنیایی
+            اومدم که همه چیز من در اکسل بود. استفاده از کوئرا لیست به ما این
+            امکان رو می‌دهد که باهوش‌تر، سریع‌تر و سازمان دهی شده تر زندگی کنیم
+            و هم چینین همه چیز به گونه‌ای ساده تنظیم شده و میتونیم از یکپارچگی
+            اطلاعات و دیتاها لذت ببریم.
+          </p>
+        </section>
+        <section
+          class="hidden border-2 rounded-xl dark:bg-[#0B192D] dark:shadow-none dark:border-white-300 shadow-[0px_4px_63px_0px_#0000000A] md:block md:w-[357px] md:h-[240px] md:px-[24px] md:py-[32px] md:bg-white"
+        >
+          <section class="flex">
+            <img src="./src/assets/images/user6.png" alt="user3" />
+
+            <section class="flex flex-col p-3">
+              <h2 class="sec-one-header dark:text-white">رویا ملکی</h2>
+              <p class="sec-one-paragraph-header dark:text-white">
+                مهندس نرم افزار دیجی‌کالا
+              </p>
+            </section>
+          </section>
+
+          <p class="seconeplus-paragraph-header py-[20px] dark:text-white">
+            تجربه من با کوئرا لیست زندگی من رو تغییر داده است. من از دنیایی
+            اومدم که همه چیز من در اکسل بود. استفاده از کوئرا لیست به ما این
+            امکان رو می‌دهد که سریع تر باشیم
+          </p>
+        </section>
+        <section
+          class="hidden md:block md:py-[32px] dark:bg-[#0B192D] md:px-[24px] flex flex-col justify-items-center justify-self-center shadow-[0px_4px_63px_0px_#0000000A] w-[358px] h-[272px] cmone md:w-[357px] md:h-[340px] md:mt-[-100px] md:px-[24px] md:py-[32px]"
+        >
+          <section class="flex">
+            <img src="./src/assets/images/user5.png" alt="user3" />
+
+            <section class="flex flex-col mr-[10px]">
+              <h2 class="sec-one-header dark:text-white">رویا ملکی</h2>
+              <p class="sec-one-paragraph-header dark:text-white">
+                مهندس نرم افزار دیجی‌کالا
+              </p>
+            </section>
+          </section>
+
+          <p class="seconeplus-paragraph-header py-[20px] dark:text-white">
+            تجربه من با کوئرا لیست زندگی من رو تغییر داده است. من از دنیایی
+            اومدم که همه چیز من در اکسل بود. استفاده از کوئرا لیست به ما این
+            امکان رو می‌دهد که باهوش‌تر، سریع‌تر و سازمان دهی شده تر زندگی کنیم
+            و هم چینین همه چیز به گونه‌ای ساده تنظیم شده و میتونیم از یکپارچگی
+            اطلاعات و دیتاها لذت ببریم.
+          </p>
+        </section>
+        <section
+          class="hidden border-2 dark:bg-[#0B192D] dark:border-white-300 dark:shadow-none shadow-[0px_4px_63px_0px_#0000000A] bg-white md:block w-[358px] h-[272px] md:w-[357px] md:h-[240px] md:px-[24px] md:py-[32px]"
+        >
+          <section class="flex">
+            <img src="./src/assets/images/user4.png" alt="user3" />
+
+            <section class="flex flex-col p-3">
+              <h2 class="sec-one-header dark:text-white">رویا ملکی</h2>
+              <p class="sec-one-paragraph-header dark:text-white">
+                مهندس نرم افزار دیجی‌کالا
+              </p>
+            </section>
+          </section>
+
+          <p class="seconeplus-paragraph-header py-[20px] dark:text-white">
+            تجربه من با کوئرا لیست زندگی من رو تغییر داده است. من از دنیایی
+            اومدم که همه چیز من در اکسل بود. استفاده از کوئرا لیست به ما این
+            امکان رو می‌دهد که سریع تر باشیم
+          </p>
+        </section>
+        <section
+          class="arrow dark:bg-[#0B192D] dark:text-white-300 absolute bottom-[-80px] md:absolute md:left-[500px] md:top-[650px]"
+        >
+          <img
+            src="./src/assets/images/Frame 1000005305.png"
+            alt="arrow"
+            class="dark:hidden"
+          />
+          <img
+            src="./src/assets/images/arrow dark.svg"
+            alt="arrowdark"
+            class="dark:block hidden"
+          />
+        </section>
+      </figure>
+    </main>
+    <!-- footer on desktop -->
+    <footer
+      class="hidden lg:block mt-20 bg-white dark:bg-[#0B192D] py-12 px-4 md:px-12"
+    >
+      <div class="flex items-center w-full mb-8">
+        <div
+          class="flex-grow border-t border-gray-300 dark:border-gray-600"
+        ></div>
+        <span
+          class="px-3 text-sm text-gray-700 whitespace-nowrap dark:text-gray-300"
+          >کوئرا لیست</span
+        >
+        <div
+          class="flex-grow border-t border-gray-300 dark:border-gray-600"
+        ></div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-4 lg:gap-x-12">
+        <div
+          class="md:col-span-2 order-2 md:order-1 flex flex-col items-center mb-8 md:mb-0"
+        >
+          <div
+            class="border-2 border-gray-300 dark:border-gray-600 p-4 rounded-lg flex items-center w-full max-w-sm mb-4 md:border-none"
+          >
+            <img
+              class="text-md dark:bg-white"
+              src="./src/assets/images/call1.png"
+              alt="تلفن"
+              class="w-6 h-6 ml-2"
+            />
+            <p class="dark:text-gray-300 text-sm text-gray-600 p-3">
+              تلفن پشتیبانی: ۴۴۴۴۵۵۶۶ - ۰۲۱
+            </p>
+          </div>
+
+          <div
+            class="border-2 border-gray-300 dark:border-gray-600 md:border-none p-4 rounded-lg flex items-center w-full max-w-sm"
+          >
+            <img
+              class="text-md dark:bg-white"
+              src="./src/assets/images/fax1.png"
+              alt="فکس"
+              class="w-6 h-6 ml-2"
+            />
+            <p class="text-sm text-gray-600 dark:text-gray-300 p-3">
+              فکس: ۴۴۴۴۵۵۶۶ - ۰۲۱
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="md:col-span-2 order-1 md:order-2 flex flex-col items-center mb-8 md:mb-0"
+        >
+          <h3 class="font-bold text-xl mb-2 dark:text-white">
+            با ما در ارتباط باش
+          </h3>
+          <p
+            class="text-sm text-gray-600 text-center max-w-xs mb-4 dark:text-gray-300"
+          >
+            اگه میخوای اولین نفری باشی که از فیچرهای جدید و تخفیفات با خبر بشی.
+          </p>
+          <form class="flex w-full max-w-xs md:max-w-md">
+            <input
+              type="email"
+              placeholder="ایمیل"
+              class="relative dark:bg-[#0B192D] flex-grow py-3 px-4 border border-gray-300 dark:border-gray-600 rounded-lg rounded-lg outline-none dark:focus:ring-blue-500 focus:ring-2 focus:ring-blue-500 text-right dark:text-white"
+              dir="rtl"
+            />
+            <button
+              type="submit"
+              class="absolute lg:left-[220px] lg:mt-[5px] h-[40px] left-[140px] mt-[5px] bg-blue-600 dark:bg-blue-600 dark:text-white text-white dark:hover:bg-blue-700 font-bold px-6 rounded-lg hover:bg-blue-700"
+            >
+              ارسال
+            </button>
+          </form>
+        </div>
+
+        <div class="md:col-span-2 order-3 flex flex-col items-center md:mt-0">
+          <div
+            class="border-2 border-gray-300 dark:border-gray-600 md:border-none p-4 rounded-lg flex items-start w-full max-w-sm"
+          >
+            <img
+              class="text-md dark:bg-white"
+              src="./src/assets/images/Frame 1000005390.png"
+              alt="آدرس"
+              class="w-6 h-6 ml-2 mt-1"
+            />
+            <p
+              class="text-sm text-gray-600 leading-relaxed dark:text-gray-300 p-3"
+            >
+              آدرس دفتر مرکزی: پونک - خیابان اشرفی اصفهانی - خیابان صبحدل- بن
+              بست شب بو
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-8 pt-8">
+        <p class="text-md text-center text-gray-500 dark:text-gray-300">
+          تمامی حقوق مادی و معنوی این سایت متعلق به کوئرا لیست می‌باشد.
+        </p>
+      </div>
+    </footer>
+    <!-- footer on desktop -->
+
+    <!-- footer on mobile -->
+    <footer class="lg:hidden py-10 mt-[80px]">
+      <div class="flex items-center w-full mb-8">
+        <div
+          class="flex-grow border-t border-gray-300 dark:border-gray-600"
+        ></div>
+        <span
+          class="px-3 text-sm text-gray-700 whitespace-nowrap dark:text-gray-300"
+          >کوئرا لیست</span
+        >
+        <div
+          class="flex-grow border-t border-gray-300 dark:border-gray-600"
+        ></div>
+      </div>
+      <h1 class="font-bold text-[14px] text-black dark:text-white">
+        با ما در ارتباط باش
+      </h1>
+      <br />
+      <p class="text-[12px] text-gray-700 dark:text-gray-300">
+        اگه میخوای اولین نفری باشی که از فیچرهای جدید و تخفیفات با خبر بشی.
+      </p>
+      <div class="relative flex justify-center mt-5">
+        <form action="">
+          <input
+            type="email"
+            placeholder="ایمیل"
+            class="rounded-lg border-2 border-solid border-gray-300 dark:border-gray-600 px-2 w-[328px] h-[48px] bg-white dark:bg-gray-800 text-black dark:text-white placeholder-gray-400 dark:placeholder-gray-500"
+          />
+          <button
+            type="submit"
+            class="bg-blue-500 text-white-500 rounded-lg w-[65px] h-[36px] text-white font-bold absolute left-[135px] bottom-[6px] dark:bg-blue-600"
+          >
+            ارسال
+          </button>
+        </form>
+      </div>
+      <div class="grid grid-cols-2 grid-rows-2 gap-[30px] mt-[45px] mx-3">
+        <div
+          class="flex flex-row-reverse justify-center items-center text-center gap-3 order-1 border-2 border-solid border-gray-300 dark:border-gray-600 rounded-lg p-3 bg-white dark:bg-gray-800 text-black dark:text-white"
+        >
+          <div>
+            <h1>فکس</h1>
+
+            <p>۴۴۴۴۵۵۶۶ - ۰۲۱</p>
+          </div>
+          <img
+            src="/src/assets/images/fax1.png"
+            alt="call"
+            class="W-[60px] h-[60px] filter dark:invert"
+          />
+        </div>
+        <div
+          class="flex flex-col justify-center relative top-20 items-center border-2 p-6 border-solid border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-black dark:text-white"
+        >
+          <img
+            src="/src/assets/images/Frame 1000005390.png "
+            alt="call"
+            class="W-[60px] h-[60px] filter dark:invert"
+          />
+          <p>
+            آدرس دفتر مرکزی: پونک - خیابان اشرفی اصفهانی - خیابان صبحدل- بن بست
+            شب بو
+          </p>
+        </div>
+        <div
+          class="flex flex-row-reverse justify-center items-center gap-5 border-2 border-solid border-gray-300 dark:border-gray-600 rounded-lg p-3 bg-white dark:bg-gray-800 text-black dark:text-white"
+        >
+          <div>
+            <h1>تلفن پشتیبانی</h1>
+
+            <p>۴۴۴۴۵۵۶۶ - ۰۲۱</p>
+          </div>
+          <img
+            src="/src/assets/images/call1.png"
+            alt="call"
+            class="W-[60px] h-[60px] filter dark:invert"
+          />
+        </div>
+
+        <div></div>
+      </div>
+    </footer>
+    <div
+      class="my-9 flex justify-center text-gray-500 lg:hidden dark:text-gray-400"
+    >
+      <h1>تمامی حقوق مادی و معنوی این سایت متعلق به کوئرا لیست می‌باشد.</h1>
+    </div>
+    <!-- footer on mobile -->
+
+    <script src="./src/main.js"></script>
+    <script>
+      const themeToggle = document.getElementById("theme-toggle");
+      const mobileThemeToggle = document.getElementById("mobile-theme-toggle");
+
+      function toggleDarkMode() {
+        document.documentElement.classList.toggle("dark");
+
+        const isDark = document.documentElement.classList.contains("dark");
+        localStorage.setItem("darkMode", isDark);
+      }
+
+      const savedTheme = localStorage.getItem("darkMode");
+      if (savedTheme === "true") {
+        document.documentElement.classList.add("dark");
+      }
+
+      if (themeToggle) {
+        themeToggle.addEventListener("click", toggleDarkMode);
+      }
+
+      if (mobileThemeToggle) {
+        mobileThemeToggle.addEventListener("click", toggleDarkMode);
+      }
+    </script>
+  </body>
 </html>
